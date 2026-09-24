@@ -6,6 +6,7 @@ public class CardScript : MonoBehaviour
 {
     private Collider2D col;
     private Vector3 startDragPosition; 
+    private SpawnAreaScript currentSpawnArea;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,15 @@ public class CardScript : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("Card clicked");
         startDragPosition = transform.position;
+
+        if (currentSpawnArea != null)
+        {
+            currentSpawnArea.RemoveCard(this);
+            currentSpawnArea = null;
+        }
+
         transform.position = GetMousePositionInWorldSpace();
     }
 
@@ -39,10 +48,15 @@ public class CardScript : MonoBehaviour
         }
     }
 
+    public void SetSpawnArea(SpawnAreaScript spawnArea)
+    {
+        currentSpawnArea = spawnArea;
+    }
+
     public Vector3 GetMousePositionInWorldSpace()
     {
         Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        p.z = 0f;
+        p.z = transform.position.z;
         return p;
     }
 
