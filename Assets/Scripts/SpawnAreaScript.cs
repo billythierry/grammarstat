@@ -1,26 +1,31 @@
 using UnityEngine;
 
-public class SpawnAreaScript : MonoBehaviour, ICardDropArea
+public class SpawnAreaScript : MonoBehaviour, IBoxDropArea
 {
-    private CardScript currentCard;
+    private BoxScript currentBox;
 
-    public void OnCardDrop(CardScript card)
+    public bool CanAccept(BoxScript box)
     {
-        currentCard = card;
-
-        card.SetSpawnArea(this);
-
-        Vector3 newPosition = transform.position;
-        newPosition.z = card.transform.position.z;
-
-        card.transform.position = newPosition;
+        return currentBox == null || currentBox == box;
     }
 
-    public void RemoveCard(CardScript card)
+    public void OnBoxDrop(BoxScript box)
     {
-        if (currentCard == card)
+        currentBox = box;
+
+        box.SetCurrentArea(this);
+
+        Vector3 newPosition = transform.position;
+        newPosition.z = box.transform.position.z;
+
+        box.transform.position = newPosition;
+    }
+
+    public void RemoveBox(BoxScript box)
+    {
+        if (currentBox == box)
         {
-            currentCard = null;
+            currentBox = null;
         }
     }
 }
