@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,6 +11,10 @@ public class BoxSpawner : MonoBehaviour
     [SerializeField] public SpawnAreaScript[] spawnAreas;
     [Tooltip("Kereta yang membawa drop area (kolom jawaban) di tiap gerbong")]
     [SerializeField] private TrainController train;
+    [Tooltip("Panel UI untuk notifikasi jawaban benar/salah")]
+    [SerializeField] private NotificationUI notification;
+    [Tooltip("Teks penghitung soal, mis. 1/15")]
+    [SerializeField] private TMP_Text questionCounterText;
 
     [Header("Questions")]
     [SerializeField] private QuestionBank questionBank;
@@ -76,7 +81,13 @@ public class BoxSpawner : MonoBehaviour
         orderIndex = 0;
         CorrectCount = 0;
         IsFinished = false;
+        UpdateQuestionCounter();
         StartCoroutine(BeginLevelRoutine());
+    }
+
+    void UpdateQuestionCounter()
+    {
+        if (questionCounterText != null) questionCounterText.text = CurrentQuestionNumber + "/" + TotalQuestions;
     }
 
     IEnumerator BeginLevelRoutine()
@@ -97,6 +108,7 @@ public class BoxSpawner : MonoBehaviour
             Debug.LogWarning("BoxSpawner: soal " + question.id + " punya " + CorrectWords.Length + " kata, tapi spawn area hanya " + spawnAreas.Length + ". Sebagian kata tidak di-spawn.");
 
         PlaceBoxes(Shuffle(CorrectWords));
+        UpdateQuestionCounter();
         Debug.Log("Soal " + CurrentQuestionNumber + "/" + TotalQuestions + " (" + question.id + ") : " + string.Join(" ", CorrectWords));
     }
 
@@ -166,21 +178,23 @@ public class BoxSpawner : MonoBehaviour
         {
             if (area == null || area.CurrentBox == null)
             {
-                Debug.Log("Jawaban salah (masih ada drop area yang kosong)");
+                if (notification != null) notification.ShowInfo("Lengkapi semua kolom jawaban terlebih dahulu");
                 return false;
             }
             answer.Add(area.CurrentBox.Word);
         }
 
         bool correct = answer.Count == CorrectWords.Length && SameOrder(answer.ToArray(), CorrectWords);
-        if (correct)
+        if (correct) CorrectCount++;
+        bool advance = correct || !advanceOnlyWhenCorrect;
+        if (notification != null)
         {
-            CorrectCount++;
-            Debug.Log("Jawaban benar: " + string.Join(" ", answer));
+            // Saat pindah gerbong, notifikasi tetap tampil selama kereta bergerak lalu disembunyikan di NextQuestionRoutine
+            if (correct) notification.ShowCorrect("<b>Jawaban Benar!</b>", advance);
+            else notification.ShowWrong("<b>Jawaban Salah!</b>\n<size=70%><color=#FFFFFF>Jawaban benar: " + string.Join(" ", CorrectWords) + "</color></size>", advance);
         }
-        else Debug.Log("Jawaban salah: " + string.Join(" ", answer) + " | Seharusnya: " + string.Join(" ", CorrectWords));
 
-        if (correct || !advanceOnlyWhenCorrect) StartCoroutine(NextQuestionRoutine());
+        if (advance) StartCoroutine(NextQuestionRoutine());
         return correct;
     }
 
@@ -202,6 +216,7 @@ public class BoxSpawner : MonoBehaviour
         if (orderIndex < questionOrder.Count)
         {
             yield return train.MoveToNext();
+            if (notification != null) notification.Hide();
             LoadQuestion(questionBank.questions[questionOrder[orderIndex]]);
         }
         else
@@ -210,7 +225,13 @@ public class BoxSpawner : MonoBehaviour
             yield return train.Depart();
             IsFinished = true;
             bool passed = CorrectCount >= passingScore;
-            Debug.Log("Level selesai! Benar " + CorrectCount + " dari " + TotalQuestions + " soal - " + (passed ? "LULUS" : "TIDAK LULUS") + " (minimal " + passingScore + ")");
+            if (notification != null)
+            {
+                string result = "<b>Level Selesai!</b>\n<size=70%>Benar " + CorrectCount + " dari " + TotalQuestions + " soal - " + (passed ? "LULUS" : "TIDAK LULUS") + "</size>";
+                // Tetap tampil sampai level dimulai ulang
+                if (passed) notification.ShowCorrect(result, true);
+                else notification.ShowWrong(result, true);
+            }
         }
 
         IsBusy = false;

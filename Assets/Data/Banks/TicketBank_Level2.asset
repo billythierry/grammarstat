@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a635c0d0bab4a45a5b280ec3711ceb, type: 3}
+  m_Name: TicketBank_Level2
+  m_EditorClassIdentifier: 
+  tickets:
+  - id: L2-001
+    passengerName: Taufik Hidayat
+    age: 38
+    tense: Simple Past
+    note: Taufik [A:missed] the early train yesterday because he [B:woke] up late.
+    correctAnswer: 2
+    correction: Taufik missed the early train yesterday because he woke up late.
+  - id: L2-002
+    passengerName: Wulan Sari
+    age: 23
+    tense: Simple Past
+    note: Wulan [A:buyed] a new suitcase last week before she [B:left] for Malang.
+    correctAnswer: 0
+    correction: Wulan bought a new suitcase last week before she left for Malang.
+  - id: L2-003
+    passengerName: Dimas Prakoso
+    age: 16
+    tense: Simple Past
+    note: Dimas [A:went] to Yogyakarta last month and [B:visit] Borobudur Temple.
+    correctAnswer: 1
+    correction: Dimas went to Yogyakarta last month and visited Borobudur Temple.
+  - id: L2-004
+    passengerName: Ratna Dewi
+    age: 58
+    tense: Simple Past
+    note: Mrs. Ratna did not [A:brought] her umbrella, so she [B:got] wet at the
+      station.
+    correctAnswer: 0
+    correction: Mrs. Ratna did not bring her umbrella, so she got wet at the station.
+  - id: L2-005
+    passengerName: Eko Prasetyo
+    age: 29
+    tense: Simple Past
+    note: Eko [A:was] in Surabaya two days ago and [B:meets] his old friends there.
+    correctAnswer: 1
+    correction: Eko was in Surabaya two days ago and met his old friends there.
+  - id: L2-006
+    passengerName: Sinta Maharani
+    age: 20
+    tense: Simple Past
+    note: Sinta [A:studied] all night, so she [B:slept] on the train this morning.
+    correctAnswer: 2
+    correction: Sinta studied all night, so she slept on the train this morning.
+  - id: L2-007
+    passengerName: Yusuf Hakim
+    age: 70
+    tense: Simple Past
+    note: Mr. Yusuf [A:worked] at this station for thirty years before he [B:retire]
+      in 2015.
+    correctAnswer: 1
+    correction: Mr. Yusuf worked at this station for thirty years before he retired
+      in 2015.
+  - id: L2-008
+    passengerName: Laras Ayu
+    age: 27
+    tense: Simple Past
+    note: Laras and her friends [A:was] at the beach last weekend and [B:took] many
+      photos.
+    correctAnswer: 0
+    correction: Laras and her friends were at the beach last weekend and took many
+      photos.
+  - id: L2-009
+    passengerName: Gilang Permana
+    age: 13
+    tense: Simple Past
+    note: Gilang [A:lost] his ticket yesterday, but the officer [B:helped] him find
+      it.
+    correctAnswer: 2
+    correction: Gilang lost his ticket yesterday, but the officer helped him find
+      it.
+  - id: L2-010
+    passengerName: Mira Susanti
+    age: 34
+    tense: Simple Past
+    note: Did Mira [A:called] her mother before she [B:boarded] the train?
+    correctAnswer: 0
+    correction: Did Mira call her mother before she boarded the train?
+  - id: L2-011
+    passengerName: Hana Fitriani
+    age: 25
+    tense: Future
+    note: Hana [A:will start] her new job in Surabaya [B:next] Monday.
+    correctAnswer: 2
+    correction: Hana will start her new job in Surabaya next Monday.
+  - id: L2-012
+    passengerName: Arif Rahman
+    age: 32
+    tense: Future
+    note: Arif [A:will to visit] his parents in Solo [B:tomorrow].
+    correctAnswer: 0
+    correction: Arif will visit his parents in Solo tomorrow.
+  - id: L2-013
+    passengerName: Tia Kusuma
+    age: 18
+    tense: Future
+    note: Tia [A:is going to] study at a university in Bandung [B:last] year.
+    correctAnswer: 1
+    correction: Tia is going to study at a university in Bandung next year.
+  - id: L2-014
+    passengerName: Rudi Hartono
+    age: 55
+    tense: Future
+    note: Rudi [A:is going to retiring] next year, and he [B:will move] to his hometown.
+    correctAnswer: 0
+    correction: Rudi is going to retire next year, and he will move to his hometown.
+  - id: L2-015
+    passengerName: Indah Permata
+    age: 29
+    tense: Future
+    note: Indah [A:will arrive] in Malang at noon, and her cousin [B:will picks]
+      her up at the station.
+    correctAnswer: 1
+    correction: Indah will arrive in Malang at noon, and her cousin will pick her
+      up at the station.
+  - id: L2-016
+    passengerName: Bima Aditya
+    age: 10
+    tense: Future
+    note: Bima [A:is going to] watch a football match with his uncle [B:this] Saturday.
+    correctAnswer: 2
+    correction: Bima is going to watch a football match with his uncle this Saturday.
+  - id: L2-017
+    passengerName: Sari Wulandari
+    age: 41
+    tense: Future
+    note: Sari [A:are going to] attend a meeting in Jakarta, so she [B:will stay]
+      at a hotel tonight.
+    correctAnswer: 0
+    correction: Sari is going to attend a meeting in Jakarta, so she will stay at
+      a hotel tonight.
+  - id: L2-018
+    passengerName: Darmo Sutrisno
+    age: 75
+    tense: Future
+    note: Mr. Darmo [A:will celebrate] his birthday with his family, and they [B:going
+      to] eat at a restaurant.
+    correctAnswer: 1
+    correction: Mr. Darmo will celebrate his birthday with his family, and they are
+      going to eat at a restaurant.
+  - id: L2-019
+    passengerName: Yoga Pratama
+    age: 24
+    tense: Future
+    note: Yoga [A:will travel] to Bali after he [B:finishes] his final exam.
+    correctAnswer: 2
+    correction: Yoga will travel to Bali after he finishes his final exam.
+  - id: L2-020
+    passengerName: Fitri Handayani
+    age: 36
+    tense: Future
+    note: Fitri [A:won't] take the night train because she [B:will arrives] too late.
+    correctAnswer: 1
+    correction: Fitri won't take the night train because she will arrive too late.

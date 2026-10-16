@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a635c0d0bab4a45a5b280ec3711ceb, type: 3}
+  m_Name: TicketBank_Level1
+  m_EditorClassIdentifier: 
+  tickets:
+  - id: L1-001
+    passengerName: Andi Pratama
+    age: 24
+    tense: Simple Present
+    note: Andi [A:works] as a bank teller and [B:take] the train every morning.
+    correctAnswer: 1
+    correction: Andi works as a bank teller and takes the train every morning.
+  - id: L1-002
+    passengerName: Siti Rahma
+    age: 31
+    tense: Simple Present
+    note: Siti [A:teach] English at a high school [B:near] the station.
+    correctAnswer: 0
+    correction: Siti teaches English at a high school near the station.
+  - id: L1-003
+    passengerName: Budi Santoso
+    age: 45
+    tense: Simple Present
+    note: Budi [A:usually visits] his parents in Bogor [B:every] weekend.
+    correctAnswer: 2
+    correction: Budi usually visits his parents in Bogor every weekend.
+  - id: L1-004
+    passengerName: Rina Lestari
+    age: 19
+    tense: Simple Present
+    note: Rina [A:doesn't] live on campus, so she [B:travels] home by train.
+    correctAnswer: 2
+    correction: Rina doesn't live on campus, so she travels home by train.
+  - id: L1-005
+    passengerName: Harun Wijaya
+    age: 67
+    tense: Simple Present
+    note: Mr. Harun [A:don't] drive anymore, so he [B:prefers] the train.
+    correctAnswer: 0
+    correction: Mr. Harun doesn't drive anymore, so he prefers the train.
+  - id: L1-006
+    passengerName: Dewi Anggraini
+    age: 12
+    tense: Simple Present
+    note: Dewi [A:goes] to school with her mother, who [B:work] at the city hospital.
+    correctAnswer: 1
+    correction: Dewi goes to school with her mother, who works at the city hospital.
+  - id: L1-007
+    passengerName: Kevin Tanaka
+    age: 28
+    tense: Simple Present
+    note: Kevin [A:does] not [B:likes] crowded trains in the morning.
+    correctAnswer: 1
+    correction: Kevin does not like crowded trains in the morning.
+  - id: L1-008
+    passengerName: Lina Marlina
+    age: 35
+    tense: Simple Present
+    note: Lina and her husband [A:runs] a small bakery that [B:opens] at six.
+    correctAnswer: 0
+    correction: Lina and her husband run a small bakery that opens at six.
+  - id: L1-009
+    passengerName: Joko Susilo
+    age: 52
+    tense: Simple Present
+    note: Joko [A:has] two sons who [B:study] in Yogyakarta.
+    correctAnswer: 2
+    correction: Joko has two sons who study in Yogyakarta.
+  - id: L1-010
+    passengerName: Maya Putri
+    age: 22
+    tense: Simple Present
+    note: Maya [A:always buy] her ticket online because it [B:saves] time.
+    correctAnswer: 0
+    correction: Maya always buys her ticket online because it saves time.
+  - id: L1-011
+    passengerName: Fajar Nugroho
+    age: 26
+    tense: Present Continuous
+    note: Fajar [A:is traveling] to Surabaya because his sister [B:is getting] married
+      this week.
+    correctAnswer: 2
+    correction: Fajar is traveling to Surabaya because his sister is getting married
+      this week.
+  - id: L1-012
+    passengerName: Ayu Kartika
+    age: 17
+    tense: Present Continuous
+    note: Ayu [A:is studying] for her exams, so she [B:is read] a book on the train.
+    correctAnswer: 1
+    correction: Ayu is studying for her exams, so she is reading a book on the train.
+  - id: L1-013
+    passengerName: Hendra Gunawan
+    age: 40
+    tense: Present Continuous
+    note: Hendra [A:are] waiting for his wife, who [B:is buying] snacks at the kiosk.
+    correctAnswer: 0
+    correction: Hendra is waiting for his wife, who is buying snacks at the kiosk.
+  - id: L1-014
+    passengerName: Sri Wahyuni
+    age: 72
+    tense: Present Continuous
+    note: Mrs. Sri [A:is visiting] her grandchildren, who [B:is staying] in Bandung
+      this month.
+    correctAnswer: 1
+    correction: Mrs. Sri is visiting her grandchildren, who are staying in Bandung
+      this month.
+  - id: L1-015
+    passengerName: Rizky Ramadhan
+    age: 21
+    tense: Present Continuous
+    note: Rizky [A:listening] to music while he [B:is waiting] for the train.
+    correctAnswer: 0
+    correction: Rizky is listening to music while he is waiting for the train.
+  - id: L1-016
+    passengerName: Clara Wijaya
+    age: 30
+    tense: Present Continuous
+    note: Clara [A:is working] from home this week, but today she [B:is going] to
+      the head office.
+    correctAnswer: 2
+    correction: Clara is working from home this week, but today she is going to the
+      head office.
+  - id: L1-017
+    passengerName: Bayu Saputra
+    age: 9
+    tense: Present Continuous
+    note: Bayu [A:is holding] his father's hand because the station [B:is getting]
+      very crowded.
+    correctAnswer: 2
+    correction: Bayu is holding his father's hand because the station is getting
+      very crowded.
+  - id: L1-018
+    passengerName: Putri Amelia
+    age: 25
+    tense: Present Continuous
+    note: Putri [A:is knowing] the way, so she [B:is guiding] her friend to the platform.
+    correctAnswer: 0
+    correction: Putri knows the way, so she is guiding her friend to the platform.
+  - id: L1-019
+    passengerName: Agus Salim
+    age: 48
+    tense: Present Continuous
+    note: Right now Agus [A:is talking] on the phone with his boss and [B:take] notes.
+    correctAnswer: 1
+    correction: Right now Agus is talking on the phone with his boss and taking notes.
+  - id: L1-020
+    passengerName: Nadia Safitri
+    age: 33
+    tense: Present Continuous
+    note: Nadia [A:is carrying] two heavy bags because she [B:moving] to a new apartment.
+    correctAnswer: 1
+    correction: Nadia is carrying two heavy bags because she is moving to a new apartment.

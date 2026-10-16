@@ -12,8 +12,11 @@ public class TrainController : MonoBehaviour
     [Tooltip("Jarak awal kereta di kanan layar sebelum datang")]
     [SerializeField] private float arriveDistance = 33f;
     [SerializeField] private float arriveDuration = 2f;
-    [SerializeField] private float moveDuration = 1.2f;
+    [Tooltip("Lama transisi ke gerbong berikutnya. Notifikasi benar/salah tampil selama transisi ini")]
+    [SerializeField] private float moveDuration = 2f;
     [SerializeField] private float departDuration = 1.5f;
+    [Tooltip("Lokomotif di depan gerbong pertama. Hanya muncul di awal, di-Destroy setelah keluar layar")]
+    [SerializeField] private Transform locomotive;
 
     public int CurrentIndex { get; private set; }
     public WagonScript CurrentWagon => WagonAt(CurrentIndex);
@@ -35,7 +38,33 @@ public class TrainController : MonoBehaviour
         CurrentIndex = 0;
         wagonIndex = new int[wagons.Length];
         for (int i = 0; i < wagons.Length; i++) AssignWagon(i, i);
-        SetX(baseX + arriveDistance);
+        SetX(Mathf.Max(baseX + arriveDistance, OffscreenRightX()));
+    }
+
+    // Posisi x kereta agar seluruh bagiannya (termasuk lokomotif) berada di luar layar kanan
+    float OffscreenRightX()
+    {
+        Camera cam = Camera.main;
+        float cameraRight = cam.transform.position.x + cam.orthographicSize * cam.aspect;
+        float minX = float.MaxValue;
+        foreach (Renderer r in GetComponentsInChildren<Renderer>()) minX = Mathf.Min(minX, r.bounds.min.x);
+        if (minX == float.MaxValue) return transform.position.x;
+        return cameraRight + (transform.position.x - minX) + 1f;
+    }
+
+    // Lokomotif hanya penarik di awal: hapus permanen setelah keluar dari layar kiri
+    void DestroyLocomotiveIfOffscreen()
+    {
+        if (locomotive == null) return;
+        Camera cam = Camera.main;
+        float cameraLeft = cam.transform.position.x - cam.orthographicSize * cam.aspect;
+        float maxX = float.MinValue;
+        foreach (Renderer r in locomotive.GetComponentsInChildren<Renderer>()) maxX = Mathf.Max(maxX, r.bounds.max.x);
+        if (maxX < cameraLeft)
+        {
+            Destroy(locomotive.gameObject);
+            locomotive = null;
+        }
     }
 
     public IEnumerator Arrive()
@@ -53,6 +82,7 @@ public class TrainController : MonoBehaviour
         {
             if (wagonIndex[i] <= CurrentIndex - 2) AssignWagon(i, wagonIndex[i] + wagons.Length);
         }
+        DestroyLocomotiveIfOffscreen();
     }
 
     // Kereta berangkat meninggalkan layar ke kiri

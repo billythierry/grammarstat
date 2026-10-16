@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea4d08b34696614abfa061417496b0f, type: 3}
+  m_Name: TenseBank_Runaway
+  m_EditorClassIdentifier: 
+  questions:
+  - id: RW-001
+    sentence: "She drinks milk every morning."
+    tense: 0
+  - id: RW-002
+    sentence: "My father works at the station."
+    tense: 0
+  - id: RW-003
+    sentence: "They play football on Sundays."
+    tense: 0
+  - id: RW-004
+    sentence: "The train leaves at seven o'clock."
+    tense: 0
+  - id: RW-005
+    sentence: "He does not like spicy food."
+    tense: 0
+  - id: RW-006
+    sentence: "Do you speak English?"
+    tense: 0
+  - id: RW-007
+    sentence: "The sun rises in the east."
+    tense: 0
+  - id: RW-008
+    sentence: "We always eat dinner together."
+    tense: 0
+  - id: RW-009
+    sentence: "Rina reads a book before bed."
+    tense: 0
+  - id: RW-010
+    sentence: "Cats sleep a lot."
+    tense: 0
+  - id: RW-011
+    sentence: "She is drinking milk now."
+    tense: 1
+  - id: RW-012
+    sentence: "My father is working in the garden."
+    tense: 1
+  - id: RW-013
+    sentence: "They are playing football right now."
+    tense: 1
+  - id: RW-014
+    sentence: "Look! The train is leaving."
+    tense: 1
+  - id: RW-015
+    sentence: "He is not watching TV at the moment."
+    tense: 1
+  - id: RW-016
+    sentence: "Are you listening to me?"
+    tense: 1
+  - id: RW-017
+    sentence: "The children are singing in the classroom."
+    tense: 1
+  - id: RW-018
+    sentence: "I am waiting for the bus."
+    tense: 1
+  - id: RW-019
+    sentence: "It is raining outside."
+    tense: 1
+  - id: RW-020
+    sentence: "We are eating lunch now."
+    tense: 1
+  - id: RW-021
+    sentence: "She drank milk this morning."
+    tense: 2
+  - id: RW-022
+    sentence: "My father worked late yesterday."
+    tense: 2
+  - id: RW-023
+    sentence: "They played football last Sunday."
+    tense: 2
+  - id: RW-024
+    sentence: "The train left two hours ago."
+    tense: 2
+  - id: RW-025
+    sentence: "He did not come to school yesterday."
+    tense: 2
+  - id: RW-026
+    sentence: "Did you see the bandits?"
+    tense: 2
+  - id: RW-027
+    sentence: "We visited our grandmother last week."
+    tense: 2
+  - id: RW-028
+    sentence: "I bought a new bag yesterday."
+    tense: 2
+  - id: RW-029
+    sentence: "Rina wrote a letter last night."
+    tense: 2
+  - id: RW-030
+    sentence: "The bus arrived late this morning."
+    tense: 2
+  - id: RW-031
+    sentence: "She will drink milk later."
+    tense: 3
+  - id: RW-032
+    sentence: "I will play football next week."
+    tense: 3
+  - id: RW-033
+    sentence: "They are going to visit Bali next month."
+    tense: 3
+  - id: RW-034
+    sentence: "The train will arrive soon."
+    tense: 3
+  - id: RW-035
+    sentence: "He will not come to the party tomorrow."
+    tense: 3
+  - id: RW-036
+    sentence: "Will you help me tomorrow?"
+    tense: 3
+  - id: RW-037
+    sentence: "We are going to buy a new car."
+    tense: 3
+  - id: RW-038
+    sentence: "It will rain this afternoon."
+    tense: 3
+  - id: RW-039
+    sentence: "I will call you tonight."
+    tense: 3
+  - id: RW-040
+    sentence: "My sister is going to study in Japan next year."
+    tense: 3
