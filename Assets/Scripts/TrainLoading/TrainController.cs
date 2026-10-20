@@ -2,10 +2,10 @@ using System.Collections;
 using UnityEngine;
 
 // Kereta bergerak ke kiri, kamera diam. Gerbong fisik dipakai ulang:
-// gerbong yang sudah lewat jauh di kiri dipindah ke ujung kanan (tanpa Destroy/Instantiate).
+// gerbong yang sudah lewat jauh di kiri dipindah ke ujung belakang (tanpa Destroy/Instantiate).
 public class TrainController : MonoBehaviour
 {
-    [Tooltip("Gerbong yang dipakai ulang. Minimal 3: sebelumnya, sekarang, berikutnya")]
+    [Tooltip("Gerbong yang dipakai ulang. Minimal 4: yang keluar di kiri, sekarang, berikutnya, dan yang masuk dari kanan saat transisi")]
     [SerializeField] private WagonScript[] wagons;
     [Tooltip("Jarak antar pusat gerbong (lebar gerbong + sambungan)")]
     [SerializeField] private float wagonSpacing = 22f;
@@ -74,15 +74,25 @@ public class TrainController : MonoBehaviour
 
     public IEnumerator MoveToNext()
     {
-        CurrentIndex++;
-        yield return MoveTo(baseX - CurrentIndex * wagonSpacing, moveDuration);
-
-        // Gerbong yang sudah 2 posisi di belakang tidak terlihat lagi: pindahkan ke depan antrean
+        // Sebelum kereta bergerak: gerbong yang sudah 2 posisi di kiri (tidak terlihat) disambung ke ujung belakang.
+        // Posisinya masih di luar layar kanan, jadi gerbong ikut masuk layar bersama rangkaian, tidak muncul tiba-tiba.
+        // Gerbong di luar jumlah soal dinonaktifkan oleh AssignWagon, jadi di soal terakhir tidak ada gerbong tambahan.
         for (int i = 0; i < wagons.Length; i++)
         {
-            if (wagonIndex[i] <= CurrentIndex - 2) AssignWagon(i, wagonIndex[i] + wagons.Length);
+            if (wagonIndex[i] <= CurrentIndex - 2) AssignWagon(i, LastWagonIndex() + 1);
         }
+
+        CurrentIndex++;
+        yield return MoveTo(baseX - CurrentIndex * wagonSpacing, moveDuration);
         DestroyLocomotiveIfOffscreen();
+    }
+
+    // Indeks gerbong paling belakang dalam rangkaian saat ini
+    int LastWagonIndex()
+    {
+        int last = int.MinValue;
+        foreach (int index in wagonIndex) last = Mathf.Max(last, index);
+        return last;
     }
 
     // Kereta berangkat meninggalkan layar ke kiri

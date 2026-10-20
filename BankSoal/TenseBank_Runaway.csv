@@ -1,0 +1,41 @@
+﻿id;sentence;tense
+RW-001;She drinks milk every morning.;SimplePresent
+RW-002;My father works at the station.;SimplePresent
+RW-003;They play football on Sundays.;SimplePresent
+RW-004;The train leaves at seven o'clock.;SimplePresent
+RW-005;He does not like spicy food.;SimplePresent
+RW-006;Do you speak English?;SimplePresent
+RW-007;The sun rises in the east.;SimplePresent
+RW-008;We always eat dinner together.;SimplePresent
+RW-009;Rina reads a book before bed.;SimplePresent
+RW-010;Cats sleep a lot.;SimplePresent
+RW-011;She is drinking milk now.;PresentContinuous
+RW-012;My father is working in the garden.;PresentContinuous
+RW-013;They are playing football right now.;PresentContinuous
+RW-014;Look! The train is leaving.;PresentContinuous
+RW-015;He is not watching TV at the moment.;PresentContinuous
+RW-016;Are you listening to me?;PresentContinuous
+RW-017;The children are singing in the classroom.;PresentContinuous
+RW-018;I am waiting for the bus.;PresentContinuous
+RW-019;It is raining outside.;PresentContinuous
+RW-020;We are eating lunch now.;PresentContinuous
+RW-021;She drank milk this morning.;SimplePast
+RW-022;My father worked late yesterday.;SimplePast
+RW-023;They played football last Sunday.;SimplePast
+RW-024;The train left two hours ago.;SimplePast
+RW-025;He did not come to school yesterday.;SimplePast
+RW-026;Did you see the bandits?;SimplePast
+RW-027;We visited our grandmother last week.;SimplePast
+RW-028;I bought a new bag yesterday.;SimplePast
+RW-029;Rina wrote a letter last night.;SimplePast
+RW-030;The bus arrived late this morning.;SimplePast
+RW-031;She will drink milk later.;Future
+RW-032;I will play football next week.;Future
+RW-033;They are going to visit Bali next month.;Future
+RW-034;The train will arrive soon.;Future
+RW-035;He will not come to the party tomorrow.;Future
+RW-036;Will you help me tomorrow?;Future
+RW-037;We are going to buy a new car.;Future
+RW-038;It will rain this afternoon.;Future
+RW-039;I will call you tonight.;Future
+RW-040;My sister is going to study in Japan next year.;Future

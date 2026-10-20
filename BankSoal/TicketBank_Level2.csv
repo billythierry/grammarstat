@@ -1,0 +1,21 @@
+﻿id;passengerName;age;tense;note;correctAnswer;correction
+L2-001;Taufik Hidayat;38;Simple Past;Taufik [A:missed] the early train yesterday because he [B:woke] up late.;NoError;Taufik missed the early train yesterday because he woke up late.
+L2-002;Wulan Sari;23;Simple Past;Wulan [A:buyed] a new suitcase last week before she [B:left] for Malang.;A;Wulan bought a new suitcase last week before she left for Malang.
+L2-003;Dimas Prakoso;16;Simple Past;Dimas [A:went] to Yogyakarta last month and [B:visit] Borobudur Temple.;B;Dimas went to Yogyakarta last month and visited Borobudur Temple.
+L2-004;Ratna Dewi;58;Simple Past;"Mrs. Ratna did not [A:brought] her umbrella, so she [B:got] wet at the station.";A;"Mrs. Ratna did not bring her umbrella, so she got wet at the station."
+L2-005;Eko Prasetyo;29;Simple Past;Eko [A:was] in Surabaya two days ago and [B:meets] his old friends there.;B;Eko was in Surabaya two days ago and met his old friends there.
+L2-006;Sinta Maharani;20;Simple Past;"Sinta [A:studied] all night, so she [B:slept] on the train this morning.";NoError;"Sinta studied all night, so she slept on the train this morning."
+L2-007;Yusuf Hakim;70;Simple Past;Mr. Yusuf [A:worked] at this station for thirty years before he [B:retire] in 2015.;B;Mr. Yusuf worked at this station for thirty years before he retired in 2015.
+L2-008;Laras Ayu;27;Simple Past;Laras and her friends [A:was] at the beach last weekend and [B:took] many photos.;A;Laras and her friends were at the beach last weekend and took many photos.
+L2-009;Gilang Permana;13;Simple Past;"Gilang [A:lost] his ticket yesterday, but the officer [B:helped] him find it.";NoError;"Gilang lost his ticket yesterday, but the officer helped him find it."
+L2-010;Mira Susanti;34;Simple Past;Did Mira [A:called] her mother before she [B:boarded] the train?;A;Did Mira call her mother before she boarded the train?
+L2-011;Hana Fitriani;25;Future;Hana [A:will start] her new job in Surabaya [B:next] Monday.;NoError;Hana will start her new job in Surabaya next Monday.
+L2-012;Arif Rahman;32;Future;Arif [A:will to visit] his parents in Solo [B:tomorrow].;A;Arif will visit his parents in Solo tomorrow.
+L2-013;Tia Kusuma;18;Future;Tia [A:is going to] study at a university in Bandung [B:last] year.;B;Tia is going to study at a university in Bandung next year.
+L2-014;Rudi Hartono;55;Future;"Rudi [A:is going to retiring] next year, and he [B:will move] to his hometown.";A;"Rudi is going to retire next year, and he will move to his hometown."
+L2-015;Indah Permata;29;Future;"Indah [A:will arrive] in Malang at noon, and her cousin [B:will picks] her up at the station.";B;"Indah will arrive in Malang at noon, and her cousin will pick her up at the station."
+L2-016;Bima Aditya;10;Future;Bima [A:is going to] watch a football match with his uncle [B:this] Saturday.;NoError;Bima is going to watch a football match with his uncle this Saturday.
+L2-017;Sari Wulandari;41;Future;"Sari [A:are going to] attend a meeting in Jakarta, so she [B:will stay] at a hotel tonight.";A;"Sari is going to attend a meeting in Jakarta, so she will stay at a hotel tonight."
+L2-018;Darmo Sutrisno;75;Future;"Mr. Darmo [A:will celebrate] his birthday with his family, and they [B:going to] eat at a restaurant.";B;"Mr. Darmo will celebrate his birthday with his family, and they are going to eat at a restaurant."
+L2-019;Yoga Pratama;24;Future;Yoga [A:will travel] to Bali after he [B:finishes] his final exam.;NoError;Yoga will travel to Bali after he finishes his final exam.
+L2-020;Fitri Handayani;36;Future;Fitri [A:won't] take the night train because she [B:will arrives] too late.;B;Fitri won't take the night train because she will arrive too late.

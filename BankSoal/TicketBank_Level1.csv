@@ -1,0 +1,21 @@
+﻿id;passengerName;age;tense;note;correctAnswer;correction
+L1-001;Andi Pratama;24;Simple Present;Andi [A:works] as a bank teller and [B:take] the train every morning.;B;Andi works as a bank teller and takes the train every morning.
+L1-002;Siti Rahma;31;Simple Present;Siti [A:teach] English at a high school [B:near] the station.;A;Siti teaches English at a high school near the station.
+L1-003;Budi Santoso;45;Simple Present;Budi [A:usually visits] his parents in Bogor [B:every] weekend.;NoError;Budi usually visits his parents in Bogor every weekend.
+L1-004;Rina Lestari;19;Simple Present;"Rina [A:doesn't] live on campus, so she [B:travels] home by train.";NoError;"Rina doesn't live on campus, so she travels home by train."
+L1-005;Harun Wijaya;67;Simple Present;"Mr. Harun [A:don't] drive anymore, so he [B:prefers] the train.";A;"Mr. Harun doesn't drive anymore, so he prefers the train."
+L1-006;Dewi Anggraini;12;Simple Present;"Dewi [A:goes] to school with her mother, who [B:work] at the city hospital.";B;"Dewi goes to school with her mother, who works at the city hospital."
+L1-007;Kevin Tanaka;28;Simple Present;Kevin [A:does] not [B:likes] crowded trains in the morning.;B;Kevin does not like crowded trains in the morning.
+L1-008;Lina Marlina;35;Simple Present;Lina and her husband [A:runs] a small bakery that [B:opens] at six.;A;Lina and her husband run a small bakery that opens at six.
+L1-009;Joko Susilo;52;Simple Present;Joko [A:has] two sons who [B:study] in Yogyakarta.;NoError;Joko has two sons who study in Yogyakarta.
+L1-010;Maya Putri;22;Simple Present;Maya [A:always buy] her ticket online because it [B:saves] time.;A;Maya always buys her ticket online because it saves time.
+L1-011;Fajar Nugroho;26;Present Continuous;Fajar [A:is traveling] to Surabaya because his sister [B:is getting] married this week.;NoError;Fajar is traveling to Surabaya because his sister is getting married this week.
+L1-012;Ayu Kartika;17;Present Continuous;"Ayu [A:is studying] for her exams, so she [B:is read] a book on the train.";B;"Ayu is studying for her exams, so she is reading a book on the train."
+L1-013;Hendra Gunawan;40;Present Continuous;"Hendra [A:are] waiting for his wife, who [B:is buying] snacks at the kiosk.";A;"Hendra is waiting for his wife, who is buying snacks at the kiosk."
+L1-014;Sri Wahyuni;72;Present Continuous;"Mrs. Sri [A:is visiting] her grandchildren, who [B:is staying] in Bandung this month.";B;"Mrs. Sri is visiting her grandchildren, who are staying in Bandung this month."
+L1-015;Rizky Ramadhan;21;Present Continuous;Rizky [A:listening] to music while he [B:is waiting] for the train.;A;Rizky is listening to music while he is waiting for the train.
+L1-016;Clara Wijaya;30;Present Continuous;"Clara [A:is working] from home this week, but today she [B:is going] to the head office.";NoError;"Clara is working from home this week, but today she is going to the head office."
+L1-017;Bayu Saputra;9;Present Continuous;Bayu [A:is holding] his father's hand because the station [B:is getting] very crowded.;NoError;Bayu is holding his father's hand because the station is getting very crowded.
+L1-018;Putri Amelia;25;Present Continuous;"Putri [A:is knowing] the way, so she [B:is guiding] her friend to the platform.";A;"Putri knows the way, so she is guiding her friend to the platform."
+L1-019;Agus Salim;48;Present Continuous;Right now Agus [A:is talking] on the phone with his boss and [B:take] notes.;B;Right now Agus is talking on the phone with his boss and taking notes.
+L1-020;Nadia Safitri;33;Present Continuous;Nadia [A:is carrying] two heavy bags because she [B:moving] to a new apartment.;B;Nadia is carrying two heavy bags because she is moving to a new apartment.
