@@ -7288,7 +7288,7 @@ MonoBehaviour:
   creditsPage: {fileID: 137860349}
   chapters:
   - title: Train Loading
-    sceneName: TestTrainLoading
+    sceneName: TrainLoading
     levelCount: 6
   - title: Ticket Inspection
     sceneName: TIcketInspection

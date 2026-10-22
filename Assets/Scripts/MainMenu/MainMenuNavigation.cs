@@ -30,7 +30,7 @@ public class MainMenuNavigation : MonoBehaviour
 
     [SerializeField] private ChapterInfo[] chapters =
     {
-        new ChapterInfo { title = "Train Loading", sceneName = "TestTrainLoading", levelCount = 6 },
+        new ChapterInfo { title = "Train Loading", sceneName = "TrainLoading", levelCount = 6 },
         new ChapterInfo { title = "Ticket Inspection", sceneName = "TIcketInspection", levelCount = 2 },
         new ChapterInfo { title = "Runaway", sceneName = "Runaway", levelCount = 1 },
     };

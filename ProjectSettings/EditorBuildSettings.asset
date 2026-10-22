@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4c926c350e433ce449c2b0f782d387c5
   - enabled: 1
-    path: Assets/Scenes/TestTrainLoading.unity
+    path: Assets/Scenes/TrainLoading.unity
     guid: a4102a832e423f542b95cd1cafafe5f3
   - enabled: 1
     path: Assets/Scenes/TIcketInspection.unity

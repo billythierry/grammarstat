@@ -76,7 +76,7 @@ public class TicketItem : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (IsClickable) transform.localScale = baseScale * hoverScale;
+        if (IsClickable && !PauseMenu.IsPaused) transform.localScale = baseScale * hoverScale;
     }
 
     void OnMouseExit()
@@ -86,7 +86,7 @@ public class TicketItem : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!IsClickable) return;
+        if (!IsClickable || PauseMenu.IsPaused) return;
         transform.localScale = baseScale;
         Clicked?.Invoke();
     }

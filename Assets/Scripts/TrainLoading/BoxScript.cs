@@ -11,6 +11,7 @@ public class BoxScript : MonoBehaviour
     private Vector3 startDragPosition; 
     private IBoxDropArea currentArea;   // area yang sedang ditempati box
     private IBoxDropArea dragStartArea; // area sebelum box di-drag
+    private bool isDragging;
 
     // Kata/frasa yang tertulis di box ini
     public string Word { get; private set; }
@@ -37,6 +38,8 @@ public class BoxScript : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (PauseMenu.IsPaused) return;
+        isDragging = true;
         Debug.Log("Box clicked");
         startDragPosition = transform.position;
 
@@ -52,11 +55,15 @@ public class BoxScript : MonoBehaviour
 
     void OnMouseDrag()
     {
+        if (!isDragging || PauseMenu.IsPaused) return;
         transform.position = GetMousePositionInWorldSpace();
     }
 
     void OnMouseUp()
     {
+        // Abaikan jika klik dimulai saat pause
+        if (!isDragging) return;
+        isDragging = false;
         col.enabled = false;
         Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
         col.enabled = true;
