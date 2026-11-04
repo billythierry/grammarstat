@@ -1,0 +1,19 @@
+﻿id;section;sentence;alternativeSentences;translation
+SF-P01;Positive;I-will-help-you;;Saya akan membantumu.
+SF-P02;Positive;They-will-visit-Bali;;Mereka akan mengunjungi Bali.
+SF-P03;Positive;We-will-eat-later;;Kami akan makan nanti.
+SF-P04;Positive;He-will-come-tomorrow;;Dia (laki-laki) akan datang besok.
+SF-P05;Positive;The-train-will-leave-soon;;Kereta akan segera berangkat.
+SF-N01;Negative;She-will-not-come-today;;Dia (perempuan) tidak akan datang hari ini.
+SF-N02;Negative;They-will-not-play-tonight;;Mereka tidak akan bermain malam ini.
+SF-N03;Negative;I-will-not-be-late;;Saya tidak akan terlambat.
+SF-N04;Negative;We-will-not-buy-it;;Kami tidak akan membelinya.
+SF-N05;Negative;He-will-not-call-you;;Dia (laki-laki) tidak akan meneleponmu.
+SF-Q01;Interrogative;Will-you-help-me?;;Apakah kamu akan membantuku?
+SF-Q02;Interrogative;Will-she-join-us?;;Apakah dia (perempuan) akan bergabung dengan kami?
+SF-Q03;Interrogative;Will-they-come-tonight?;;Apakah mereka akan datang malam ini?
+SF-Q04;Interrogative;Will-it-rain-tomorrow?;;Apakah besok akan hujan?
+SF-Q05;Interrogative;Will-the-train-arrive-soon?;;Apakah kereta akan segera tiba?
+SF-R01;Review;I-will-call-you-tonight;;Saya akan meneleponmu malam ini.
+SF-R02;Review;They-will-not-come-tomorrow;;Mereka tidak akan datang besok.
+SF-R03;Review;Will-he-buy-a-ticket?;;Apakah dia (laki-laki) akan membeli tiket?

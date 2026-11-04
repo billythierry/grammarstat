@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df0590130ea9be448db61b24a81c0dc, type: 3}
+  m_Name: Cutscene_Ch3_Outro
+  m_EditorClassIdentifier: 
+  stages:
+  - name: Stasiun Tujuan
+    background: {fileID: 21300000, guid: 025125f8ff7f4ae5a1d07c5bd3585713, type: 3}
+    characters: []
+  - name: Kantor Mr. Mister
+    background: {fileID: 21300000, guid: 621f3084af7edfd4583983dadc648878, type: 3}
+    characters:
+    - character: 1
+      posX: -760
+    - character: 2
+      posX: -400
+    - character: 3
+      posX: 560
+  lines:
+  - speaker: 0
+    text: Setelah terbebas dari ancaman bandit, kereta kembali melanjutkan perjalanan
+      dengan aman hingga akhirnya tiba di stasiun tujuan.
+    stage: 0
+    showCharacters: 0
+  - speaker: 0
+    text: Kabar kedatangan kereta pun sampai ke Grammar Station. Thomas, Shelby, dan
+      Mr. Mister akhirnya bisa bernapas lega.
+    stage: 1
+    showCharacters: 1
+  - speaker: 3
+    text: Saya dapat kabar kalau kereta terakhir sempat dikejar bandit. Kabar baiknya,
+      kereta itu selamat sampai tujuan.
+    stage: 1
+    showCharacters: 1
+  - speaker: 1
+    text: Wah, untung semuanya berakhir dengan baik!
+    stage: 1
+    showCharacters: 1
+  - speaker: 2
+    text: Benar. Setidaknya, semua penumpang tiba dengan selamat.
+    stage: 1
+    showCharacters: 1
+  - speaker: 3
+    text: Kerja bagus, semuanya. Pekerjaan kali ini selesai dengan sukses!
+    stage: 1
+    showCharacters: 1
+  nextSceneName: MainMenu

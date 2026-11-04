@@ -1,0 +1,4 @@
+Backup sebelum intro level (fade hitam + nama materi) dan kereta masuk diperlambat.
+Untuk mengembalikan: tutup Unity, salin TrainLoading.unity -> Assets/Scenes/,
+hapus Assets/Scripts/TrainLoading/LevelIntro.cs (+ .meta), lalu di BoxSpawner.cs hapus field levelIntro
+dan kembalikan Start() menjadi void Start() tanpa baris levelIntro.Play.

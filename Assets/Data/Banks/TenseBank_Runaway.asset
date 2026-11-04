@@ -14,122 +14,242 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions:
   - id: RW-001
-    sentence: "She drinks milk every morning."
+    sentence: "I drink water every day."
     tense: 0
   - id: RW-002
-    sentence: "My father works at the station."
+    sentence: "She likes cats."
     tense: 0
   - id: RW-003
-    sentence: "They play football on Sundays."
+    sentence: "He reads books at night."
     tense: 0
   - id: RW-004
-    sentence: "The train leaves at seven o'clock."
+    sentence: "We walk to school."
     tense: 0
   - id: RW-005
-    sentence: "He does not like spicy food."
+    sentence: "My mother cooks rice."
     tense: 0
   - id: RW-006
-    sentence: "Do you speak English?"
+    sentence: "The bird sings in the morning."
     tense: 0
   - id: RW-007
-    sentence: "The sun rises in the east."
+    sentence: "They live in Jakarta."
     tense: 0
   - id: RW-008
-    sentence: "We always eat dinner together."
+    sentence: "The train stops here."
     tense: 0
   - id: RW-009
-    sentence: "Rina reads a book before bed."
+    sentence: "I do not eat fish."
     tense: 0
   - id: RW-010
-    sentence: "Cats sleep a lot."
+    sentence: "He does not like milk."
     tense: 0
   - id: RW-011
-    sentence: "She is drinking milk now."
-    tense: 1
+    sentence: "We do not play at night."
+    tense: 0
   - id: RW-012
-    sentence: "My father is working in the garden."
-    tense: 1
+    sentence: "She does not ride a bike."
+    tense: 0
   - id: RW-013
-    sentence: "They are playing football right now."
-    tense: 1
+    sentence: "They do not drink coffee."
+    tense: 0
   - id: RW-014
-    sentence: "Look! The train is leaving."
-    tense: 1
+    sentence: "My cat does not eat rice."
+    tense: 0
   - id: RW-015
-    sentence: "He is not watching TV at the moment."
-    tense: 1
+    sentence: "Do you like rice?"
+    tense: 0
   - id: RW-016
-    sentence: "Are you listening to me?"
-    tense: 1
+    sentence: "Does he play football?"
+    tense: 0
   - id: RW-017
-    sentence: "The children are singing in the classroom."
-    tense: 1
+    sentence: "Do they walk to school?"
+    tense: 0
   - id: RW-018
-    sentence: "I am waiting for the bus."
-    tense: 1
+    sentence: "Does your mother work?"
+    tense: 0
   - id: RW-019
-    sentence: "It is raining outside."
-    tense: 1
+    sentence: "Do we need a ticket?"
+    tense: 0
   - id: RW-020
-    sentence: "We are eating lunch now."
-    tense: 1
+    sentence: "Does the bus stop here?"
+    tense: 0
   - id: RW-021
-    sentence: "She drank milk this morning."
-    tense: 2
+    sentence: "I am drinking water."
+    tense: 1
   - id: RW-022
-    sentence: "My father worked late yesterday."
-    tense: 2
+    sentence: "She is washing the dishes."
+    tense: 1
   - id: RW-023
-    sentence: "They played football last Sunday."
-    tense: 2
+    sentence: "He is riding a bike."
+    tense: 1
   - id: RW-024
-    sentence: "The train left two hours ago."
-    tense: 2
+    sentence: "We are walking to school."
+    tense: 1
   - id: RW-025
-    sentence: "He did not come to school yesterday."
-    tense: 2
+    sentence: "They are eating rice."
+    tense: 1
   - id: RW-026
-    sentence: "Did you see the bandits?"
-    tense: 2
+    sentence: "My father is driving a car."
+    tense: 1
   - id: RW-027
-    sentence: "We visited our grandmother last week."
-    tense: 2
+    sentence: "The cat is sleeping."
+    tense: 1
   - id: RW-028
-    sentence: "I bought a new bag yesterday."
-    tense: 2
+    sentence: "The birds are singing."
+    tense: 1
   - id: RW-029
-    sentence: "Rina wrote a letter last night."
-    tense: 2
+    sentence: "I am not eating now."
+    tense: 1
   - id: RW-030
-    sentence: "The bus arrived late this morning."
-    tense: 2
+    sentence: "She is not cooking."
+    tense: 1
   - id: RW-031
-    sentence: "She will drink milk later."
-    tense: 3
+    sentence: "He is not running."
+    tense: 1
   - id: RW-032
-    sentence: "I will play football next week."
-    tense: 3
+    sentence: "We are not sleeping."
+    tense: 1
   - id: RW-033
-    sentence: "They are going to visit Bali next month."
-    tense: 3
+    sentence: "They are not singing."
+    tense: 1
   - id: RW-034
-    sentence: "The train will arrive soon."
-    tense: 3
+    sentence: "The train is not moving."
+    tense: 1
   - id: RW-035
-    sentence: "He will not come to the party tomorrow."
-    tense: 3
+    sentence: "Are you reading a book?"
+    tense: 1
   - id: RW-036
-    sentence: "Will you help me tomorrow?"
-    tense: 3
+    sentence: "Is she washing the car?"
+    tense: 1
   - id: RW-037
-    sentence: "We are going to buy a new car."
-    tense: 3
+    sentence: "Is he sleeping?"
+    tense: 1
   - id: RW-038
-    sentence: "It will rain this afternoon."
-    tense: 3
+    sentence: "Are they singing?"
+    tense: 1
   - id: RW-039
-    sentence: "I will call you tonight."
-    tense: 3
+    sentence: "Are we going home?"
+    tense: 1
   - id: RW-040
-    sentence: "My sister is going to study in Japan next year."
+    sentence: "Is the bus coming?"
+    tense: 1
+  - id: RW-041
+    sentence: "I drank water yesterday."
+    tense: 2
+  - id: RW-042
+    sentence: "She cooked fried rice."
+    tense: 2
+  - id: RW-043
+    sentence: "He rode a bike to school."
+    tense: 2
+  - id: RW-044
+    sentence: "We walked to the station."
+    tense: 2
+  - id: RW-045
+    sentence: "They ate lunch at home."
+    tense: 2
+  - id: RW-046
+    sentence: "My mother bought some fish."
+    tense: 2
+  - id: RW-047
+    sentence: "The cat slept all day."
+    tense: 2
+  - id: RW-048
+    sentence: "The train came late."
+    tense: 2
+  - id: RW-049
+    sentence: "I did not drink milk."
+    tense: 2
+  - id: RW-050
+    sentence: "She did not cook dinner."
+    tense: 2
+  - id: RW-051
+    sentence: "He did not go to school."
+    tense: 2
+  - id: RW-052
+    sentence: "We did not see the bus."
+    tense: 2
+  - id: RW-053
+    sentence: "They did not walk home."
+    tense: 2
+  - id: RW-054
+    sentence: "My father did not work yesterday."
+    tense: 2
+  - id: RW-055
+    sentence: "Did you eat breakfast?"
+    tense: 2
+  - id: RW-056
+    sentence: "Did she go home?"
+    tense: 2
+  - id: RW-057
+    sentence: "Did he call you?"
+    tense: 2
+  - id: RW-058
+    sentence: "Did they see the movie?"
+    tense: 2
+  - id: RW-059
+    sentence: "Did we miss the train?"
+    tense: 2
+  - id: RW-060
+    sentence: "Did your mother cook rice?"
+    tense: 2
+  - id: RW-061
+    sentence: "I will drink some water."
+    tense: 3
+  - id: RW-062
+    sentence: "She will cook dinner."
+    tense: 3
+  - id: RW-063
+    sentence: "He will ride a bike."
+    tense: 3
+  - id: RW-064
+    sentence: "We will walk to the station."
+    tense: 3
+  - id: RW-065
+    sentence: "They will eat lunch later."
+    tense: 3
+  - id: RW-066
+    sentence: "My father will drive the car."
+    tense: 3
+  - id: RW-067
+    sentence: "The bus will come soon."
+    tense: 3
+  - id: RW-068
+    sentence: "It will rain tonight."
+    tense: 3
+  - id: RW-069
+    sentence: "I will not eat fish."
+    tense: 3
+  - id: RW-070
+    sentence: "She will not go to school."
+    tense: 3
+  - id: RW-071
+    sentence: "He will not drive tomorrow."
+    tense: 3
+  - id: RW-072
+    sentence: "We will not sleep late."
+    tense: 3
+  - id: RW-073
+    sentence: "They will not sing tonight."
+    tense: 3
+  - id: RW-074
+    sentence: "The train will not stop here."
+    tense: 3
+  - id: RW-075
+    sentence: "Will you call me?"
+    tense: 3
+  - id: RW-076
+    sentence: "Will she cook tonight?"
+    tense: 3
+  - id: RW-077
+    sentence: "Will he walk home?"
+    tense: 3
+  - id: RW-078
+    sentence: "Will they buy a ticket?"
+    tense: 3
+  - id: RW-079
+    sentence: "Will we go tomorrow?"
+    tense: 3
+  - id: RW-080
+    sentence: "Will the bus come soon?"
     tense: 3

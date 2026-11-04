@@ -1,16 +1,19 @@
-﻿id;sentence;translation
-SP-001;I-cook-breakfast-every-day;Aku memasak sarapan setiap hari
-SP-002;She-drinks-milk-every-morning;Dia (perempuan) minum susu setiap pagi
-SP-003;They-play-football-after-school;Mereka bermain sepak bola sepulang sekolah
-SP-004;My-father-reads-the-newspaper;Ayahku membaca koran
-SP-005;We-walk-to-school-together;Kami berjalan ke sekolah bersama-sama
-SP-006;Tom-watches-TV-every-night;Tom menonton TV setiap malam
-SP-007;He-brushes-his-teeth-daily;Dia (laki-laki) menyikat giginya setiap hari
-SP-008;The-sun-rises-every-morning;Matahari terbit setiap pagi
-SP-009;My-mother-cooks-delicious-food;Ibuku memasak makanan lezat
-SP-010;Birds-fly-in-the-sky;Burung terbang di langit
-SP-011;The-shop-opens-at-nine;Toko itu buka jam sembilan
-SP-012;My-sister-likes-chocolate-cake;Kakak/adik perempuanku suka kue cokelat
-SP-013;We-eat-dinner-at-seven;Kami makan malam jam tujuh
-SP-014;The-dog-barks-every-night;Anjing itu menggonggong setiap malam
-SP-015;I-read-books-every-weekend;Aku membaca buku setiap akhir pekan
+﻿id;section;sentence;alternativeSentences;translation
+SP-P01;Positive;I-like-apples;;Saya suka apel.
+SP-P02;Positive;She-drinks-milk-daily;;Dia (perempuan) minum susu setiap hari.
+SP-P03;Positive;He-goes-to-school;;Dia (laki-laki) pergi ke sekolah.
+SP-P04;Positive;My-brother-watches-TV;;Saudara laki-laki saya menonton TV.
+SP-P05;Positive;She-always-cooks-for-us;;Dia (perempuan) selalu memasak untuk kami.
+SP-N01;Negative;I-do-not-like-coffee;;Saya tidak suka kopi.
+SP-N02;Negative;They-do-not-play-football;;Mereka tidak bermain sepak bola.
+SP-N03;Negative;She-does-not-drink-tea;;Dia (perempuan) tidak minum teh.
+SP-N04;Negative;Tom-does-not-watch-TV;;Tom tidak menonton TV.
+SP-N05;Negative;My-father-does-not-smoke;;Ayah saya tidak merokok.
+SP-Q01;Interrogative;Do-you-like-pizza?;;Apakah kamu suka pizza?
+SP-Q02;Interrogative;Does-she-speak-English?;;Apakah dia (perempuan) berbicara bahasa Inggris?
+SP-Q03;Interrogative;Do-they-live-here?;;Apakah mereka tinggal di sini?
+SP-Q04;Interrogative;Does-your-sister-cook?;;Apakah saudara perempuanmu memasak?
+SP-Q05;Interrogative;Does-the-train-leave-early?;;Apakah kereta berangkat pagi-pagi?
+SP-R01;Review;The-sun-rises-early;;Matahari terbit pagi-pagi.
+SP-R02;Review;We-do-not-eat-pork;;Kami tidak makan daging babi.
+SP-R03;Review;Does-your-father-read-books?;;Apakah ayahmu membaca buku?

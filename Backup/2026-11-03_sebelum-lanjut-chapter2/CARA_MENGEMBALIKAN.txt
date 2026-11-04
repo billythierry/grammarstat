@@ -1,0 +1,4 @@
+Backup sebelum tombol Lanjut di Level 4 Chapter 1 diarahkan ke Chapter 2 Level 1.
+1. Salin TrainLoading.unity ke Assets/Scenes/TrainLoading.unity (atau cukup kosongkan Next Scene Override di ResultPanel).
+2. Di Assets/Scripts/TrainLoading/ResultPanel.cs: hapus field nextSceneChapter, kembalikan
+   showNext = !passed || hasNextLevel; dan syarat "passed && !string.IsNullOrEmpty(nextSceneOverride)" di NextOrRetry.

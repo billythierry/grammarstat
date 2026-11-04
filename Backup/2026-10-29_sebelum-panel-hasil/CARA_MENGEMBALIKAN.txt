@@ -1,0 +1,4 @@
+Backup scene sebelum panel hasil level (BOOYAH / bintang / Menu / Lanjut).
+Untuk mengembalikan: tutup Unity, salin TrainLoading.unity -> Assets/Scenes/,
+hapus Assets/Scripts/TrainLoading/ResultPanel.cs (+ .meta). Di BoxSpawner.cs hapus field resultPanel,
+twoStarRatio, threeStarRatio, Stars, CountStars dan blok "if (resultPanel != null)" di FinishLevel.

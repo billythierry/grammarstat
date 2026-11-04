@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 // Kereta bergerak ke kiri, kamera diam. Gerbong fisik dipakai ulang:
@@ -25,16 +26,19 @@ public class TrainController : MonoBehaviour
     private int totalWagons;
     private float baseX;
     private int[] wagonIndex; // indeks gerbong (urutan soal) yang sedang dipegang tiap gerbong fisik
+    private IList<WagonPlan> plans; // jumlah box dan label peran tiap gerbong
 
     void Awake()
     {
         baseX = transform.position.x;
     }
 
-    // Siapkan kereta di luar layar sebelah kanan dengan jumlah gerbong = jumlah soal
-    public void Setup(int total)
+    // Siapkan kereta di luar layar sebelah kanan dengan jumlah gerbong = jumlah langkah level (tutorial + soal).
+    // wagonPlans[i] diterapkan saat gerbong ke-i dipasang (masih di luar layar)
+    public void Setup(IList<WagonPlan> wagonPlans)
     {
-        totalWagons = total;
+        totalWagons = wagonPlans.Count;
+        plans = wagonPlans;
         CurrentIndex = 0;
         wagonIndex = new int[wagons.Length];
         for (int i = 0; i < wagons.Length; i++) AssignWagon(i, i);
@@ -107,6 +111,7 @@ public class TrainController : MonoBehaviour
         WagonScript wagon = wagons[physical];
         wagon.ReleaseBoxes();
         wagon.gameObject.SetActive(logical < totalWagons);
+        if (logical < totalWagons) wagon.Configure(plans[logical]);
 
         Vector3 p = wagon.transform.localPosition;
         p.x = logical * wagonSpacing;

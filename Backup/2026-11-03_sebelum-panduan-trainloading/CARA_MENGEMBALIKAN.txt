@@ -1,0 +1,5 @@
+Backup sebelum panduan cara bermain (GuidePanel) di Train Loading Level 1.
+Untuk mengembalikan: tutup Unity, salin TrainLoading.unity -> Assets/Scenes/,
+lalu hapus folder Assets/Art/TrainLoading/Guide (+ .meta).
+Di BoxSpawner.cs hapus field guidePanel dan guideLevel, serta blok
+"if (guidePanel != null && ...)" di BeginLevelRoutine.

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 118a50f464101c34db8b20cd8da12264, type: 3}
+  m_Name: Bank_SimplePresent
+  m_EditorClassIdentifier: 
+  tenseName: Simple Present
+  questions:
+  - id: SP-001
+    sentence: The-baby-sleeps
+    alternativeSentences: 
+    translation: Bayi itu tidur
+  - id: SP-002
+    sentence: We-study-English
+    alternativeSentences: 
+    translation: Kami belajar bahasa Inggris
+  - id: SP-003
+    sentence: She-sings-beautifully
+    alternativeSentences: 
+    translation: Dia (perempuan) bernyanyi dengan indah
+  - id: SP-004
+    sentence: She-drinks-milk-daily
+    alternativeSentences: 
+    translation: Dia (perempuan) minum susu setiap hari
+  - id: SP-005
+    sentence: The-sun-rises-early
+    alternativeSentences: 
+    translation: Matahari terbit lebih awal
+  - id: SP-006
+    sentence: They-play-football-together
+    alternativeSentences: 
+    translation: Mereka bermain sepak bola bersama
+  - id: SP-007
+    sentence: I-cook-breakfast-every-day
+    alternativeSentences: 
+    translation: Aku memasak sarapan setiap hari
+  - id: SP-008
+    sentence: He-brushes-his-teeth-daily
+    alternativeSentences: 
+    translation: Dia (laki-laki) menyikat giginya setiap hari
+  - id: SP-009
+    sentence: My-father-reads-the-newspaper
+    alternativeSentences: 
+    translation: Ayahku membaca koran
+  - id: SP-010
+    sentence: Tom-does-not-watch-TV
+    alternativeSentences: 
+    translation: Tom tidak menonton TV
+  - id: SP-011
+    sentence: The-train-leaves-at-seven-o'clock
+    alternativeSentences: 
+    translation: Kereta itu berangkat pukul tujuh
+  - id: SP-012
+    sentence: Does-your-sister-go-to-school?
+    alternativeSentences: 
+    translation: Apakah kakak/adik perempuanmu pergi ke sekolah?
+  - id: SP-013
+    sentence: My-mother-always-cooks-for-us
+    alternativeSentences: 
+    translation: Ibuku selalu memasak untuk kami
+  - id: SP-014
+    sentence: She-usually-takes-the-train-to-work
+    alternativeSentences: 
+    translation: Dia (perempuan) biasanya naik kereta ke tempat kerja
+  - id: SP-015
+    sentence: We-play-badminton-with-friends-after-school
+    alternativeSentences: We-play-badminton-after-school-with-friends
+    translation: Kami bermain bulu tangkis bersama teman sepulang sekolah

@@ -1,0 +1,5 @@
+Backup sebelum menambah dialog Thomas di akhir Level 4 Chapter 1.
+Cara mengembalikan (tutup Unity atau pastikan scene TrainLoading tidak terbuka dengan perubahan):
+1. Salin BoxSpawner.cs ke Assets/Scripts/TrainLoading/BoxSpawner.cs
+2. Salin TrainLoading.unity ke Assets/Scenes/TrainLoading.unity
+3. Hapus Assets/Scripts/Shared/DialogPopup.cs (beserta .meta)

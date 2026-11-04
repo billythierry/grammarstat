@@ -1,0 +1,12 @@
+Cadangan dibuat 2026-10-27 sebelum fitur tutorial terpandu + soal per bagian (Positif/Negatif/Tanya/Review).
+Isinya: kondisi Train Loading dengan box dinamis 1 box 1 kata (15 soal acak, penanda 1/15).
+
+Untuk mengembalikan: tutup Unity, salin file di folder ini ke lokasi asalnya:
+  Scripts/*.cs        -> Assets/Scripts/TrainLoading/
+  Editor/*.cs         -> Assets/Editor/
+  Scenes/*.unity      -> Assets/Scenes/
+  Prefabs/*.prefab    -> Assets/Prefabs/
+  Data/*.asset        -> Assets/Data/Banks/
+  BankSoal/*.csv      -> BankSoal/
+Script baru yang dibuat setelah backup ini (mis. TutorialPanel.cs, SentenceSection.cs) boleh dihapus
+beserta file .meta-nya. File .meta lama tidak diubah, jadi GUID/referensi tetap sama.

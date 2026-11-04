@@ -1,0 +1,4 @@
+Cadangan dibuat 2026-10-26 sebelum fitur jumlah kartu dinamis (Train Loading).
+Untuk mengembalikan: tutup Unity, salin isi folder ini (kecuali file .txt ini)
+ke root project sehingga menimpa file dengan path yang sama, lalu buka Unity lagi.
+File .meta tidak diubah, jadi GUID/referensi tetap sama.

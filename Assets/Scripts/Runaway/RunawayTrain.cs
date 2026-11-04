@@ -8,7 +8,7 @@ public class RunawayTrain : MonoBehaviour
 {
     [Header("Gerak saat bermain")]
     [Tooltip("Kecepatan kereta terdorong ke kanan (unit/detik)")]
-    [SerializeField] private float driftSpeed = 0.5f;
+    [SerializeField] private float driftSpeed = 0.3f;
     [Tooltip("Jarak kereta meluncur ke kiri setiap jawaban benar")]
     [SerializeField] private float boostDistance = 3f;
     [Tooltip("Lama luncuran boost (detik)")]

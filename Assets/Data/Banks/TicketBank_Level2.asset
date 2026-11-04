@@ -14,155 +14,282 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickets:
   - id: L2-001
-    passengerName: Taufik Hidayat
-    age: 38
+    passengerName: Andi Saputra
+    age: 42
     tense: Simple Past
-    note: Taufik [A:missed] the early train yesterday because he [B:woke] up late.
-    correctAnswer: 2
-    correction: Taufik missed the early train yesterday because he woke up late.
+    note: Last year, Andi [A:works] as a [B:farmer].
+    correctAnswer: 0
+    correction: Last year, Andi worked as a farmer.
   - id: L2-002
     passengerName: Wulan Sari
-    age: 23
+    age: 13
     tense: Simple Past
-    note: Wulan [A:buyed] a new suitcase last week before she [B:left] for Malang.
-    correctAnswer: 0
-    correction: Wulan bought a new suitcase last week before she left for Malang.
+    note: I [A:visited] my grandmother [B:last] week.
+    correctAnswer: 2
+    correction: I visited my grandmother last week.
   - id: L2-003
     passengerName: Dimas Prakoso
-    age: 16
+    age: 14
     tense: Simple Past
-    note: Dimas [A:went] to Yogyakarta last month and [B:visit] Borobudur Temple.
-    correctAnswer: 1
-    correction: Dimas went to Yogyakarta last month and visited Borobudur Temple.
+    note: She [A:buyed] a new bag [B:yesterday].
+    correctAnswer: 0
+    correction: She bought a new bag yesterday.
   - id: L2-004
     passengerName: Ratna Dewi
-    age: 58
+    age: 36
     tense: Simple Past
-    note: Mrs. Ratna did not [A:brought] her umbrella, so she [B:got] wet at the
-      station.
-    correctAnswer: 0
-    correction: Mrs. Ratna did not bring her umbrella, so she got wet at the station.
+    note: We [A:went] to the beach and [B:swim] there.
+    correctAnswer: 1
+    correction: We went to the beach and swam there.
   - id: L2-005
+    passengerName: Dina Maharani
+    age: 12
+    tense: Simple Past
+    note: Dina [A:did not] come to school yesterday because she [B:was] sick.
+    correctAnswer: 2
+    correction: Dina did not come to school yesterday because she was sick.
+  - id: L2-006
     passengerName: Eko Prasetyo
     age: 29
     tense: Simple Past
-    note: Eko [A:was] in Surabaya two days ago and [B:meets] his old friends there.
-    correctAnswer: 1
-    correction: Eko was in Surabaya two days ago and met his old friends there.
-  - id: L2-006
-    passengerName: Sinta Maharani
-    age: 20
-    tense: Simple Past
-    note: Sinta [A:studied] all night, so she [B:slept] on the train this morning.
-    correctAnswer: 2
-    correction: Sinta studied all night, so she slept on the train this morning.
-  - id: L2-007
-    passengerName: Yusuf Hakim
-    age: 70
-    tense: Simple Past
-    note: Mr. Yusuf [A:worked] at this station for thirty years before he [B:retire]
-      in 2015.
-    correctAnswer: 1
-    correction: Mr. Yusuf worked at this station for thirty years before he retired
-      in 2015.
-  - id: L2-008
-    passengerName: Laras Ayu
-    age: 27
-    tense: Simple Past
-    note: Laras and her friends [A:was] at the beach last weekend and [B:took] many
-      photos.
+    note: They [A:was] at home [B:last] night.
     correctAnswer: 0
-    correction: Laras and her friends were at the beach last weekend and took many
-      photos.
-  - id: L2-009
+    correction: They were at home last night.
+  - id: L2-007
     passengerName: Gilang Permana
     age: 13
     tense: Simple Past
-    note: Gilang [A:lost] his ticket yesterday, but the officer [B:helped] him find
-      it.
-    correctAnswer: 2
-    correction: Gilang lost his ticket yesterday, but the officer helped him find
-      it.
-  - id: L2-010
+    note: He [A:missed] the bus, so he [B:walk] to school.
+    correctAnswer: 1
+    correction: He missed the bus, so he walked to school.
+  - id: L2-008
     passengerName: Mira Susanti
     age: 34
     tense: Simple Past
-    note: Did Mira [A:called] her mother before she [B:boarded] the train?
+    note: Did you [A:watched] the movie [B:last] night?
     correctAnswer: 0
-    correction: Did Mira call her mother before she boarded the train?
+    correction: Did you watch the movie last night?
+  - id: L2-009
+    passengerName: Laras Ayu
+    age: 15
+    tense: Simple Past
+    note: My cat [A:slept] on the sofa all [B:day] yesterday.
+    correctAnswer: 2
+    correction: My cat slept on the sofa all day yesterday.
+  - id: L2-010
+    passengerName: Rina Kusuma
+    age: 14
+    tense: Simple Past
+    note: Yesterday, Rina [A:cleaned] her room and [B:wash] the clothes.
+    correctAnswer: 1
+    correction: Yesterday, Rina cleaned her room and washed the clothes.
   - id: L2-011
     passengerName: Hana Fitriani
     age: 25
-    tense: Future
-    note: Hana [A:will start] her new job in Surabaya [B:next] Monday.
+    tense: Simple Future
+    note: I [A:will help] you [B:tomorrow].
     correctAnswer: 2
-    correction: Hana will start her new job in Surabaya next Monday.
+    correction: I will help you tomorrow.
   - id: L2-012
     passengerName: Arif Rahman
-    age: 32
-    tense: Future
-    note: Arif [A:will to visit] his parents in Solo [B:tomorrow].
+    age: 13
+    tense: Simple Future
+    note: She [A:will goes] to Bali [B:next] month.
     correctAnswer: 0
-    correction: Arif will visit his parents in Solo tomorrow.
+    correction: She will go to Bali next month.
   - id: L2-013
-    passengerName: Tia Kusuma
-    age: 18
-    tense: Future
-    note: Tia [A:is going to] study at a university in Bandung [B:last] year.
-    correctAnswer: 1
-    correction: Tia is going to study at a university in Bandung next year.
+    passengerName: Tia Lestari
+    age: 12
+    tense: Simple Future
+    note: We [A:are going to] visit the zoo [B:next] Sunday.
+    correctAnswer: 2
+    correction: We are going to visit the zoo next Sunday.
   - id: L2-014
-    passengerName: Rudi Hartono
-    age: 55
-    tense: Future
-    note: Rudi [A:is going to retiring] next year, and he [B:will move] to his hometown.
+    passengerName: Yoga Pratama
+    age: 14
+    tense: Simple Future
+    note: They [A:is going to] play football [B:tomorrow].
     correctAnswer: 0
-    correction: Rudi is going to retire next year, and he will move to his hometown.
+    correction: They are going to play football tomorrow.
   - id: L2-015
+    passengerName: Budi Hartono
+    age: 15
+    tense: Simple Future
+    note: Budi [A:will] come to the party, and he [B:will brings] a cake.
+    correctAnswer: 1
+    correction: Budi will come to the party, and he will bring a cake.
+  - id: L2-016
     passengerName: Indah Permata
     age: 29
-    tense: Future
-    note: Indah [A:will arrive] in Malang at noon, and her cousin [B:will picks]
-      her up at the station.
-    correctAnswer: 1
-    correction: Indah will arrive in Malang at noon, and her cousin will pick her
-      up at the station.
-  - id: L2-016
-    passengerName: Bima Aditya
-    age: 10
-    tense: Future
-    note: Bima [A:is going to] watch a football match with his uncle [B:this] Saturday.
+    tense: Simple Future
+    note: The train [A:will leave] in five minutes, so let's [B:hurry].
     correctAnswer: 2
-    correction: Bima is going to watch a football match with his uncle this Saturday.
+    correction: The train will leave in five minutes, so let's hurry.
   - id: L2-017
-    passengerName: Sari Wulandari
-    age: 41
-    tense: Future
-    note: Sari [A:are going to] attend a meeting in Jakarta, so she [B:will stay]
-      at a hotel tonight.
-    correctAnswer: 0
-    correction: Sari is going to attend a meeting in Jakarta, so she will stay at
-      a hotel tonight.
+    passengerName: Bima Aditya
+    age: 13
+    tense: Simple Future
+    note: I [A:am going to] study tonight because I [B:will has] a test tomorrow.
+    correctAnswer: 1
+    correction: I am going to study tonight because I will have a test tomorrow.
   - id: L2-018
-    passengerName: Darmo Sutrisno
-    age: 75
-    tense: Future
-    note: Mr. Darmo [A:will celebrate] his birthday with his family, and they [B:going
-      to] eat at a restaurant.
-    correctAnswer: 1
-    correction: Mr. Darmo will celebrate his birthday with his family, and they are
-      going to eat at a restaurant.
+    passengerName: Sari Wulandari
+    age: 16
+    tense: Simple Future
+    note: My sister [A:will to cook] dinner [B:tonight].
+    correctAnswer: 0
+    correction: My sister will cook dinner tonight.
   - id: L2-019
-    passengerName: Yoga Pratama
-    age: 24
-    tense: Future
-    note: Yoga [A:will travel] to Bali after he [B:finishes] his final exam.
-    correctAnswer: 2
-    correction: Yoga will travel to Bali after he finishes his final exam.
-  - id: L2-020
-    passengerName: Fitri Handayani
-    age: 36
-    tense: Future
-    note: Fitri [A:won't] take the night train because she [B:will arrives] too late.
+    passengerName: Darmo Sutrisno
+    age: 47
+    tense: Simple Future
+    note: Dad [A:is going to] buy a new car, and we [B:going to] drive it to Bandung.
     correctAnswer: 1
-    correction: Fitri won't take the night train because she will arrive too late.
+    correction: Dad is going to buy a new car, and we are going to drive it to Bandung.
+  - id: L2-020
+    passengerName: Tia Kusuma
+    age: 12
+    tense: Simple Future
+    note: Next week, Tia [A:will visit] her uncle and [B:stays] there for two days.
+    correctAnswer: 1
+    correction: Next week, Tia will visit her uncle and stay there for two days.
+  - id: L2-021
+    passengerName: Aldi Ramadhan
+    age: 14
+    tense: Simple Past
+    note: He [A:goed] to the market [B:yesterday] morning.
+    correctAnswer: 0
+    correction: He went to the market yesterday morning.
+  - id: L2-022
+    passengerName: Bella Safira
+    age: 13
+    tense: Simple Past
+    note: We [A:was] late for school [B:this] morning.
+    correctAnswer: 0
+    correction: We were late for school this morning.
+  - id: L2-023
+    passengerName: Cahya Purnama
+    age: 15
+    tense: Simple Past
+    note: Did she [A:finished] her homework [B:last] night?
+    correctAnswer: 0
+    correction: Did she finish her homework last night?
+  - id: L2-024
+    passengerName: Dani Kusnadi
+    age: 14
+    tense: Simple Past
+    note: I [A:saw] a movie and [B:eat] popcorn last night.
+    correctAnswer: 1
+    correction: I saw a movie and ate popcorn last night.
+  - id: L2-025
+    passengerName: Tono Saputro
+    age: 12
+    tense: Simple Past
+    note: Yesterday, Tono [A:played] football and [B:drink] a lot of water.
+    correctAnswer: 1
+    correction: Yesterday, Tono played football and drank a lot of water.
+  - id: L2-026
+    passengerName: Elsa Novita
+    age: 13
+    tense: Simple Past
+    note: She [A:didn't] come yesterday, and her sister [B:stay] at home too.
+    correctAnswer: 1
+    correction: She didn't come yesterday, and her sister stayed at home too.
+  - id: L2-027
+    passengerName: Faisal Anwar
+    age: 15
+    tense: Simple Past
+    note: Last Sunday, we [A:cleaned] the house and [B:cook] lunch.
+    correctAnswer: 1
+    correction: Last Sunday, we cleaned the house and cooked lunch.
+  - id: L2-028
+    passengerName: Heru Cahyono
+    age: 43
+    tense: Simple Past
+    note: My father [A:bought] a new bike for me [B:last] month.
+    correctAnswer: 2
+    correction: My father bought a new bike for me last month.
+  - id: L2-029
+    passengerName: Intan Nuraini
+    age: 14
+    tense: Simple Past
+    note: They [A:were] tired because they [B:walked] all day.
+    correctAnswer: 2
+    correction: They were tired because they walked all day.
+  - id: L2-030
+    passengerName: Rina Maharani
+    age: 13
+    tense: Simple Past
+    note: Last night, Rina [A:studied] English and [B:went] to bed early.
+    correctAnswer: 2
+    correction: Last night, Rina studied English and went to bed early.
+  - id: L2-031
+    passengerName: Kiki Amalia
+    age: 14
+    tense: Simple Future
+    note: He [A:will comes] to my house [B:tonight].
+    correctAnswer: 0
+    correction: He will come to my house tonight.
+  - id: L2-032
+    passengerName: Rangga Saputra
+    age: 15
+    tense: Simple Future
+    note: I [A:will to buy] a new book [B:tomorrow].
+    correctAnswer: 0
+    correction: I will buy a new book tomorrow.
+  - id: L2-033
+    passengerName: Novi Andriani
+    age: 12
+    tense: Simple Future
+    note: She [A:are going to] sing at the party [B:next] week.
+    correctAnswer: 0
+    correction: She is going to sing at the party next week.
+  - id: L2-034
+    passengerName: Oki Setiawan
+    age: 13
+    tense: Simple Future
+    note: They [A:going to] visit their grandparents [B:this] weekend.
+    correctAnswer: 0
+    correction: They are going to visit their grandparents this weekend.
+  - id: L2-035
+    passengerName: Pipit Rahayu
+    age: 33
+    tense: Simple Future
+    note: We [A:will clean] the class tomorrow, and the teacher [B:will helps] us.
+    correctAnswer: 1
+    correction: We will clean the class tomorrow, and the teacher will help us.
+  - id: L2-036
+    passengerName: Dina Anggraeni
+    age: 14
+    tense: Simple Future
+    note: Dina [A:is going to] make a cake, and I [B:are going to] help her.
+    correctAnswer: 1
+    correction: Dina is going to make a cake, and I am going to help her.
+  - id: L2-037
+    passengerName: Rafi Pradana
+    age: 12
+    tense: Simple Future
+    note: My father [A:will take] us to the zoo, and we [B:will sees] the elephants.
+    correctAnswer: 1
+    correction: My father will take us to the zoo, and we will see the elephants.
+  - id: L2-038
+    passengerName: Sekar Ayu
+    age: 15
+    tense: Simple Future
+    note: It [A:will rain] in the [B:afternoon].
+    correctAnswer: 2
+    correction: It will rain in the afternoon.
+  - id: L2-039
+    passengerName: Teguh Santosa
+    age: 13
+    tense: Simple Future
+    note: I [A:am going to] play badminton [B:next] Saturday.
+    correctAnswer: 2
+    correction: I am going to play badminton next Saturday.
+  - id: L2-040
+    passengerName: Umi Kalsum
+    age: 14
+    tense: Simple Future
+    note: We [A:will not] go to school [B:tomorrow].
+    correctAnswer: 2
+    correction: We will not go to school tomorrow.

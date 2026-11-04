@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df0590130ea9be448db61b24a81c0dc, type: 3}
+  m_Name: Cutscene_Ch1_Intro
+  m_EditorClassIdentifier: 
+  stages:
+  - name: Grammar Station
+    background: {fileID: 21300000, guid: 00c8e3a1b75388245ae7092cca2f96ac, type: 3}
+    characters:
+    - character: 1
+      posX: -600
+    - character: 2
+      posX: 600
+  - name: Kantor Mr. Mister
+    background: {fileID: 21300000, guid: 621f3084af7edfd4583983dadc648878, type: 3}
+    characters:
+    - character: 1
+      posX: -760
+    - character: 2
+      posX: -400
+    - character: 3
+      posX: 560
+  lines:
+  - speaker: 0
+    text: Di wilayah barat yang liar, di mana kereta menjadi urat nadi kehidupan
+      dan setiap perjalanan menyimpan kisahnya sendiri, berdirilah sebuah stasiun
+      yang dikenal sebagai Grammar Station.
+    stage: 0
+    showCharacters: 0
+  - speaker: 0
+    text: Di tempat inilah, dua saudara kembar bernama Thomas dan Shelby memulai
+      babak baru dalam hidup mereka. Sebagai staff baru, keduanya datang dengan semangat
+      untuk membuktikan kemampuan mereka.
+    stage: 0
+    showCharacters: 0
+  - speaker: 1
+    text: Wah, akhirnya sampai juga! Jadi, ini Grammar Station.
+    stage: 0
+    showCharacters: 1
+  - speaker: 2
+    text: Kelihatannya cukup sepi. Semoga kita tidak langsung mendapat pekerjaan
+      yang merepotkan di hari pertama.
+    stage: 0
+    showCharacters: 1
+  - speaker: 1
+    text: Hey ayolah, ini kesempatan untuk menunjukkan kemampuan kita. Masih beruntung
+      kita dapat pekerjaan. Lagipula, seberapa sulit pekerjaan di sebuah stasiun?
+    stage: 0
+    showCharacters: 1
+  - speaker: 2
+    text: Kau mengatakan itu seolah-olah kau sudah tahu apa yang harus dilakukan.
+    stage: 0
+    showCharacters: 1
+  - speaker: 1
+    text: Tentu saja! Kita tinggal mengikuti instruksi, menyelesaikan pekerjaan,
+      lalu menikmati hari.
+    stage: 0
+    showCharacters: 1
+  - speaker: 2
+    text: Kedengarannya sederhana. Justru itu yang membuatku khawatir.
+    stage: 0
+    showCharacters: 1
+  - speaker: 1
+    text: Ya ya ya, saya setuju. Sudah, ayo kita harus menemui sang kepala stasiun.
+    stage: 0
+    showCharacters: 1
+  - speaker: 0
+    text: Thomas dan Shelby memasuki kantor kepala stasiun. Seorang pria paruh baya
+      berdiri di dekat meja. Di tengah kesibukan pagi, sang kepala stasiun telah
+      menyiapkan tugas pertama bagi kedua pegawai barunya.
+    stage: 1
+    showCharacters: 1
+  - speaker: 3
+    text: Oh halo! Kalian pasti Thomas dan Shelby. Namaku Mister, kalian bisa memanggilku
+      Mr. Mister. Selamat datang di Grammar Station. Saya sudah menunggu kedatangan
+      kalian.
+    stage: 1
+    showCharacters: 1
+  - speaker: 4
+    text: Senang bertemu dengan Anda, Pak! Kami siap mulai bekerja.
+    stage: 1
+    showCharacters: 1
+  - speaker: 3
+    text: Bagus. Stasiun ini memiliki banyak pekerjaan yang harus diselesaikan setiap
+      hari. Agar semuanya berjalan lancar, kalian masing-masing akan bertanggung
+      jawab atas bagian yang berbeda.
+    stage: 1
+    showCharacters: 1
+  - speaker: 3
+    text: Thomas, kau akan bertugas di bagian pemuatan barang. Pastikan semua barang
+      dimuat ke gerbong yang tepat sebelum kereta diberangkatkan. Jangan sampai ada
+      barang yang tertinggal atau salah tempat.
+    stage: 1
+    showCharacters: 1
+  - speaker: 3
+    text: Sementara itu, Shelby, kau akan bertugas memeriksa tiket dan dokumen penumpang.
+      Pastikan semuanya sesuai sebelum penumpang diizinkan naik ke kereta.
+    stage: 1
+    showCharacters: 1
+  - speaker: 4
+    text: Siap, Sir!
+    stage: 1
+    showCharacters: 1
+  nextSceneName: TrainLoading

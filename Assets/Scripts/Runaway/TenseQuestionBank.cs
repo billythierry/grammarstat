@@ -20,7 +20,7 @@ public static class TenseNames
             case Tense.SimplePresent: return "Simple Present";
             case Tense.PresentContinuous: return "Present Continuous";
             case Tense.SimplePast: return "Simple Past";
-            default: return "Future";
+            default: return "Simple Future";
         }
     }
 }

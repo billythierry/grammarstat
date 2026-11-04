@@ -1,0 +1,7 @@
+Backup sebelum penambahan Level 2 (Present Continuous) dan menu 4 level.
+Untuk mengembalikan, tutup Unity lalu salin:
+  BoxSpawner.cs         -> Assets/Scripts/TrainLoading/
+  MainMenuNavigation.cs -> Assets/Scripts/MainMenu/
+  TrainLoading.unity    -> Assets/Scenes/
+  MainMenu.unity        -> Assets/Scenes/
+Lalu hapus Assets/Data/Banks/Bank_PresentContinuous.asset (+ .meta) dan BankSoal/Bank_PresentContinuous.csv

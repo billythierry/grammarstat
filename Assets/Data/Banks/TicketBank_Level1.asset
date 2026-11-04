@@ -15,149 +15,281 @@ MonoBehaviour:
   tickets:
   - id: L1-001
     passengerName: Andi Pratama
-    age: 24
+    age: 14
     tense: Simple Present
-    note: Andi [A:works] as a bank teller and [B:take] the train every morning.
+    note: Andi [A:works] as a farmer and [B:get] up early every day.
     correctAnswer: 1
-    correction: Andi works as a bank teller and takes the train every morning.
+    correction: Andi works as a farmer and gets up early every day.
   - id: L1-002
     passengerName: Siti Rahma
-    age: 31
+    age: 13
     tense: Simple Present
-    note: Siti [A:teach] English at a high school [B:near] the station.
+    note: Siti [A:go] to school [B:by] bus every morning.
     correctAnswer: 0
-    correction: Siti teaches English at a high school near the station.
+    correction: Siti goes to school by bus every morning.
   - id: L1-003
     passengerName: Budi Santoso
     age: 45
     tense: Simple Present
-    note: Budi [A:usually visits] his parents in Bogor [B:every] weekend.
+    note: My father [A:reads] the newspaper [B:every] morning.
     correctAnswer: 2
-    correction: Budi usually visits his parents in Bogor every weekend.
+    correction: My father reads the newspaper every morning.
   - id: L1-004
     passengerName: Rina Lestari
-    age: 19
-    tense: Simple Present
-    note: Rina [A:doesn't] live on campus, so she [B:travels] home by train.
-    correctAnswer: 2
-    correction: Rina doesn't live on campus, so she travels home by train.
-  - id: L1-005
-    passengerName: Harun Wijaya
-    age: 67
-    tense: Simple Present
-    note: Mr. Harun [A:don't] drive anymore, so he [B:prefers] the train.
-    correctAnswer: 0
-    correction: Mr. Harun doesn't drive anymore, so he prefers the train.
-  - id: L1-006
-    passengerName: Dewi Anggraini
     age: 12
     tense: Simple Present
-    note: Dewi [A:goes] to school with her mother, who [B:work] at the city hospital.
-    correctAnswer: 1
-    correction: Dewi goes to school with her mother, who works at the city hospital.
-  - id: L1-007
-    passengerName: Kevin Tanaka
-    age: 28
+    note: They [A:plays] football [B:after] school.
+    correctAnswer: 0
+    correction: They play football after school.
+  - id: L1-005
+    passengerName: Dewi Anggraini
+    age: 15
     tense: Simple Present
-    note: Kevin [A:does] not [B:likes] crowded trains in the morning.
+    note: She [A:doesn't] like coffee, but she [B:like] tea.
     correctAnswer: 1
-    correction: Kevin does not like crowded trains in the morning.
+    correction: She doesn't like coffee, but she likes tea.
+  - id: L1-006
+    passengerName: Joko Susilo
+    age: 40
+    tense: Simple Present
+    note: We [A:don't] watch TV [B:at] night.
+    correctAnswer: 2
+    correction: We don't watch TV at night.
+  - id: L1-007
+    passengerName: Bayu Saputra
+    age: 13
+    tense: Simple Present
+    note: Bayu [A:don't] have a bike, so he [B:walks] to school.
+    correctAnswer: 0
+    correction: Bayu doesn't have a bike, so he walks to school.
   - id: L1-008
+    passengerName: Hendra Gunawan
+    age: 38
+    tense: Simple Present
+    note: The train [A:leaves] at seven and [B:arrives] at nine.
+    correctAnswer: 2
+    correction: The train leaves at seven and arrives at nine.
+  - id: L1-009
+    passengerName: Maya Putri
+    age: 14
+    tense: Simple Present
+    note: Does Rina [A:likes] cats or [B:dogs]?
+    correctAnswer: 0
+    correction: Does Rina like cats or dogs?
+  - id: L1-010
     passengerName: Lina Marlina
     age: 35
     tense: Simple Present
-    note: Lina and her husband [A:runs] a small bakery that [B:opens] at six.
-    correctAnswer: 0
-    correction: Lina and her husband run a small bakery that opens at six.
-  - id: L1-009
-    passengerName: Joko Susilo
-    age: 52
-    tense: Simple Present
-    note: Joko [A:has] two sons who [B:study] in Yogyakarta.
-    correctAnswer: 2
-    correction: Joko has two sons who study in Yogyakarta.
-  - id: L1-010
-    passengerName: Maya Putri
-    age: 22
-    tense: Simple Present
-    note: Maya [A:always buy] her ticket online because it [B:saves] time.
-    correctAnswer: 0
-    correction: Maya always buys her ticket online because it saves time.
+    note: My mother [A:cooks] rice and my sister [B:wash] the dishes.
+    correctAnswer: 1
+    correction: My mother cooks rice and my sister washes the dishes.
   - id: L1-011
-    passengerName: Fajar Nugroho
-    age: 26
-    tense: Present Continuous
-    note: Fajar [A:is traveling] to Surabaya because his sister [B:is getting] married
-      this week.
-    correctAnswer: 2
-    correction: Fajar is traveling to Surabaya because his sister is getting married
-      this week.
-  - id: L1-012
-    passengerName: Ayu Kartika
-    age: 17
-    tense: Present Continuous
-    note: Ayu [A:is studying] for her exams, so she [B:is read] a book on the train.
-    correctAnswer: 1
-    correction: Ayu is studying for her exams, so she is reading a book on the train.
-  - id: L1-013
-    passengerName: Hendra Gunawan
-    age: 40
-    tense: Present Continuous
-    note: Hendra [A:are] waiting for his wife, who [B:is buying] snacks at the kiosk.
-    correctAnswer: 0
-    correction: Hendra is waiting for his wife, who is buying snacks at the kiosk.
-  - id: L1-014
     passengerName: Sri Wahyuni
-    age: 72
-    tense: Present Continuous
-    note: Mrs. Sri [A:is visiting] her grandchildren, who [B:is staying] in Bandung
-      this month.
-    correctAnswer: 1
-    correction: Mrs. Sri is visiting her grandchildren, who are staying in Bandung
-      this month.
-  - id: L1-015
-    passengerName: Rizky Ramadhan
-    age: 21
-    tense: Present Continuous
-    note: Rizky [A:listening] to music while he [B:is waiting] for the train.
-    correctAnswer: 0
-    correction: Rizky is listening to music while he is waiting for the train.
-  - id: L1-016
-    passengerName: Clara Wijaya
     age: 30
     tense: Present Continuous
-    note: Clara [A:is working] from home this week, but today she [B:is going] to
-      the head office.
+    note: Look! The baby [A:is sleeping] on the [B:sofa].
     correctAnswer: 2
-    correction: Clara is working from home this week, but today she is going to the
-      head office.
-  - id: L1-017
-    passengerName: Bayu Saputra
-    age: 9
+    correction: Look! The baby is sleeping on the sofa.
+  - id: L1-012
+    passengerName: Kevin Tanaka
+    age: 13
     tense: Present Continuous
-    note: Bayu [A:is holding] his father's hand because the station [B:is getting]
-      very crowded.
-    correctAnswer: 2
-    correction: Bayu is holding his father's hand because the station is getting
-      very crowded.
-  - id: L1-018
-    passengerName: Putri Amelia
-    age: 25
-    tense: Present Continuous
-    note: Putri [A:is knowing] the way, so she [B:is guiding] her friend to the platform.
+    note: They [A:is playing] games in the [B:living room] now.
     correctAnswer: 0
-    correction: Putri knows the way, so she is guiding her friend to the platform.
-  - id: L1-019
-    passengerName: Agus Salim
-    age: 48
+    correction: They are playing games in the living room now.
+  - id: L1-013
+    passengerName: Ayu Kartika
+    age: 12
     tense: Present Continuous
-    note: Right now Agus [A:is talking] on the phone with his boss and [B:take] notes.
+    note: Dewi [A:is reading] a book and her brother [B:is watch] TV.
     correctAnswer: 1
-    correction: Right now Agus is talking on the phone with his boss and taking notes.
-  - id: L1-020
+    correction: Dewi is reading a book and her brother is watching TV.
+  - id: L1-014
+    passengerName: Fajar Nugroho
+    age: 15
+    tense: Present Continuous
+    note: I [A:am] waiting for the train [B:now].
+    correctAnswer: 2
+    correction: I am waiting for the train now.
+  - id: L1-015
+    passengerName: Putri Amelia
+    age: 14
+    tense: Present Continuous
+    note: Listen! Somebody [A:singing] in the [B:next room].
+    correctAnswer: 0
+    correction: Listen! Somebody is singing in the next room.
+  - id: L1-016
     passengerName: Nadia Safitri
     age: 33
     tense: Present Continuous
-    note: Nadia [A:is carrying] two heavy bags because she [B:moving] to a new apartment.
+    note: We [A:are eating] lunch, and Dad [B:are cooking] fish.
     correctAnswer: 1
-    correction: Nadia is carrying two heavy bags because she is moving to a new apartment.
+    correction: We are eating lunch, and Dad is cooking fish.
+  - id: L1-017
+    passengerName: Rudi Hartono
+    age: 13
+    tense: Present Continuous
+    note: Right now, Rudi [A:is talk] to his [B:teacher].
+    correctAnswer: 0
+    correction: Right now, Rudi is talking to his teacher.
+  - id: L1-018
+    passengerName: Clara Wijaya
+    age: 11
+    tense: Present Continuous
+    note: The children [A:are running] and [B:laughing] in the park.
+    correctAnswer: 2
+    correction: The children are running and laughing in the park.
+  - id: L1-019
+    passengerName: Rizky Ramadhan
+    age: 14
+    tense: Present Continuous
+    note: It [A:is raining] now, so we [B:is staying] at home.
+    correctAnswer: 1
+    correction: It is raining now, so we are staying at home.
+  - id: L1-020
+    passengerName: Agus Salim
+    age: 48
+    tense: Present Continuous
+    note: Look! The bus [A:is coming], and the people [B:is waiting].
+    correctAnswer: 1
+    correction: Look! The bus is coming, and the people are waiting.
+  - id: L1-021
+    passengerName: Tono Wibowo
+    age: 13
+    tense: Simple Present
+    note: My brother [A:drink] milk [B:every] morning.
+    correctAnswer: 0
+    correction: My brother drinks milk every morning.
+  - id: L1-022
+    passengerName: Ani Setiawati
+    age: 14
+    tense: Simple Present
+    note: The shop [A:opens] at eight and [B:close] at five.
+    correctAnswer: 1
+    correction: The shop opens at eight and closes at five.
+  - id: L1-023
+    passengerName: Ani Wulandari
+    age: 12
+    tense: Simple Present
+    note: Ani [A:has] a cat, and she [B:feed] it every day.
+    correctAnswer: 1
+    correction: Ani has a cat, and she feeds it every day.
+  - id: L1-024
+    passengerName: Reza Firmansyah
+    age: 15
+    tense: Simple Present
+    note: He [A:doesn't] play games, but he [B:read] many books.
+    correctAnswer: 1
+    correction: He doesn't play games, but he reads many books.
+  - id: L1-025
+    passengerName: Galih Pamungkas
+    age: 14
+    tense: Simple Present
+    note: The sun [A:rise] in the [B:east].
+    correctAnswer: 0
+    correction: The sun rises in the east.
+  - id: L1-026
+    passengerName: Mega Puspita
+    age: 13
+    tense: Simple Present
+    note: Do they [A:lives] near the [B:station]?
+    correctAnswer: 0
+    correction: Do they live near the station?
+  - id: L1-027
+    passengerName: Tina Marpaung
+    age: 12
+    tense: Simple Present
+    note: Tina [A:loves] her dog and [B:walks] it every day.
+    correctAnswer: 2
+    correction: Tina loves her dog and walks it every day.
+  - id: L1-028
+    passengerName: Wahyu Hidayat
+    age: 15
+    tense: Simple Present
+    note: I [A:go] to bed [B:at] nine o'clock.
+    correctAnswer: 2
+    correction: I go to bed at nine o'clock.
+  - id: L1-029
+    passengerName: Citra Anjani
+    age: 14
+    tense: Simple Present
+    note: They [A:don't] like spicy food, and they [B:drinks] only water.
+    correctAnswer: 1
+    correction: They don't like spicy food, and they drink only water.
+  - id: L1-030
+    passengerName: Ilham Maulana
+    age: 13
+    tense: Simple Present
+    note: My parents [A:work] in an office [B:near] our house.
+    correctAnswer: 2
+    correction: My parents work in an office near our house.
+  - id: L1-031
+    passengerName: Dian Paramita
+    age: 34
+    tense: Present Continuous
+    note: She [A:are washing] the dishes in the [B:kitchen].
+    correctAnswer: 0
+    correction: She is washing the dishes in the kitchen.
+  - id: L1-032
+    passengerName: Farhan Akbar
+    age: 14
+    tense: Present Continuous
+    note: We [A:is studying] English in the [B:classroom] now.
+    correctAnswer: 0
+    correction: We are studying English in the classroom now.
+  - id: L1-033
+    passengerName: Nina Oktavia
+    age: 12
+    tense: Present Continuous
+    note: Look! The cat [A:climbing] the [B:tree].
+    correctAnswer: 0
+    correction: Look! The cat is climbing the tree.
+  - id: L1-034
+    passengerName: Gita Savitri
+    age: 13
+    tense: Present Continuous
+    note: Listen! The birds [A:is singing] in the [B:garden].
+    correctAnswer: 0
+    correction: Listen! The birds are singing in the garden.
+  - id: L1-035
+    passengerName: Tina Kurniawati
+    age: 15
+    tense: Present Continuous
+    note: Tina [A:is drawing] a picture and her friend [B:is paint] a wall.
+    correctAnswer: 1
+    correction: Tina is drawing a picture and her friend is painting a wall.
+  - id: L1-036
+    passengerName: Sandi Permadi
+    age: 14
+    tense: Present Continuous
+    note: I [A:am doing] my homework, and my sister [B:am sleeping].
+    correctAnswer: 1
+    correction: I am doing my homework, and my sister is sleeping.
+  - id: L1-037
+    passengerName: Vina Amelia
+    age: 13
+    tense: Present Continuous
+    note: The students [A:are reading], and the teacher [B:writing] on the board.
+    correctAnswer: 1
+    correction: The students are reading, and the teacher is writing on the board.
+  - id: L1-038
+    passengerName: Bambang Sutejo
+    age: 44
+    tense: Present Continuous
+    note: Dad [A:is driving] the car [B:to] the station now.
+    correctAnswer: 2
+    correction: Dad is driving the car to the station now.
+  - id: L1-039
+    passengerName: Lukman Hakim
+    age: 12
+    tense: Present Continuous
+    note: Look! The children [A:are swimming] in the [B:river].
+    correctAnswer: 2
+    correction: Look! The children are swimming in the river.
+  - id: L1-040
+    passengerName: Salsa Azzahra
+    age: 14
+    tense: Present Continuous
+    note: My mother [A:is cooking], and I [B:am helping] her now.
+    correctAnswer: 2
+    correction: My mother is cooking, and I am helping her now.

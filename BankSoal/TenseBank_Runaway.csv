@@ -1,41 +1,81 @@
 ﻿id;sentence;tense
-RW-001;She drinks milk every morning.;SimplePresent
-RW-002;My father works at the station.;SimplePresent
-RW-003;They play football on Sundays.;SimplePresent
-RW-004;The train leaves at seven o'clock.;SimplePresent
-RW-005;He does not like spicy food.;SimplePresent
-RW-006;Do you speak English?;SimplePresent
-RW-007;The sun rises in the east.;SimplePresent
-RW-008;We always eat dinner together.;SimplePresent
-RW-009;Rina reads a book before bed.;SimplePresent
-RW-010;Cats sleep a lot.;SimplePresent
-RW-011;She is drinking milk now.;PresentContinuous
-RW-012;My father is working in the garden.;PresentContinuous
-RW-013;They are playing football right now.;PresentContinuous
-RW-014;Look! The train is leaving.;PresentContinuous
-RW-015;He is not watching TV at the moment.;PresentContinuous
-RW-016;Are you listening to me?;PresentContinuous
-RW-017;The children are singing in the classroom.;PresentContinuous
-RW-018;I am waiting for the bus.;PresentContinuous
-RW-019;It is raining outside.;PresentContinuous
-RW-020;We are eating lunch now.;PresentContinuous
-RW-021;She drank milk this morning.;SimplePast
-RW-022;My father worked late yesterday.;SimplePast
-RW-023;They played football last Sunday.;SimplePast
-RW-024;The train left two hours ago.;SimplePast
-RW-025;He did not come to school yesterday.;SimplePast
-RW-026;Did you see the bandits?;SimplePast
-RW-027;We visited our grandmother last week.;SimplePast
-RW-028;I bought a new bag yesterday.;SimplePast
-RW-029;Rina wrote a letter last night.;SimplePast
-RW-030;The bus arrived late this morning.;SimplePast
-RW-031;She will drink milk later.;Future
-RW-032;I will play football next week.;Future
-RW-033;They are going to visit Bali next month.;Future
-RW-034;The train will arrive soon.;Future
-RW-035;He will not come to the party tomorrow.;Future
-RW-036;Will you help me tomorrow?;Future
-RW-037;We are going to buy a new car.;Future
-RW-038;It will rain this afternoon.;Future
-RW-039;I will call you tonight.;Future
-RW-040;My sister is going to study in Japan next year.;Future
+RW-001;I drink water every day.;SimplePresent
+RW-002;She likes cats.;SimplePresent
+RW-003;He reads books at night.;SimplePresent
+RW-004;We walk to school.;SimplePresent
+RW-005;My mother cooks rice.;SimplePresent
+RW-006;The bird sings in the morning.;SimplePresent
+RW-007;They live in Jakarta.;SimplePresent
+RW-008;The train stops here.;SimplePresent
+RW-009;I do not eat fish.;SimplePresent
+RW-010;He does not like milk.;SimplePresent
+RW-011;We do not play at night.;SimplePresent
+RW-012;She does not ride a bike.;SimplePresent
+RW-013;They do not drink coffee.;SimplePresent
+RW-014;My cat does not eat rice.;SimplePresent
+RW-015;Do you like rice?;SimplePresent
+RW-016;Does he play football?;SimplePresent
+RW-017;Do they walk to school?;SimplePresent
+RW-018;Does your mother work?;SimplePresent
+RW-019;Do we need a ticket?;SimplePresent
+RW-020;Does the bus stop here?;SimplePresent
+RW-021;I am drinking water.;PresentContinuous
+RW-022;She is washing the dishes.;PresentContinuous
+RW-023;He is riding a bike.;PresentContinuous
+RW-024;We are walking to school.;PresentContinuous
+RW-025;They are eating rice.;PresentContinuous
+RW-026;My father is driving a car.;PresentContinuous
+RW-027;The cat is sleeping.;PresentContinuous
+RW-028;The birds are singing.;PresentContinuous
+RW-029;I am not eating now.;PresentContinuous
+RW-030;She is not cooking.;PresentContinuous
+RW-031;He is not running.;PresentContinuous
+RW-032;We are not sleeping.;PresentContinuous
+RW-033;They are not singing.;PresentContinuous
+RW-034;The train is not moving.;PresentContinuous
+RW-035;Are you reading a book?;PresentContinuous
+RW-036;Is she washing the car?;PresentContinuous
+RW-037;Is he sleeping?;PresentContinuous
+RW-038;Are they singing?;PresentContinuous
+RW-039;Are we going home?;PresentContinuous
+RW-040;Is the bus coming?;PresentContinuous
+RW-041;I drank water yesterday.;SimplePast
+RW-042;She cooked fried rice.;SimplePast
+RW-043;He rode a bike to school.;SimplePast
+RW-044;We walked to the station.;SimplePast
+RW-045;They ate lunch at home.;SimplePast
+RW-046;My mother bought some fish.;SimplePast
+RW-047;The cat slept all day.;SimplePast
+RW-048;The train came late.;SimplePast
+RW-049;I did not drink milk.;SimplePast
+RW-050;She did not cook dinner.;SimplePast
+RW-051;He did not go to school.;SimplePast
+RW-052;We did not see the bus.;SimplePast
+RW-053;They did not walk home.;SimplePast
+RW-054;My father did not work yesterday.;SimplePast
+RW-055;Did you eat breakfast?;SimplePast
+RW-056;Did she go home?;SimplePast
+RW-057;Did he call you?;SimplePast
+RW-058;Did they see the movie?;SimplePast
+RW-059;Did we miss the train?;SimplePast
+RW-060;Did your mother cook rice?;SimplePast
+RW-061;I will drink some water.;Future
+RW-062;She will cook dinner.;Future
+RW-063;He will ride a bike.;Future
+RW-064;We will walk to the station.;Future
+RW-065;They will eat lunch later.;Future
+RW-066;My father will drive the car.;Future
+RW-067;The bus will come soon.;Future
+RW-068;It will rain tonight.;Future
+RW-069;I will not eat fish.;Future
+RW-070;She will not go to school.;Future
+RW-071;He will not drive tomorrow.;Future
+RW-072;We will not sleep late.;Future
+RW-073;They will not sing tonight.;Future
+RW-074;The train will not stop here.;Future
+RW-075;Will you call me?;Future
+RW-076;Will she cook tonight?;Future
+RW-077;Will he walk home?;Future
+RW-078;Will they buy a ticket?;Future
+RW-079;Will we go tomorrow?;Future
+RW-080;Will the bus come soon?;Future

@@ -1,0 +1,2 @@
+Backup font asset sebelum ditambah karakter '_' (untuk menghilangkan warning Underline).
+Cara mengembalikan: tutup Unity, salin "thedeadsaloon-Regular SDF.asset" ke Assets/Art/Fonts/ (timpa), lalu buka Unity lagi.

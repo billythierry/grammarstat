@@ -1,0 +1,19 @@
+﻿id;section;sentence;alternativeSentences;translation
+PC-P01;Positive;She-is-cooking-dinner;;Dia (perempuan) sedang memasak makan malam.
+PC-P02;Positive;They-are-playing-football;;Mereka sedang bermain sepak bola.
+PC-P03;Positive;I-am-reading-a-book;;Saya sedang membaca buku.
+PC-P04;Positive;We-are-watching-TV;;Kami sedang menonton TV.
+PC-P05;Positive;The-baby-is-sleeping;;Bayi itu sedang tidur.
+PC-N01;Negative;I-am-not-sleeping;;Saya tidak sedang tidur.
+PC-N02;Negative;He-is-not-eating-rice;;Dia (laki-laki) tidak sedang makan nasi.
+PC-N03;Negative;They-are-not-watching-TV;;Mereka tidak sedang menonton TV.
+PC-N04;Negative;She-is-not-reading;;Dia (perempuan) tidak sedang membaca.
+PC-N05;Negative;We-are-not-playing-now;;Kami tidak sedang bermain sekarang.
+PC-Q01;Interrogative;Are-you-studying-now?;;Apakah kamu sedang belajar sekarang?
+PC-Q02;Interrogative;Is-she-drinking-tea?;;Apakah dia (perempuan) sedang minum teh?
+PC-Q03;Interrogative;Are-they-running?;;Apakah mereka sedang berlari?
+PC-Q04;Interrogative;Is-he-writing-a-letter?;;Apakah dia (laki-laki) sedang menulis surat?
+PC-Q05;Interrogative;Is-the-train-coming?;;Apakah keretanya sedang datang?
+PC-R01;Review;My-mother-is-sleeping;;Ibu saya sedang tidur.
+PC-R02;Review;He-is-not-driving-now;;Dia (laki-laki) tidak sedang menyetir sekarang.
+PC-R03;Review;Are-you-eating-lunch?;;Apakah kamu sedang makan siang?

@@ -1,0 +1,4 @@
+Backup sebelum penambahan Level 3 (Simple Past) dan Level 4 (Simple Future).
+Untuk mengembalikan, tutup Unity lalu salin TrainLoading.unity -> Assets/Scenes/
+Lalu hapus Assets/Data/Banks/Bank_SimplePast.asset, Bank_SimpleFuture.asset (+ .meta)
+dan BankSoal/Bank_SimplePast.csv, BankSoal/Bank_SimpleFuture.csv

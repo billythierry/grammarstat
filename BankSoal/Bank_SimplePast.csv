@@ -1,0 +1,19 @@
+﻿id;section;sentence;alternativeSentences;translation
+SPA-P01;Positive;I-watched-a-movie;;Saya menonton sebuah film.
+SPA-P02;Positive;She-went-to-school;;Dia (perempuan) pergi ke sekolah.
+SPA-P03;Positive;They-played-games-yesterday;;Mereka bermain game kemarin.
+SPA-P04;Positive;We-ate-fried-rice;;Kami makan nasi goreng.
+SPA-P05;Positive;He-bought-a-new-bag;;Dia (laki-laki) membeli tas baru.
+SPA-N01;Negative;I-did-not-sleep-well;;Saya tidak tidur nyenyak.
+SPA-N02;Negative;She-did-not-call-me;;Dia (perempuan) tidak menelepon saya.
+SPA-N03;Negative;They-did-not-eat-breakfast;;Mereka tidak sarapan.
+SPA-N04;Negative;We-did-not-go-there;;Kami tidak pergi ke sana.
+SPA-N05;Negative;Tom-did-not-study-yesterday;;Tom tidak belajar kemarin.
+SPA-Q01;Interrogative;Did-you-sleep-well?;;Apakah kamu tidur nyenyak?
+SPA-Q02;Interrogative;Did-she-call-you?;;Apakah dia (perempuan) meneleponmu?
+SPA-Q03;Interrogative;Did-they-win-the-game?;;Apakah mereka memenangkan pertandingan itu?
+SPA-Q04;Interrogative;Did-he-buy-a-car?;;Apakah dia (laki-laki) membeli mobil?
+SPA-Q05;Interrogative;Did-the-train-arrive-late?;;Apakah kereta datang terlambat?
+SPA-R01;Review;We-visited-the-museum;;Kami mengunjungi museum itu.
+SPA-R02;Review;She-did-not-watch-TV;;Dia (perempuan) tidak menonton TV.
+SPA-R03;Review;Did-you-see-the-train?;;Apakah kamu melihat keretanya?

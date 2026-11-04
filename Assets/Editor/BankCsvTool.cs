@@ -187,6 +187,7 @@ public static class BankCsvTool
         AssetDatabase.SaveAssets();
 
         if (bank is TicketBank ticketBank) ValidateTickets(ticketBank, warnings);
+        if (bank is QuestionBank questionBank) warnings.AddRange(questionBank.Validate());
         return items.Count;
     }
 
