@@ -73,11 +73,14 @@ public class TrainController : MonoBehaviour
 
     public IEnumerator Arrive()
     {
+        AudioManager.Instance.PlayTrainMoveSound();
         yield return MoveTo(baseX, arriveDuration);
     }
 
     public IEnumerator MoveToNext()
     {
+        AudioManager.Instance.PlayTrainMoveSound();
+
         // Sebelum kereta bergerak: gerbong yang sudah 2 posisi di kiri (tidak terlihat) disambung ke ujung belakang.
         // Posisinya masih di luar layar kanan, jadi gerbong ikut masuk layar bersama rangkaian, tidak muncul tiba-tiba.
         // Gerbong di luar jumlah soal dinonaktifkan oleh AssignWagon, jadi di soal terakhir tidak ada gerbong tambahan.
