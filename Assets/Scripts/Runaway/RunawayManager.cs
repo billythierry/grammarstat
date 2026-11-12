@@ -44,11 +44,13 @@ public class RunawayManager : MonoBehaviour
     [Tooltip("Jumlah soal dalam satu permainan. Kereta selamat bila bertahan sampai soal terakhir")]
     [SerializeField] private int totalQuestions = 15;
     [Tooltip("Batas waktu menjawab per soal (detik). Waktu habis dihitung salah")]
-    [SerializeField] private float questionTime = 7f;
+    [SerializeField] private float questionTime = 10f;
     [Tooltip("Jeda setelah jawaban benar sebelum soal berikutnya")]
     [SerializeField] private float correctPause = 0.6f;
     [Tooltip("Lama koreksi jawaban tampil setelah jawaban salah. Kereta tetap terdorong selama jeda ini")]
     [SerializeField] private float wrongPause = 1.5f;
+    [Tooltip("Lama adegan kereta mogok sebelum bandit menyusul (detik)")]
+    [SerializeField] private float stallDuration = 1.5f;
     [Tooltip("Jeda setelah panduan ditutup sebelum soal pertama")]
     [SerializeField] private float startDelay = 0.5f;
     [Tooltip("Lama notifikasi akhir (Sampai Tujuan / Game Over) tampil sebelum panel hasil muncul")]
@@ -88,6 +90,12 @@ public class RunawayManager : MonoBehaviour
     private Tense? chosenAnswer;
     private bool answered;
     private Coroutine gameRoutine;
+    // Jumlah jawaban salah (termasuk waktu habis)
+    private int wrongCount;
+
+    // Batas salah sebelum kereta mogok: saat jawaban benar sudah tidak mungkin mencapai batas lulus.
+    // 15 soal dengan batas lulus 7 berarti mogok di salah ke-9
+    public int MaxWrongAnswers => Mathf.Max(1, totalQuestions - oneStarScore + 1);
 
     void Start()
     {
@@ -103,6 +111,7 @@ public class RunawayManager : MonoBehaviour
         if (debugOverlay != null) debugOverlay.TextProvider = BuildDebugText;
         CorrectCount = 0;
         QuestionNumber = 0;
+        wrongCount = 0;
         IsFinished = false;
         StartCoroutine(IntroRoutine());
     }
@@ -178,6 +187,13 @@ public class RunawayManager : MonoBehaviour
             }
             else
             {
+                wrongCount++;
+                // Kemenangan sudah tidak mungkin: kereta langsung mogok dan tertangkap bandit
+                if (wrongCount >= MaxWrongAnswers)
+                {
+                    yield return Breakdown();
+                    yield break;
+                }
                 string title = answered ? "Wrong !!" : "Time's Up !!";
                 notification.ShowWrong("<b>" + title + "</b>\n<size=65%><color=#FFFFFF>Jawaban: " + TenseNames.Get(question.tense) + "</color></size>");
                 yield return new WaitForSeconds(wrongPause);
@@ -264,6 +280,26 @@ public class RunawayManager : MonoBehaviour
         yield return ShowResult(false);
     }
 
+    // Adegan kereta mogok: mesin mati, background melambat sampai berhenti, kereta tertinggal, lalu bandit menyusul
+    IEnumerator Breakdown()
+    {
+        IsFinished = true;
+        quizUI.Hide();
+        notification.ShowWrong("<b>KERETA MOGOK!</b>\n<size=65%><color=#FFFFFF>Salah " + wrongCount + " kali, bandit berhasil menyusul</color></size>", true);
+
+        StartCoroutine(train.Stall(stallDuration));
+        for (float t = 0f; t < stallDuration; t += Time.deltaTime)
+        {
+            SetBackgroundSpeed(1f - t / stallDuration);
+            yield return null;
+        }
+        SetBackgroundSpeed(0f);
+
+        yield return bandits.CatchUp();
+        yield return ShowResult(false);
+    }
+
+
     // Panel hasil seperti chapter sebelumnya: nilai per tense dan bintang. Tertangkap bandit selalu tidak lulus
     IEnumerator ShowResult(bool escaped)
     {
@@ -273,6 +309,12 @@ public class RunawayManager : MonoBehaviour
             + ", benar " + CorrectCount + "/" + totalQuestions + ", bintang " + Stars);
 
         yield return new WaitForSeconds(resultDelay);
+        // Sound effect menang / kalah, bersamaan dengan panel hasil muncul
+        if (AudioManager.Instance != null)
+        {
+            if (passed) AudioManager.Instance.PlayVictorySound();
+            else AudioManager.Instance.PlayDefeatSound();
+        }
         if (resultPanel == null) yield break;
 
         var lines = new List<string>();

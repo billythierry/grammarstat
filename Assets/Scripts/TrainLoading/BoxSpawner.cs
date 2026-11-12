@@ -45,15 +45,12 @@ public class BoxSpawner : MonoBehaviour
     [SerializeField] private QuestionBank[] levelBanks;
     [Tooltip("Bank cadangan bila level yang dipilih belum punya bank di Level Banks")]
     [SerializeField] private QuestionBank questionBank;
-    [Tooltip("Minimal jawaban benar di tiap bagian Positif / Negatif / Tanya untuk lulus")]
-    [SerializeField] private int minCorrectPerSection = 3;
-    [Tooltip("Minimal jawaban benar di bagian Review untuk lulus")]
-    [SerializeField] private int minCorrectReview = 2;
-    [Header("Bintang (hanya bila lulus; lulus = 1 bintang)")]
-    [Tooltip("Minimal persentase jawaban benar dari semua soal untuk 2 bintang")]
-    [Range(0f, 1f)] [SerializeField] private float twoStarRatio = 0.75f;
-    [Tooltip("Minimal persentase jawaban benar dari semua soal untuk 3 bintang")]
-    [Range(0f, 1f)] [SerializeField] private float threeStarRatio = 0.9f;
+    [Header("Bintang (dinilai dari jumlah jawaban benar seluruh soal)")]
+    [Tooltip("Minimal jawaban benar untuk lulus dan mendapat 1 bintang")]
+    [SerializeField] private int oneStarMinCorrect = 9;
+    [Tooltip("Minimal jawaban benar untuk 2 bintang")]
+    [SerializeField] private int twoStarMinCorrect = 13;
+    // 3 bintang bila semua soal dijawab benar
     [Tooltip("Jika aktif, soal baru berlanjut bila jawaban benar. Jika tidak, tetap lanjut walau salah")]
     [SerializeField] private bool advanceOnlyWhenCorrect = false;
     [SerializeField] private char separator = '-';
@@ -308,9 +305,56 @@ public class BoxSpawner : MonoBehaviour
         boxObject.transform.position = p;
 
         BoxScript newBox = boxObject.GetComponent<BoxScript>();
+        newBox.SetSpawner(this);
         boxPool.Add(newBox);
         return newBox;
     }
+
+    // ---------- Klik box ----------
+
+    // Box diklik tanpa drag: dari peron masuk ke kolom kosong paling kiri, dari gerbong kembali ke peron
+    public void OnBoxClicked(BoxScript box)
+    {
+        if (box == null || box.IsLocked || IsBusy || IsFinished) return;
+        if (box.IsInDropArea) ReturnToPlatform(box);
+        else TryAutoPlace(box);
+    }
+
+    // Masukkan box ke kolom kosong paling kiri di gerbong aktif. Bila kolom itu menolak (mis. tutorial), tampilkan petunjuk
+    bool TryAutoPlace(BoxScript box)
+    {
+        foreach (DropAreaScript area in dropAreas)
+        {
+            if (area == null || !area.gameObject.activeInHierarchy || area.CurrentBox != null) continue;
+            if (!area.CanAccept(box))
+            {
+                area.NotifyRejected(box);
+                return false;
+            }
+            box.DetachFromArea();
+            area.OnBoxDrop(box);
+            return true;
+        }
+        // Semua kolom sudah terisi
+        return false;
+    }
+
+    // Kembalikan box ke spawn area asalnya, atau spawn area kosong lain bila asalnya sudah terisi
+    void ReturnToPlatform(BoxScript box)
+    {
+        SpawnAreaScript target = box.HomeSpawnArea != null && box.HomeSpawnArea.gameObject.activeInHierarchy && box.HomeSpawnArea.CanAccept(box) ? box.HomeSpawnArea : null;
+        if (target == null)
+        {
+            foreach (SpawnAreaScript area in spawnAreas)
+            {
+                if (area != null && area.gameObject.activeInHierarchy && area.CanAccept(box)) { target = area; break; }
+            }
+        }
+        if (target == null) return;
+        box.DetachFromArea();
+        target.OnBoxDrop(box);
+    }
+
 
     // ---------- Tutorial terpandu ----------
 
@@ -434,6 +478,12 @@ public class BoxSpawner : MonoBehaviour
         }
 
         bool correct = IsAccepted(answer.ToArray());
+        // Sound effect jawaban benar / salah
+        if (AudioManager.Instance != null)
+        {
+            if (correct) AudioManager.Instance.PlayCorrectSound();
+            else AudioManager.Instance.PlayWrongSound();
+        }
         if (correct)
         {
             CorrectCount++;
@@ -486,25 +536,27 @@ public class BoxSpawner : MonoBehaviour
     }
 
     // Lulus bila tiap bagian mencapai minimal jawaban benar bagian tersebut
+    // Lulus bila jumlah jawaban benar seluruh soal mencapai batas 1 bintang. Rincian per bagian tetap ditampilkan
     void FinishLevel()
     {
         IsFinished = true;
-        IsPassed = true;
+        Stars = CountStars();
+        IsPassed = Stars > 0;
+        // Sound effect menang / kalah
+        if (AudioManager.Instance != null)
+        {
+            if (IsPassed) AudioManager.Instance.PlayVictorySound();
+            else AudioManager.Instance.PlayDefeatSound();
+        }
+
         var parts = new List<string>();
         var lines = new List<string>();
         foreach (SentenceForm section in sectionOrder)
         {
-            int correct = sectionCorrect[section];
-            int total = sectionTotal[section];
-            int needed = Mathf.Min(total, section == SentenceForm.Review ? minCorrectReview : minCorrectPerSection);
-            if (correct < needed) IsPassed = false;
-            // Bagian yang belum mencapai batas lulus ditandai merah
-            string color = correct >= needed ? "#FFFFFF" : "#FFB4A8";
-            parts.Add("<color=" + color + ">" + SentenceSection.GetShortName(section) + " " + correct + "/" + total + "</color>");
-            string line = SentenceSection.GetShortName(section) + " : " + correct + "/" + total;
-            lines.Add(correct >= needed ? line : "<color=#C0392B>" + line + "</color>");
+            string line = SentenceSection.GetShortName(section) + " : " + sectionCorrect[section] + "/" + sectionTotal[section];
+            parts.Add(line);
+            lines.Add(line);
         }
-        Stars = CountStars();
 
         Debug.Log("Level selesai: benar " + CorrectCount + "/" + TotalQuestions + " - " + (IsPassed ? "LULUS" : "TIDAK LULUS") + ", bintang " + Stars);
         if (notification != null) notification.Hide();
@@ -525,14 +577,14 @@ public class BoxSpawner : MonoBehaviour
     }
 
     // Tidak lulus = 0, lulus = 1, lalu 2 / 3 bintang sesuai persentase jawaban benar dari semua soal
+    // 0 = tidak lulus; 1 / 2 bintang sesuai batas jumlah benar; 3 bintang bila semua soal benar
     int CountStars()
     {
-        if (!IsPassed || TotalQuestions == 0) return 0;
-        float ratio = (float)CorrectCount / TotalQuestions;
-        // Toleransi kecil agar mis. 0.75 tidak gagal karena pembulatan float
-        if (ratio >= threeStarRatio - 0.0001f) return 3;
-        if (ratio >= twoStarRatio - 0.0001f) return 2;
-        return 1;
+        if (TotalQuestions == 0) return 0;
+        if (CorrectCount >= TotalQuestions) return 3;
+        if (CorrectCount >= Mathf.Min(twoStarMinCorrect, TotalQuestions)) return 2;
+        if (CorrectCount >= Mathf.Min(oneStarMinCorrect, TotalQuestions)) return 1;
+        return 0;
     }
 
     // Jawaban benar bila sama dengan kalimat utama atau salah satu susunan alternatif

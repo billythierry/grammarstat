@@ -105,6 +105,7 @@ public class TrainController : MonoBehaviour
     // Kereta berangkat meninggalkan layar ke kiri
     public IEnumerator Depart()
     {
+        AudioManager.Instance.PlayTrainMoveSound();
         yield return MoveTo(transform.position.x - arriveDistance, departDuration);
     }
 

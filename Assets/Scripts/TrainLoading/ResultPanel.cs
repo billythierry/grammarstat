@@ -21,8 +21,8 @@ public class ResultPanel : MonoBehaviour
     [SerializeField] private TMP_Text nextButtonLabel;
 
     [Header("Teks")]
-    [SerializeField] private string passTitle = "BOOYAH !";
-    [SerializeField] private string failTitle = "Aduh sayang sekali!";
+    [SerializeField] private string passTitle = "MENANG!";
+    [SerializeField] private string failTitle = "KALAH!";
     [Tooltip("Warna judul saat gagal. Saat lulus, judul memakai warna yang diatur di objek Title")]
     [SerializeField] private Color failTitleColor = new Color32(0xFF, 0x52, 0x52, 0xFF);
     [SerializeField] private string nextLabel = "Lanjut";
@@ -65,6 +65,7 @@ public class ResultPanel : MonoBehaviour
     // lines: nilai tiap bagian yang sudah diformat, starCount 0..3
     public void Show(bool isPassed, string lines, int starCount, bool nextLevelExists)
     {
+        StopCameraMusic();
         passed = isPassed;
         hasNextLevel = nextLevelExists;
         if (titleText != null)
@@ -174,5 +175,14 @@ public class ResultPanel : MonoBehaviour
         canvasGroup.interactable = false;
         if (levelIntro != null) yield return levelIntro.FadeOut();
         SceneManager.LoadScene(sceneName);
+    }
+
+
+    // Hentikan BGM gameplay (AudioSource di Main Camera) agar suara menang / kalah terdengar jelas
+    static void StopCameraMusic()
+    {
+        Camera cam = Camera.main;
+        if (cam == null) return;
+        foreach (AudioSource source in cam.GetComponents<AudioSource>()) source.Stop();
     }
 }

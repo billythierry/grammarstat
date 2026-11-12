@@ -20,6 +20,13 @@ public class BoxScript : MonoBehaviour
     private IBoxDropArea currentArea;   // area yang sedang ditempati box
     private IBoxDropArea dragStartArea; // area sebelum box di-drag
     private bool isDragging;
+    // Mouse sedang ditekan di box ini (belum tentu drag)
+    private bool isPressed;
+    private Vector3 pressScreenPosition;
+    private BoxSpawner spawner;
+
+    [Tooltip("Jarak gerak mouse (piksel) sebelum klik dianggap drag")]
+    [SerializeField] private float dragThresholdPixels = 10f;
 
     // Kata/frasa yang tertulis di box ini
     public string Word { get; private set; }
@@ -85,31 +92,39 @@ public class BoxScript : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (PauseMenu.IsPaused) return;
-        isDragging = true;
-        Debug.Log("Box clicked");
+        if (PauseMenu.IsPaused || IsLocked) return;
+        // Belum dilepas dari area: tunggu apakah ini klik atau drag
+        isPressed = true;
+        isDragging = false;
+        pressScreenPosition = Input.mousePosition;
         startDragPosition = transform.position;
-
-        dragStartArea = currentArea;
-        if (currentArea != null)
-        {
-            currentArea.RemoveBox(this);
-            currentArea = null;
-        }
-
-        transform.position = GetMousePositionInWorldSpace();
     }
 
     void OnMouseDrag()
     {
-        if (!isDragging || PauseMenu.IsPaused) return;
+        if (!isPressed || PauseMenu.IsPaused) return;
+        if (!isDragging)
+        {
+            // Gerakan kecil masih dianggap klik
+            if ((Input.mousePosition - pressScreenPosition).sqrMagnitude < dragThresholdPixels * dragThresholdPixels) return;
+            BeginDrag();
+        }
         transform.position = GetMousePositionInWorldSpace();
     }
 
     void OnMouseUp()
     {
         // Abaikan jika klik dimulai saat pause
-        if (!isDragging) return;
+        if (!isPressed) return;
+        isPressed = false;
+
+        if (!isDragging)
+        {
+            // Klik tanpa drag: box ditempatkan otomatis oleh spawner
+            if (!PauseMenu.IsPaused && spawner != null) spawner.OnBoxClicked(this);
+            return;
+        }
+
         isDragging = false;
         col.enabled = false;
         Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
@@ -183,5 +198,25 @@ public class BoxScript : MonoBehaviour
         Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         p.z = transform.position.z;
         return p;
+    }
+
+
+    // Spawner yang menangani penempatan otomatis saat box diklik
+    public void SetSpawner(BoxSpawner boxSpawner)
+    {
+        spawner = boxSpawner;
+    }
+
+
+    // Mulai drag: lepaskan box dari area yang ditempati
+    void BeginDrag()
+    {
+        isDragging = true;
+        dragStartArea = currentArea;
+        if (currentArea != null)
+        {
+            currentArea.RemoveBox(this);
+            currentArea = null;
+        }
     }
 }

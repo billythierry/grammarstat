@@ -69,6 +69,8 @@ public class TicketInspectionManager : MonoBehaviour
     [SerializeField] private LevelIntro levelIntro;
     [Tooltip("Panel panduan yang tampil di awal level. Permainan baru dimulai setelah panduan ditutup. Kosongkan untuk langsung bermain")]
     [SerializeField] private GuidePanel guidePanel;
+    [Tooltip("Level yang menampilkan panduan. 0 = semua level")]
+    [SerializeField] private int guideLevel = 1;
 
     // Tiket milik penumpang yang sedang di loket
     public TicketData CurrentTicket { get; private set; }
@@ -119,9 +121,9 @@ public class TicketInspectionManager : MonoBehaviour
     // Layar hitam memudar dulu, lalu panduan muncul. Tanpa panduan, level langsung dimulai
     IEnumerator IntroRoutine()
     {
-        if (levelIntro != null) yield return levelIntro.Play("", "");
+        if (levelIntro != null) yield return levelIntro.Play(IntroTitle(), "Level " + LevelSelection.Level);
 
-        if (guidePanel != null)
+        if (guidePanel != null && (guideLevel == 0 || guideLevel == LevelSelection.Level))
         {
             guidePanel.Closed += BeginLevel;
             guidePanel.Show();
@@ -131,6 +133,15 @@ public class TicketInspectionManager : MonoBehaviour
             BeginLevel();
         }
     }
+
+    // Judul intro dari tense di bank soal level ini, mis. "Simple Present & Present Continuous Tense"
+    string IntroTitle()
+    {
+        if (tenses == null || tenses.Count == 0) return "";
+        // Tiap tense di baris sendiri, dipisah "&" di baris tengah
+        return string.Join("\n&\n", tenses.ToArray()) + " Tense";
+    }
+
 
     void OnDestroy()
     {
@@ -221,6 +232,7 @@ public class TicketInspectionManager : MonoBehaviour
     void GiveTicket()
     {
         ticket.Appear(ticketSlot.position, ticketDeskPosition);
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayPaperSlideSound();
     }
 
     void OnTicketClicked()
@@ -228,6 +240,7 @@ public class TicketInspectionManager : MonoBehaviour
         if (detailUI.IsOpen || CurrentTicket == null) return;
         ticket.IsClickable = false;
         detailUI.Show(CurrentTicket);
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayPaperCollectSound();
     }
 
     void OnAnswerSelected(string answer)
@@ -238,6 +251,12 @@ public class TicketInspectionManager : MonoBehaviour
             : answer == TicketDetailUI.AnswerB ? TicketAnswer.B
             : TicketAnswer.NoError;
         bool correct = chosen == CurrentTicket.correctAnswer;
+        // Sound effect jawaban benar / salah
+        if (AudioManager.Instance != null)
+        {
+            if (correct) AudioManager.Instance.PlayCorrectSound();
+            else AudioManager.Instance.PlayWrongSound();
+        }
         if (correct)
         {
             CorrectCount++;
@@ -290,6 +309,12 @@ public class TicketInspectionManager : MonoBehaviour
 
         Stars = CountStars();
         bool passed = Stars > 0;
+        // Sound effect menang / kalah
+        if (AudioManager.Instance != null)
+        {
+            if (passed) AudioManager.Instance.PlayVictorySound();
+            else AudioManager.Instance.PlayDefeatSound();
+        }
         Debug.Log("Level selesai: benar " + CorrectCount + "/" + TotalPassengers + ", bintang " + Stars);
 
         if (resultPanel != null)

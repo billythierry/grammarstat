@@ -40,6 +40,8 @@ public class RunawayTrain : MonoBehaviour
     private Renderer[] renderers;
     private float baseY;
     private float boostElapsed = -1f;
+    // Mesin mogok: getaran berhenti
+    private bool stalled;
 
     void Awake()
     {
@@ -105,6 +107,24 @@ public class RunawayTrain : MonoBehaviour
         yield return MoveTo(escapeX, escapeDuration, false);
     }
 
+    // Mesin mogok: getaran berhenti dan kereta makin lama makin tertinggal sampai menyentuh garis bandit
+    public IEnumerator Stall(float duration)
+    {
+        StopDrift();
+        stalled = true;
+        float startX = transform.position.x;
+        float targetX = banditLine != null ? startX + (banditLine.position.x - RightEdge()) : startX + 3f;
+        targetX = Mathf.Max(targetX, startX);
+        for (float t = 0f; t < duration; t += Time.deltaTime)
+        {
+            float k = t / duration;
+            SetX(Mathf.Lerp(startX, targetX, k * k));
+            yield return null;
+        }
+        SetX(targetX);
+    }
+
+
     IEnumerator MoveTo(float targetX, float duration, bool easeOut)
     {
         float startX = transform.position.x;
@@ -127,7 +147,7 @@ public class RunawayTrain : MonoBehaviour
     void Rumble()
     {
         Vector3 p = transform.position;
-        p.y = baseY + Mathf.Abs(Mathf.Sin(Time.time * rumbleSpeed)) * rumbleHeight;
+        p.y = stalled ? baseY : baseY + Mathf.Abs(Mathf.Sin(Time.time * rumbleSpeed)) * rumbleHeight;
         transform.position = p;
     }
 
