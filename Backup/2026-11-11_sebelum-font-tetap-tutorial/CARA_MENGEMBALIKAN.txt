@@ -1,0 +1,2 @@
+Backup sebelum penjelasan tutorial memakai ukuran font tetap + penanda "-".
+Cara mengembalikan: tutup Unity, salin TutorialPanel.cs ke Assets/Scripts/TrainLoading/ dan TrainLoading.unity ke Assets/Scenes/ (timpa).

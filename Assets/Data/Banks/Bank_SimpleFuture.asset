@@ -107,19 +107,25 @@ MonoBehaviour:
   tutorials:
   - section: 0
     formula: Subject|will|Verb 1|Object / Keterangan
-    explanation: 'Will dipakai untuk semua subject.   Setelah will, verb selalu bentuk
-      dasar: will go (bukan will goes).'
+    explanation: 'Semua subject memakai <b>will</b> + Verb 1.
+
+      Verb setelah
+      will selalu bentuk dasar (will call, will go).'
     exampleSentence: She-will-call-you
     exampleRoles: Subject|will|Verb 1|Object
   - section: 1
     formula: Subject|will|not|Verb 1|Object / Keterangan
-    explanation: Tambahkan not setelah will (will not = won't).   Verb tetap bentuk
-      dasar.
+    explanation: 'Tambahkan <b>not</b> setelah will (will not = won''t).
+
+      Verb
+      tetap bentuk dasar (will not forget).'
     exampleSentence: I-will-not-forget
     exampleRoles: Subject|will|not|Verb 1
   - section: 2
     formula: Will|Subject|Verb 1|Object / Keterangan + ?
-    explanation: Will dipindah ke depan subject.   Verb tetap bentuk dasar dan kalimat
-      diakhiri tanda tanya (?).
+    explanation: 'Kalimat tanya diawali <b>Will</b>, lalu subject dan Verb 1.
+
+      Kalimat
+      diakhiri tanda tanya (?).'
     exampleSentence: Will-he-come-tomorrow?
     exampleRoles: Will|Subject|Verb 1|Keterangan + ?

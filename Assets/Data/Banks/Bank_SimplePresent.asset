@@ -107,19 +107,27 @@ MonoBehaviour:
   tutorials:
   - section: 0
     formula: Subject|Verb 1 (+s/es)|Object / Keterangan
-    explanation: I / You / We / They + Verb 1 (read).   He / She / It + Verb 1 +
-      s/es (reads, watches, goes).
+    explanation: 'Subject <b>I / You / We / They</b> memakai Verb 1 biasa (read).
+
+      Subject
+      <b>He / She / It</b> memakai Verb 1 + <b>s/es</b> (reads, watches, goes).'
     exampleSentence: She-reads-books
     exampleRoles: Subject|Verb 1 + s|Object
   - section: 1
     formula: Subject|do / does|not|Verb 1|Object / Keterangan
-    explanation: 'I / You / We / They + do not.   He / She / It + does not.   Setelah
-      do/does, verb kembali ke bentuk dasar: does not eat (bukan eats).'
+    explanation: 'Tambahkan <b>do not</b> untuk I / You / We / They, dan <b>does
+      not</b> untuk He / She / It.
+
+      Setelah do/does not, Verb 1 <b>tanpa s/es</b>
+      (does not eat, bukan eats).'
     exampleSentence: He-does-not-eat-meat
     exampleRoles: Subject|does|not|Verb 1|Object
   - section: 2
     formula: Do / Does|Subject|Verb 1|Object / Keterangan + ?
-    explanation: Do untuk I / You / We / They,  Does untuk He / She / It.   Verb
-      tetap bentuk dasar dan kalimat diakhiri tanda tanya (?).
+    explanation: 'Kalimat tanya diawali <b>Do</b> atau <b>Does</b>: Do untuk I /
+      You / We / They, Does untuk He / She / It.
+
+      Verb 1 tanpa s/es dan kalimat
+      diakhiri tanda tanya (?).'
     exampleSentence: Does-he-play-tennis?
     exampleRoles: Does|Subject|Verb 1|Object + ?

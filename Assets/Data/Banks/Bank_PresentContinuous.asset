@@ -107,19 +107,26 @@ MonoBehaviour:
   tutorials:
   - section: 0
     formula: Subject|am / is / are|Verb + ing|Object / Keterangan
-    explanation: "I + am.   He / She / It + is.   You / We / They + are.   Verb diberi
-      akhiran -ing (play \u2192 playing)."
+    explanation: 'Subject diikuti <b>am / is / are</b>: I + am, He / She / It + is,
+      You / We / They + are.
+
+      Kata kerja diberi akhiran <b>-ing</b> (playing,
+      cooking).'
     exampleSentence: He-is-playing-games
     exampleRoles: Subject|is|Verb + ing|Object
   - section: 1
     formula: Subject|am / is / are|not|Verb + ing|Object / Keterangan
-    explanation: 'Tambahkan not setelah am / is / are.   Verb tetap memakai -ing:
-      are not swimming.'
+    explanation: 'Tambahkan <b>not</b> setelah am / is / are.
+
+      Kata kerja tetap
+      memakai -ing (is not playing, are not swimming).'
     exampleSentence: They-are-not-swimming
     exampleRoles: Subject|are|not|Verb + ing
   - section: 2
     formula: Am / Is / Are|Subject|Verb + ing|Object / Keterangan + ?
-    explanation: Am / Is / Are dipindah ke depan subject.   Verb tetap memakai -ing
-      dan kalimat diakhiri tanda tanya (?).
+    explanation: 'Kalimat tanya diawali <b>Am / Is / Are</b>, lalu subject dan kata
+      kerja -ing.
+
+      Kalimat diakhiri tanda tanya (?).'
     exampleSentence: Is-she-cooking-rice?
     exampleRoles: Is|Subject|Verb + ing|Object + ?

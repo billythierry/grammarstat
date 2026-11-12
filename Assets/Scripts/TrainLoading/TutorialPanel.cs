@@ -19,6 +19,16 @@ public class TutorialPanel : MonoBehaviour
     [SerializeField] private TMP_Text hintText;
     [SerializeField] private Color hintColor = new Color32(0xFF, 0xE2, 0x7A, 0xFF);
     [SerializeField] private Color warningColor = new Color32(0xFF, 0x8A, 0x65, 0xFF);
+    [Tooltip("Tampilkan rumus kalimat (chip). Nonaktif karena rumus sudah terlihat di label kolom gerbong")]
+    [SerializeField] private bool showFormula = false;
+    [Tooltip("Tiap baris penjelasan diberi penanda - di awal. Baris yang terlalu panjang turun ke bawah, rata dengan teksnya")]
+    [SerializeField] private bool bulletLines = true;
+    [Tooltip("Jarak dari atas panel ke penjelasan (pixel)")]
+    [SerializeField] private float explanationTop = 76f;
+    [Tooltip("Jarak antara penjelasan dan baris peringatan (pixel)")]
+    [SerializeField] private float hintSpacing = 4f;
+    [Tooltip("Ruang kosong di bawah isi panel (pixel)")]
+    [SerializeField] private float bottomPadding = 18f;
     [Tooltip("Ruang kiri-kanan teks di dalam chip (pixel)")]
     [SerializeField] private float chipPadding = 24f;
     [SerializeField] private float fadeDuration = 0.25f;
@@ -47,8 +57,9 @@ public class TutorialPanel : MonoBehaviour
             titleText.text = "Kalimat <color=#" + hex + ">" + SentenceSection.GetLabel(step.section) + "</color>";
             titleText.color = Color.white;
         }
-        if (explanationText != null) explanationText.text = step.explanation;
-        BuildFormula(step.GetFormulaParts(), sectionColor);
+        if (explanationText != null) explanationText.text = FormatExplanation(step.explanation);
+        if (formulaRow != null) formulaRow.gameObject.SetActive(showFormula);
+        if (showFormula) BuildFormula(step.GetFormulaParts(), sectionColor);
         SetHint("", false);
         Fade(1f);
     }
@@ -63,6 +74,43 @@ public class TutorialPanel : MonoBehaviour
         if (hintText == null) return;
         hintText.text = message;
         hintText.color = warning ? warningColor : hintColor;
+        Relayout();
+    }
+
+    string FormatExplanation(string text)
+    {
+        if (!bulletLines || string.IsNullOrEmpty(text)) return text;
+        var lines = new List<string>();
+        foreach (string line in text.Split('\n'))
+        {
+            string trimmed = line.Trim();
+            // indent membuat lanjutan baris yang turun ke bawah sejajar dengan teks, bukan dengan tanda -
+            if (trimmed.Length > 0) lines.Add("-<indent=0.9em>" + trimmed + "</indent>");
+        }
+        return string.Join("\n", lines.ToArray());
+    }
+
+    // Tinggi penjelasan mengikuti jumlah baris (ukuran font tetap), panel ikut memanjang ke bawah.
+    // Baris peringatan hanya diberi tempat saat ada isinya
+    void Relayout()
+    {
+        if (explanationText == null) return;
+        RectTransform explanationRect = explanationText.rectTransform;
+        float height = explanationText.GetPreferredValues(explanationText.text, explanationRect.rect.width, 0f).y;
+        explanationRect.anchoredPosition = new Vector2(explanationRect.anchoredPosition.x, -explanationTop);
+        explanationRect.sizeDelta = new Vector2(explanationRect.sizeDelta.x, height);
+        float bottom = explanationTop + height;
+
+        if (hintText != null)
+        {
+            bool hasHint = !string.IsNullOrEmpty(hintText.text);
+            RectTransform hintRect = hintText.rectTransform;
+            hintRect.anchoredPosition = new Vector2(hintRect.anchoredPosition.x, -(bottom + hintSpacing));
+            if (hasHint) bottom += hintSpacing + hintRect.sizeDelta.y;
+        }
+
+        RectTransform panel = (RectTransform)transform;
+        panel.sizeDelta = new Vector2(panel.sizeDelta.x, bottom + bottomPadding);
     }
 
     // Rumus ditampilkan sebagai chip berwarna: [Subject] + [Verb 1] + [Object]

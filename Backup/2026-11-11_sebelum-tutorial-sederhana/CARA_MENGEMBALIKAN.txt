@@ -1,0 +1,5 @@
+Backup sebelum tutorial Train Loading disederhanakan (rumus & langkah dihilangkan, penjelasan diganti).
+Cara mengembalikan (tutup Unity dulu, lalu salin dan timpa):
+- BoxSpawner.cs, TutorialPanel.cs -> Assets/Scripts/TrainLoading/
+- TrainLoading.unity -> Assets/Scenes/
+- Bank_*.asset -> Assets/Data/Banks/

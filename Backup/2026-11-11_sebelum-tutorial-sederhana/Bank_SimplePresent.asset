@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 118a50f464101c34db8b20cd8da12264, type: 3}
+  m_Name: Bank_SimplePresent
+  m_EditorClassIdentifier: 
+  tenseName: Simple Present
+  questions:
+  - id: SP-P01
+    section: 0
+    sentence: I-like-apples
+    alternativeSentences: 
+    translation: Saya suka apel.
+  - id: SP-P02
+    section: 0
+    sentence: She-drinks-milk-daily
+    alternativeSentences: 
+    translation: Dia (perempuan) minum susu setiap hari.
+  - id: SP-P03
+    section: 0
+    sentence: He-goes-to-school
+    alternativeSentences: 
+    translation: Dia (laki-laki) pergi ke sekolah.
+  - id: SP-P04
+    section: 0
+    sentence: My-brother-watches-TV
+    alternativeSentences: 
+    translation: Saudara laki-laki saya menonton TV.
+  - id: SP-P05
+    section: 0
+    sentence: She-always-cooks-for-us
+    alternativeSentences: 
+    translation: Dia (perempuan) selalu memasak untuk kami.
+  - id: SP-N01
+    section: 1
+    sentence: I-do-not-like-coffee
+    alternativeSentences: 
+    translation: Saya tidak suka kopi.
+  - id: SP-N02
+    section: 1
+    sentence: They-do-not-play-football
+    alternativeSentences: 
+    translation: Mereka tidak bermain sepak bola.
+  - id: SP-N03
+    section: 1
+    sentence: She-does-not-drink-tea
+    alternativeSentences: 
+    translation: Dia (perempuan) tidak minum teh.
+  - id: SP-N04
+    section: 1
+    sentence: Tom-does-not-watch-TV
+    alternativeSentences: 
+    translation: Tom tidak menonton TV.
+  - id: SP-N05
+    section: 1
+    sentence: My-father-does-not-smoke
+    alternativeSentences: 
+    translation: Ayah saya tidak merokok.
+  - id: SP-Q01
+    section: 2
+    sentence: Do-you-like-pizza?
+    alternativeSentences: 
+    translation: Apakah kamu suka pizza?
+  - id: SP-Q02
+    section: 2
+    sentence: Does-she-speak-English?
+    alternativeSentences: 
+    translation: Apakah dia (perempuan) berbicara bahasa Inggris?
+  - id: SP-Q03
+    section: 2
+    sentence: Do-they-live-here?
+    alternativeSentences: 
+    translation: Apakah mereka tinggal di sini?
+  - id: SP-Q04
+    section: 2
+    sentence: Does-your-sister-cook?
+    alternativeSentences: 
+    translation: Apakah saudara perempuanmu memasak?
+  - id: SP-Q05
+    section: 2
+    sentence: Does-the-train-leave-early?
+    alternativeSentences: 
+    translation: Apakah kereta berangkat pagi-pagi?
+  - id: SP-R01
+    section: 3
+    sentence: The-sun-rises-early
+    alternativeSentences: 
+    translation: Matahari terbit pagi-pagi.
+  - id: SP-R02
+    section: 3
+    sentence: We-do-not-eat-pork
+    alternativeSentences: 
+    translation: Kami tidak makan daging babi.
+  - id: SP-R03
+    section: 3
+    sentence: Does-your-father-read-books?
+    alternativeSentences: 
+    translation: Apakah ayahmu membaca buku?
+  tutorials:
+  - section: 0
+    formula: Subject|Verb 1 (+s/es)|Object / Keterangan
+    explanation: I / You / We / They + Verb 1 (read).   He / She / It + Verb 1 +
+      s/es (reads, watches, goes).
+    exampleSentence: She-reads-books
+    exampleRoles: Subject|Verb 1 + s|Object
+  - section: 1
+    formula: Subject|do / does|not|Verb 1|Object / Keterangan
+    explanation: 'I / You / We / They + do not.   He / She / It + does not.   Setelah
+      do/does, verb kembali ke bentuk dasar: does not eat (bukan eats).'
+    exampleSentence: He-does-not-eat-meat
+    exampleRoles: Subject|does|not|Verb 1|Object
+  - section: 2
+    formula: Do / Does|Subject|Verb 1|Object / Keterangan + ?
+    explanation: Do untuk I / You / We / They,  Does untuk He / She / It.   Verb
+      tetap bentuk dasar dan kalimat diakhiri tanda tanya (?).
+    exampleSentence: Does-he-play-tennis?
+    exampleRoles: Does|Subject|Verb 1|Object + ?

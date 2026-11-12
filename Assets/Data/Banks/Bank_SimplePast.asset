@@ -107,19 +107,23 @@ MonoBehaviour:
   tutorials:
   - section: 0
     formula: Subject|Verb 2|Object / Keterangan
-    explanation: "Semua subject memakai Verb 2 (bentuk lampau).   Regular: + ed (play
-      \u2192 played).   Irregular berubah bentuk (go \u2192 went, eat \u2192 ate)."
+    explanation: "Semua subject memakai <b>Verb 2</b> (bentuk lampau).\nRegular +
+      ed (play \u2192 played), irregular berubah bentuk (see \u2192 saw)."
     exampleSentence: I-played-football-yesterday
     exampleRoles: Subject|Verb 2|Object|Keterangan
   - section: 1
     formula: Subject|did|not|Verb 1|Object / Keterangan
-    explanation: 'Semua subject memakai did not.   Setelah did, verb kembali ke bentuk
-      dasar: did not go (bukan went).'
+    explanation: 'Tambahkan <b>did not</b> setelah subject, untuk semua subject.
+
+      Setelah
+      did not, verb kembali ke <b>Verb 1</b> (did not come, bukan came).'
     exampleSentence: He-did-not-come
     exampleRoles: Subject|did|not|Verb 1
   - section: 2
     formula: Did|Subject|Verb 1|Object / Keterangan + ?
-    explanation: Did dipakai untuk semua subject dan diletakkan di depan.   Verb
-      kembali ke bentuk dasar dan kalimat diakhiri tanda tanya (?).
+    explanation: 'Kalimat tanya diawali <b>Did</b>, untuk semua subject.
+
+      Verb
+      kembali ke Verb 1 dan kalimat diakhiri tanda tanya (?).'
     exampleSentence: Did-you-see-it?
     exampleRoles: Did|Subject|Verb 1|Object + ?

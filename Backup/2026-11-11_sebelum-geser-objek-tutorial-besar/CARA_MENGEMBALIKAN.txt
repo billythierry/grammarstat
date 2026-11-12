@@ -1,0 +1,2 @@
+Backup scene TrainLoading sebelum objek (rel, kereta, peron) digeser ke bawah dan panel tutorial diperbesar.
+Cara mengembalikan: tutup scene/Unity, salin TrainLoading.unity ke Assets/Scenes/ (timpa).

@@ -223,7 +223,7 @@ public class BoxSpawner : MonoBehaviour
 
         if (step.IsTutorial) BeginTutorial(step.tutorial);
         else if (IsFirstOfSection() && questionBank.GetTutorial(question.section) == null && notification != null)
-            notification.ShowInfo("<b>" + SentenceSection.GetLabel(question.section) + "</b>\n<size=70%><color=#FFFFFF>Campuran semua bentuk kalimat</color></size>");
+            notification.ShowInfo("<b>" + SentenceSection.GetLabel(question.section) + "</b>\n<size=85%><color=#FFFFFF>Campuran semua bentuk kalimat</color></size>");
 
         Debug.Log((step.IsTutorial ? "Tutorial " : "Soal ") + question.id + " : " + string.Join(" ", CorrectWords));
     }
@@ -365,8 +365,8 @@ public class BoxSpawner : MonoBehaviour
         }
         foreach (BoxScript box in SpawnedBoxes) box.SetHighlight(box == target);
 
-        if (tutorialPanel != null && next >= 0)
-            tutorialPanel.SetHint("Langkah " + (next + 1) + ": pindahkan box \"" + CorrectWords[next] + "\"" + RoleSuffix(next) + " ke kolom yang menyala", false);
+        // Langkah tidak ditulis, sudah ditunjukkan oleh kolom dan box yang menyala. Peringatan sebelumnya dihapus
+        if (tutorialPanel != null) tutorialPanel.SetHint("", false);
     }
 
     // " (Subject)" untuk ditulis setelah kata box; kosong bila peran sama dengan katanya (mis. not)
@@ -393,7 +393,7 @@ public class BoxSpawner : MonoBehaviour
         if (tutorialPanel != null) tutorialPanel.SetHint("Kalimat contoh lengkap!", false);
         yield return new WaitForSeconds(tutorialCompleteDelay);
         if (tutorialPanel != null) tutorialPanel.Hide();
-        if (notification != null) notification.ShowCorrect("<b>Bagus!</b>\n<size=70%><color=#FFFFFF>Sekarang coba sendiri</color></size>", true);
+        if (notification != null) notification.ShowCorrect("<b>Bagus!</b>\n<size=85%><color=#FFFFFF>Sekarang coba sendiri</color></size>", true);
         yield return AdvanceRoutine();
     }
 
@@ -444,7 +444,7 @@ public class BoxSpawner : MonoBehaviour
         {
             // Saat pindah gerbong, notifikasi tetap tampil selama kereta bergerak lalu disembunyikan di AdvanceRoutine
             if (correct) notification.ShowCorrect("<b>Jawaban Benar!</b>", advance);
-            else notification.ShowWrong("<b>Jawaban Salah!</b>\n<size=70%><color=#FFFFFF>Jawaban benar: " + string.Join(" ", CorrectWords) + "</color></size>", advance);
+            else notification.ShowWrong("<b>Jawaban Salah!</b>\n<size=85%><color=#FFFFFF>Jawaban benar: " + string.Join(" ", CorrectWords) + "</color></size>", advance);
         }
 
         if (advance) StartCoroutine(AdvanceRoutine());

@@ -1,0 +1,2 @@
+Backup sebelum ukuran notifikasi benar/salah disamakan dengan tutorial.
+Cara mengembalikan: tutup Unity, salin BoxSpawner.cs ke Assets/Scripts/TrainLoading/ dan TrainLoading.unity ke Assets/Scenes/ (timpa).
