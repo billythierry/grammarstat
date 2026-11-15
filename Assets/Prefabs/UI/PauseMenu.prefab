@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 6124973297908599960}
   - component: {fileID: 3002147704779301171}
   - component: {fileID: 1878857795263727470}
+  - component: {fileID: 6362711144293155628}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -347,6 +348,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2ca36900ada8d45ae5387f8d2fa94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6362711144293155628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609565557027617490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a955b64894458cb46ab09842c241e766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSlider: {fileID: 812867330107901507}
+  sfxSlider: {fileID: 4591620116442743087}
+  musicObjectName: BackgroundMusic
 --- !u!1 &736896330174643856
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1036" height="446" viewBox="-11 -11 1036 446">
+<defs><clipPath id="inner"><rect x="10" y="10" width="980" height="380" rx="14"/></clipPath></defs>
+<rect x="12" y="16" width="1000" height="400" rx="20" fill="#000" opacity="0.35"/>
+<rect x="0" y="0" width="1000" height="400" rx="20" fill="#5A3818"/>
+<g clip-path="url(#inner)"><rect x="10" y="10" width="980" height="92" fill="#C99A5E"/><line x1="10" y1="10" x2="990" y2="10" stroke="#7A4E25" stroke-width="3"/><rect x="10" y="102" width="980" height="92" fill="#BF8F54"/><line x1="10" y1="102" x2="990" y2="102" stroke="#7A4E25" stroke-width="3"/><rect x="10" y="194" width="980" height="92" fill="#C99A5E"/><line x1="10" y1="194" x2="990" y2="194" stroke="#7A4E25" stroke-width="3"/><rect x="10" y="286" width="980" height="92" fill="#BF8F54"/><line x1="10" y1="286" x2="990" y2="286" stroke="#7A4E25" stroke-width="3"/>
+ <g stroke="#8C5E2E" stroke-width="2" fill="none" opacity="0.5"><path d="M30 50 C 200 42 400 58 600 48"/><path d="M300 240 C 500 232 700 248 970 238"/><path d="M30 330 C 250 322 450 338 700 328"/></g>
+</g>
+<rect x="0" y="0" width="1000" height="400" rx="20" fill="none" stroke="#5A3818" stroke-width="22"/>
+<g fill="#2B1A0E"><circle cx="22" cy="22" r="7"/><circle cx="978" cy="22" r="7"/><circle cx="22" cy="378" r="7"/><circle cx="978" cy="378" r="7"/></g>
+</svg>

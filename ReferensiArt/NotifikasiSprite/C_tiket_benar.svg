@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs><g id="scene">
+      <rect width="1920" height="1080" fill="#E2C48A"/>
+      <rect y="230" width="1920" height="540" fill="#8E8273"/>
+      <g fill="#6B4A2E">
+        <rect x="190" y="330" width="28" height="350"/><rect x="1682" y="330" width="28" height="350"/>
+      </g>
+      <rect x="0" y="270" width="120" height="470" fill="#41B848"/>
+      <rect x="240" y="270" width="1440" height="470" fill="#41B848"/>
+      <rect x="276" y="306" width="1368" height="398" fill="#077F18"/>
+      <rect x="1765" y="270" width="200" height="470" fill="#41B848"/>
+      <g fill="#3B8A3E"><rect x="540" y="428" width="254" height="138"/><rect x="833" y="428" width="254" height="138"/><rect x="1126" y="428" width="254" height="138"/></g>
+      <rect y="770" width="1920" height="310" fill="#8D9095"/>
+      <rect y="795" width="1920" height="10" fill="#E3B531"/>
+      <g fill="#C9A26A"><rect x="540" y="856" width="254" height="138"/><rect x="833" y="856" width="254" height="138"/><rect x="1126" y="856" width="254" height="138"/></g>
+      <rect x="16" y="21" width="240" height="80" rx="18" fill="#3FA64A"/>
+      <rect x="1664" y="21" width="240" height="80" rx="18" fill="#7A3E1C"/>
+      <rect x="1664" y="976" width="240" height="80" rx="18" fill="#4CBF5A"/>
+      <!-- layar diredupkan saat notifikasi tampil -->
+      <rect width="1920" height="1080" fill="#000" opacity="0.45"/>
+    </g>
+
+    <!-- papan gantung -->
+    <g id="sign">
+      <!-- tali -->
+      <g stroke="#C9A46A" stroke-width="10" stroke-linecap="round">
+        <line x1="-250" y1="-330" x2="-200" y2="-205"/>
+        <line x1="250" y1="-330" x2="200" y2="-205"/>
+      </g>
+      <!-- bayangan + papan -->
+      <rect x="-440" y="-200" width="880" height="420" rx="34" fill="#000" opacity="0.3" transform="translate(10 16)"/>
+      <rect x="-440" y="-200" width="880" height="420" rx="34" fill="#3E2412"/>
+      <rect x="-431" y="-191" width="862" height="402" rx="27" fill="url(#wood)"/>
+      <g stroke="#5E3A1B" stroke-width="3" fill="none" opacity="0.45" stroke-linecap="round">
+        <path d="M-400 -120 C -200 -128, 0 -110, 200 -122 S 360 -116, 405 -118"/>
+        <path d="M-405 170 C -200 162, 40 178, 220 166 S 360 172, 405 168"/>
+        <ellipse cx="350" cy="-140" rx="22" ry="7"/>
+        <ellipse cx="-330" cy="130" rx="18" ry="6"/>
+      </g>
+      <rect x="-418" y="-185" width="836" height="6" rx="3" fill="#C48B52" opacity="0.6"/>
+      <!-- paku tempat tali -->
+      <g fill="#2B1A0E"><circle cx="-200" cy="-172" r="10"/><circle cx="200" cy="-172" r="10"/></g>
+      <g fill="#B9A58C"><circle cx="-203" cy="-175" r="3.5"/><circle cx="197" cy="-175" r="3.5"/></g>
+    </g>
+  </defs>
+<defs>
+ <linearGradient id="band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5CC46A"/><stop offset="1" stop-color="#2F8A3C"/></linearGradient>
+ <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF7E6"/><stop offset="1" stop-color="#F2E0BC"/></linearGradient>
+ <clipPath id="tk"><path d="M-500 -200 H500 V-40 A40 40 0 0 0 500 40 V200 H-500 V40 A40 40 0 0 0 -500 -40 Z"/></clipPath>
+</defs>
+<use href="#scene"/>
+<g transform="translate(960 540)">
+ <path d="M-500 -200 H500 V-40 A40 40 0 0 0 500 40 V200 H-500 V40 A40 40 0 0 0 -500 -40 Z" fill="#000" opacity="0.35" transform="translate(12 16)"/>
+ <path d="M-500 -200 H500 V-40 A40 40 0 0 0 500 40 V200 H-500 V40 A40 40 0 0 0 -500 -40 Z" fill="url(#cream)"/>
+ <g clip-path="url(#tk)">
+  <rect x="-500" y="-200" width="290" height="400" fill="url(#band)"/>
+  <g fill="#000" opacity="0.06"><rect x="-500" y="-200" width="1000" height="10"/><rect x="-500" y="190" width="1000" height="10"/></g>
+ </g>
+ <path d="M-500 -200 H500 V-40 A40 40 0 0 0 500 40 V200 H-500 V40 A40 40 0 0 0 -500 -40 Z" fill="none" stroke="#5A3A1E" stroke-width="6"/>
+ <line x1="-210" y1="-185" x2="-210" y2="185" stroke="#5A3A1E" stroke-width="4" stroke-dasharray="14 10"/>
+ <circle cx="-355" cy="-20" r="80" fill="#fff" opacity="0.18"/>
+ <g transform="translate(-355 -20)"><path d="M-38 2 L-10 30 L40 -28" stroke="#fff" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+ <text x="-355" y="130" text-anchor="middle" font-family="Rockwell, Georgia, serif" font-weight="800" font-size="30" letter-spacing="6" fill="#fff" opacity="0.9">TIKET</text>
+ <text x="145" y="-95" text-anchor="middle" font-family="Fredoka, 'Segoe UI', Arial, sans-serif" font-weight="700" font-size="70" fill="#2F8A3C">Jawaban Benar!</text>
+ <line x1="-150" y1="-55" x2="440" y2="-55" stroke="#B9935E" stroke-width="3"/>
+ <text x="145" y="10" text-anchor="middle" font-family="Nunito, 'Segoe UI', Arial, sans-serif" font-weight="700" font-size="38" fill="#8A5A2B">Kalimatmu:</text>
+ <text x="145" y="92" text-anchor="middle" font-family="Nunito, 'Segoe UI', Arial, sans-serif" font-weight="900" font-size="64" fill="#3B2412">I like apples</text>
+ <text x="440" y="170" text-anchor="end" font-family="Consolas, monospace" font-size="22" fill="#9C7B52">GRAMMAR STATION · No. 0042</text>
+</g>
+</svg>

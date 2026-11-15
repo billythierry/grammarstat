@@ -1,0 +1,4 @@
+Backup sebelum notifikasi benar/salah diganti menjadi popup peti muatan di tengah layar.
+Cara mengembalikan (tutup Unity dulu):
+1. Salin BoxSpawner.cs ke Assets/Scripts/TrainLoading/ dan TrainLoading.unity ke Assets/Scenes/ (timpa).
+2. Hapus Assets/Scripts/TrainLoading/AnswerPopup.cs dan folder Assets/Art/TrainLoading/Notification (beserta .meta).

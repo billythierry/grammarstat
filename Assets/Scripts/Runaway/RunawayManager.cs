@@ -15,8 +15,10 @@ public class RunawayManager : MonoBehaviour
     [SerializeField] private RunawayTrain train;
     [SerializeField] private BanditGroup bandits;
     [SerializeField] private RunawayQuizUI quizUI;
-    [Tooltip("Panel UI untuk notifikasi benar/salah, Game Over, dan menang")]
+    [Tooltip("Panel UI untuk notifikasi menang, Game Over, dan mogok. Dipakai untuk benar/salah bila Answer Popup kosong")]
     [SerializeField] private NotificationUI notification;
+    [Tooltip("Notifikasi jawaban benar/salah di tengah layar (cap, judul, tense yang benar), sama dengan chapter lain")]
+    [SerializeField] private AnswerPopup answerPopup;
     [Tooltip("Semua layer background yang bergerak")]
     [SerializeField] private ScrollingBackground[] backgrounds;
     [Tooltip("Panel hasil di akhir permainan (nilai per tense, bintang, tombol Menu dan Lanjut / Ulangi)")]
@@ -161,6 +163,7 @@ public class RunawayManager : MonoBehaviour
             QuestionNumber++;
             answered = false;
             chosenAnswer = null;
+            if (answerPopup != null) answerPopup.Hide();
             quizUI.ShowQuestion(question);
 
             for (float t = 0f; t < questionTime && !answered; t += Time.deltaTime)
@@ -182,7 +185,7 @@ public class RunawayManager : MonoBehaviour
             {
                 CorrectCount++;
                 train.Boost();
-                notification.ShowCorrect("<b>Correct !!</b>");
+                ShowFeedback(true, question.tense);
                 yield return new WaitForSeconds(correctPause);
             }
             else
@@ -194,13 +197,43 @@ public class RunawayManager : MonoBehaviour
                     yield return Breakdown();
                     yield break;
                 }
-                string title = answered ? "Wrong !!" : "Time's Up !!";
-                notification.ShowWrong("<b>" + title + "</b>\n<size=65%><color=#FFFFFF>Jawaban: " + TenseNames.Get(question.tense) + "</color></size>");
+                ShowFeedback(false, question.tense);
                 yield return new WaitForSeconds(wrongPause);
             }
         }
 
         yield return Win();
+    }
+
+    // Suara dan notifikasi benar/salah seperti chapter lain: popup cap di tengah layar, atau Notification bila popup kosong
+    void ShowFeedback(bool correct, Tense tense)
+    {
+        if (AudioManager.Instance != null)
+        {
+            if (correct) AudioManager.Instance.PlayCorrectSound();
+            else AudioManager.Instance.PlayWrongSound();
+        }
+
+        string tenseName = TenseNames.Get(tense);
+        if (answerPopup != null)
+        {
+            string label = correct ? "Tense kalimat ini:" : answered ? "Jawaban yang benar:" : "Waktu habis! Jawaban yang benar:";
+            answerPopup.Show(correct, label, tenseName, true);
+            return;
+        }
+
+        if (correct)
+        {
+            notification.ShowCorrect("<b>Jawaban Benar!</b>");
+            return;
+        }
+        string title = answered ? "Jawaban Salah!" : "Waktu Habis!";
+        notification.ShowWrong("<b>" + title + "</b>\n<size=85%><color=#FFFFFF>Jawaban benar: " + tenseName + "</color></size>");
+    }
+
+    void HideAnswerPopup()
+    {
+        if (answerPopup != null) answerPopup.Hide();
     }
 
     // Soal dikelompokkan per tense (urutan sesuai enum Tense). Bobot dibuat baru, jadi setiap percobaan mulai dari bobot awal
@@ -251,7 +284,8 @@ public class RunawayManager : MonoBehaviour
     {
         IsFinished = true;
         quizUI.Hide();
-        notification.ShowCorrect("<b>Berhasil kabur!!</b>\n<size=65%><color=#FFFFFF>Kereta lolos dari kejaran bandit</color></size>", true);
+        HideAnswerPopup();
+        notification.ShowCorrect("<b>Berhasil kabur!!</b>\n<size=85%><color=#FFFFFF>Kereta lolos dari kejaran bandit</color></size>", true);
         yield return train.Escape();
         yield return ShowResult(true);
     }
@@ -267,7 +301,8 @@ public class RunawayManager : MonoBehaviour
     IEnumerator Lose()
     {
         quizUI.Hide();
-        notification.ShowWrong("<b>GAME OVER</b>\n<size=65%><color=#FFFFFF>Kereta dihentikan bandit di soal " + QuestionNumber + "/" + totalQuestions + "</color></size>", true);
+        HideAnswerPopup();
+        notification.ShowWrong("<b>GAME OVER</b>\n<size=85%><color=#FFFFFF>Kereta dihentikan bandit di soal " + QuestionNumber + "/" + totalQuestions + "</color></size>", true);
         StartCoroutine(bandits.CatchUp());
 
         // Background melambat sampai berhenti: kereta sudah tertangkap
@@ -285,7 +320,8 @@ public class RunawayManager : MonoBehaviour
     {
         IsFinished = true;
         quizUI.Hide();
-        notification.ShowWrong("<b>KERETA MOGOK!</b>\n<size=65%><color=#FFFFFF>Salah " + wrongCount + " kali, bandit berhasil menyusul</color></size>", true);
+        HideAnswerPopup();
+        notification.ShowWrong("<b>KERETA MOGOK!</b>\n<size=85%><color=#FFFFFF>Salah " + wrongCount + " kali, bandit berhasil menyusul</color></size>", true);
 
         StartCoroutine(train.Stall(stallDuration));
         for (float t = 0f; t < stallDuration; t += Time.deltaTime)
@@ -320,6 +356,7 @@ public class RunawayManager : MonoBehaviour
         var lines = new List<string>();
         foreach (string tense in tenseSelector.Categories)
             if (tenseTotal[tense] > 0) lines.Add(tense + " : " + tenseCorrect[tense] + "/" + tenseTotal[tense]);
+        lines.Add("<b>Total : " + CorrectCount + "/" + totalQuestions + "</b>");
 
         notification.Hide();
         // Runaway hanya punya 1 level (level terakhir): Lanjut memutar cutscene akhir (End Cutscene di ResultPanel)

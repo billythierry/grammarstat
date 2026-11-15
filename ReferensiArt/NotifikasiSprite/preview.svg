@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" viewBox="0 0 1500 560">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9A6534"/>
+      <stop offset="0.5" stop-color="#85552A"/>
+      <stop offset="1" stop-color="#6E4421"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5CC46A"/>
+      <stop offset="1" stop-color="#2F8A3C"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EE6A5C"/>
+      <stop offset="1" stop-color="#B33328"/>
+    </linearGradient>
+    <g id="plank">
+      <!-- bayangan -->
+      <rect x="6" y="12" width="1400" height="200" rx="22" fill="#000" opacity="0.25"/>
+      <!-- papan kayu -->
+      <rect x="0" y="0" width="1400" height="200" rx="22" fill="#3E2412"/>
+      <rect x="7" y="7" width="1386" height="186" rx="17" fill="url(#wood)"/>
+      <!-- serat kayu -->
+      <g stroke="#5E3A1B" stroke-width="3" fill="none" opacity="0.45" stroke-linecap="round">
+        <path d="M40 52 C 300 44, 520 62, 760 50 S 1180 44, 1360 56"/>
+        <path d="M60 100 C 340 108, 600 92, 880 104 S 1220 96, 1340 102"/>
+        <path d="M30 150 C 260 142, 560 160, 820 148 S 1160 156, 1370 146"/>
+        <ellipse cx="1080" cy="122" rx="26" ry="9"/>
+        <ellipse cx="420" cy="70" rx="18" ry="6"/>
+      </g>
+      <!-- garis terang atas -->
+      <rect x="18" y="12" width="1364" height="5" rx="2.5" fill="#C48B52" opacity="0.6"/>
+      <!-- paku -->
+      <g fill="#2B1A0E">
+        <circle cx="34" cy="34" r="8"/><circle cx="1366" cy="34" r="8"/>
+        <circle cx="34" cy="166" r="8"/><circle cx="1366" cy="166" r="8"/>
+      </g>
+      <g fill="#B9A58C">
+        <circle cx="32" cy="32" r="3"/><circle cx="1364" cy="32" r="3"/>
+        <circle cx="32" cy="164" r="3"/><circle cx="1364" cy="164" r="3"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- latar pasir seperti di game -->
+  <rect width="1500" height="560" fill="#E2C48A"/>
+
+  <!-- BENAR -->
+  <g transform="translate(50 40)">
+    <use href="#plank"/>
+    <rect x="7" y="7" width="20" height="186" rx="10" fill="url(#green)"/>
+    <circle cx="120" cy="100" r="58" fill="#3E2412"/>
+    <circle cx="120" cy="100" r="52" fill="url(#green)"/>
+    <path d="M92 101 L113 122 L150 80" stroke="#FFFFFF" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="750" y="122" text-anchor="middle" font-family="Fredoka, 'Segoe UI', Arial, sans-serif" font-weight="700" font-size="60" fill="#8DF09A" stroke="#2B1A0E" stroke-width="6" paint-order="stroke">Jawaban Benar!</text>
+  </g>
+
+  <!-- SALAH -->
+  <g transform="translate(50 300)">
+    <use href="#plank"/>
+    <rect x="7" y="7" width="20" height="186" rx="10" fill="url(#red)"/>
+    <circle cx="120" cy="100" r="58" fill="#3E2412"/>
+    <circle cx="120" cy="100" r="52" fill="url(#red)"/>
+    <path d="M98 78 L142 122 M142 78 L98 122" stroke="#FFFFFF" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <text x="750" y="88" text-anchor="middle" font-family="Fredoka, 'Segoe UI', Arial, sans-serif" font-weight="700" font-size="60" fill="#FF8A80" stroke="#2B1A0E" stroke-width="6" paint-order="stroke">Jawaban Salah!</text>
+    <text x="750" y="158" text-anchor="middle" font-family="Nunito, 'Segoe UI', Arial, sans-serif" font-weight="600" font-size="48" fill="#FFF4DC" stroke="#2B1A0E" stroke-width="5" paint-order="stroke">Jawaban benar: I like apples</text>
+  </g>
+</svg>

@@ -15,8 +15,10 @@ public class TicketInspectionManager : MonoBehaviour
     [SerializeField] private TicketItem ticket;
     [SerializeField] private TicketDetailUI detailUI;
     [SerializeField] private Transform ticketSlot;
-    [Tooltip("Panel UI untuk notifikasi jawaban benar/salah")]
+    [Tooltip("Panel UI notifikasi. Dipakai untuk benar/salah bila Answer Popup kosong")]
     [SerializeField] private NotificationUI notification;
+    [Tooltip("Notifikasi jawaban benar/salah di tengah layar (cap, judul, kalimat yang benar)")]
+    [SerializeField] private AnswerPopup answerPopup;
     [Tooltip("Teks penghitung penumpang, mis. 1/10")]
     [SerializeField] private TMP_Text passengerCounterText;
     [Tooltip("Panel hasil akhir level. Bila kosong, hasil tampil di notifikasi")]
@@ -55,14 +57,16 @@ public class TicketInspectionManager : MonoBehaviour
     [Tooltip("Posisi X di luar layar kanan: arah pergi penumpang yang lolos pemeriksaan")]
     [SerializeField] private float exitX = 13f;
     [SerializeField] private float passengerY = -2.3f;
-    [SerializeField] private float walkInDuration = 3.2f;
-    [SerializeField] private float walkOutDuration = 3.2f;
+    [SerializeField] private float walkInDuration = 6f;
+    [SerializeField] private float walkOutDuration = 6f;
 
     [Header("Tiket")]
     [Tooltip("Posisi tiket di atas meja setelah keluar dari slot")]
     [SerializeField] private Vector3 ticketDeskPosition = new Vector3(0f, -2.9f, 0f);
     [Tooltip("Jeda setelah penumpang sampai sebelum tiket keluar")]
     [SerializeField] private float ticketDelay = 0.3f;
+    [Tooltip("Lama minimal notifikasi benar/salah tampil (detik). Penumpang berikutnya datang setelah notifikasi ini dan Walk Out selesai")]
+    [SerializeField] private float feedbackDuration = 5f;
 
     [Header("Intro & panduan")]
     [Tooltip("Transisi layar hitam ke gameplay saat scene dibuka (opsional)")]
@@ -275,28 +279,45 @@ public class TicketInspectionManager : MonoBehaviour
         passenger = null;
         float targetX = correct ? exitX : enterX;
         Vector3 target = new Vector3(targetX, passengerY, leaving.transform.position.z);
+        float feedbackEnd = Time.time + feedbackDuration;
         leaving.WalkAway(target, walkOutDuration, () =>
         {
             Destroy(leaving.gameObject);
-            if (notification != null) notification.Hide();
-            NextPassenger();
+            StartCoroutine(NextPassengerAfter(feedbackEnd));
         });
+    }
+
+    // Notifikasi tampil minimal Feedback Duration agar kalimat yang benar sempat dibaca,
+    // walaupun penumpang sudah selesai berjalan pergi
+    IEnumerator NextPassengerAfter(float feedbackEnd)
+    {
+        while (Time.time < feedbackEnd) yield return null;
+        if (notification != null) notification.Hide();
+        if (answerPopup != null) answerPopup.Hide();
+        NextPassenger();
     }
 
     void ShowFeedback(bool correct)
     {
-        if (notification == null) return;
+        string answerLabel = CurrentTicket.correctAnswer == TicketAnswer.NoError
+            ? "No Error"
+            : "(" + CurrentTicket.correctAnswer + ")";
 
         // Notifikasi tetap tampil selama penumpang berjalan pergi
+        if (answerPopup != null)
+        {
+            string label = correct ? "Kalimat yang benar:" : "Jawaban yang benar: " + answerLabel;
+            answerPopup.Show(correct, label, CurrentTicket.GetFormattedCorrection(), true);
+            return;
+        }
+        if (notification == null) return;
+
         if (correct)
         {
             notification.ShowCorrect("<b>Jawaban Benar!</b>", true);
             return;
         }
 
-        string answerLabel = CurrentTicket.correctAnswer == TicketAnswer.NoError
-            ? "No Error"
-            : "(" + CurrentTicket.correctAnswer + ")";
         notification.ShowWrong("<b>Jawaban Salah!</b>\n<size=65%><color=#FFFFFF>Jawaban yang benar adalah " + answerLabel
             + "\n<i>" + CurrentTicket.correction + "</i></color></size>", true);
     }
@@ -322,8 +343,10 @@ public class TicketInspectionManager : MonoBehaviour
             var lines = new List<string>();
             foreach (string tense in tenses)
                 if (tenseTotal[tense] > 0) lines.Add(tense + " : " + tenseCorrect[tense] + "/" + tenseTotal[tense]);
+            lines.Add("<b>Total : " + CorrectCount + "/" + TotalPassengers + "</b>");
 
             if (notification != null) notification.Hide();
+            if (answerPopup != null) answerPopup.Hide();
             bool hasNextLevel = levelBanks != null && LevelSelection.Level < levelBanks.Length;
             resultPanel.Show(passed, string.Join("\n", lines), Stars, hasNextLevel);
             return;

@@ -40,7 +40,7 @@ public class ResultPanel : MonoBehaviour
     [SerializeField] private int nextSceneChapter;
     [Tooltip("Tombol Lanjut tetap tampil saat lulus tetapi belum berfungsi (scene tujuan belum dibuat)")]
     [SerializeField] private bool nextNotReady;
-    [Tooltip("Cutscene yang diputar tombol Lanjut saat lulus di level terakhir, mis. akhir chapter. Didahulukan dari Next Scene Override")]
+    [Tooltip("Cutscene yang diputar tombol Lanjut saat lulus di level terakhir, mis. cutscene pembuka chapter berikutnya atau akhir cerita. Didahulukan dari Next Scene Override")]
     [SerializeField] private CutsceneData endCutscene;
     [SerializeField] private string cutsceneScene = "Cutscene";
 
@@ -143,20 +143,24 @@ public class ResultPanel : MonoBehaviour
     public void NextOrRetry()
     {
         if (passed && nextNotReady) return;
-        if (passed && !hasNextLevel && endCutscene != null)
+        if (passed && !hasNextLevel && (endCutscene != null || !string.IsNullOrEmpty(nextSceneOverride)))
         {
-            CutsceneSelection.Current = endCutscene;
-            Leave(cutsceneScene);
-            return;
-        }
-        if (passed && !hasNextLevel && !string.IsNullOrEmpty(nextSceneOverride))
-        {
+            // Pindah ke chapter berikutnya dimulai dari Level 1
             if (nextSceneChapter > 0)
             {
                 LevelSelection.Chapter = nextSceneChapter;
                 LevelSelection.Level = 1;
             }
-            Leave(nextSceneOverride);
+            // Cutscene didahulukan; scene tujuannya diatur di CutsceneData (mis. cutscene pembuka chapter berikutnya)
+            if (endCutscene != null)
+            {
+                CutsceneSelection.Current = endCutscene;
+                Leave(cutsceneScene);
+            }
+            else
+            {
+                Leave(nextSceneOverride);
+            }
             return;
         }
         if (passed && hasNextLevel) LevelSelection.Level++;

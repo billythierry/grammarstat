@@ -45,8 +45,37 @@ public class TicketData
     // Note tanpa penanda, mis. untuk log
     public string GetPlainNote()
     {
-        if (string.IsNullOrEmpty(note)) return string.Empty;
-        return MarkerRegex.Replace(note, m => m.Groups[2].Value);
+        return StripMarkers(note);
+    }
+
+    // Correction dengan bagian yang diperbaiki (A atau B) diberi garis bawah.
+    // Bagian itu dicari dari teks sebelum dan sesudah penanda di note, yang sama persis di correction.
+    // Bila tidak cocok atau jawabannya No Error, correction dikembalikan tanpa garis bawah
+    public string GetFormattedCorrection()
+    {
+        if (string.IsNullOrEmpty(correction) || string.IsNullOrEmpty(note) || correctAnswer == TicketAnswer.NoError)
+            return correction ?? string.Empty;
+
+        string key = correctAnswer.ToString();
+        foreach (Match m in MarkerRegex.Matches(note))
+        {
+            if (m.Groups[1].Value != key) continue;
+            string before = StripMarkers(note.Substring(0, m.Index));
+            string after = StripMarkers(note.Substring(m.Index + m.Length));
+            if (before.Length + after.Length >= correction.Length
+                || !correction.StartsWith(before) || !correction.EndsWith(after))
+                break;
+
+            string fixedPart = correction.Substring(before.Length, correction.Length - before.Length - after.Length);
+            return before + "<u>" + fixedPart + "</u>" + after;
+        }
+        return correction;
+    }
+
+    static string StripMarkers(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return string.Empty;
+        return MarkerRegex.Replace(text, m => m.Groups[2].Value);
     }
 }
 

@@ -34,14 +34,25 @@ public class DialogPopup : MonoBehaviour
     [SerializeField] private float characterSlide = 120f;
     [SerializeField] private float indicatorBlinkSpeed = 4f;
 
+    [Header("Suara")]
+    [Tooltip("AudioSource suara bicara (videogame_speak), diputar berulang selama teks diketik (opsional)")]
+    [SerializeField] private AudioSource typingAudio;
+
     public bool IsOpen { get; private set; }
 
     private Vector2 characterHome;
     private bool nextRequested;
+    private float typingBaseVolume = 1f;
 
     void Awake()
     {
         if (character != null) characterHome = character.anchoredPosition;
+        if (typingAudio != null)
+        {
+            typingBaseVolume = typingAudio.volume;
+            typingAudio.playOnAwake = false;
+            typingAudio.loop = true;
+        }
         SetVisible(false);
     }
 
@@ -122,6 +133,7 @@ public class DialogPopup : MonoBehaviour
         int total = dialogText.textInfo.characterCount;
 
         float shown = 0f;
+        StartTypingSound();
         yield return null;
         while (shown < total)
         {
@@ -131,7 +143,27 @@ public class DialogPopup : MonoBehaviour
             dialogText.maxVisibleCharacters = Mathf.Min(total, (int)shown);
             yield return null;
         }
+        StopTypingSound();
         dialogText.maxVisibleCharacters = int.MaxValue;
+    }
+
+    // Suara bicara mengikuti volume SFX di pengaturan, mulai dari titik acak agar tiap kalimat terdengar berbeda
+    void StartTypingSound()
+    {
+        if (typingAudio == null || typingAudio.clip == null) return;
+        typingAudio.volume = typingBaseVolume * VolumeSettings.SfxVolume;
+        typingAudio.time = UnityEngine.Random.Range(0f, typingAudio.clip.length * 0.9f);
+        typingAudio.Play();
+    }
+
+    void StopTypingSound()
+    {
+        if (typingAudio != null) typingAudio.Stop();
+    }
+
+    void OnDisable()
+    {
+        StopTypingSound();
     }
 
     IEnumerator Fade(float from, float to)

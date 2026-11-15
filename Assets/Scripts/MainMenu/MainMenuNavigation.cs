@@ -76,6 +76,17 @@ public class MainMenuNavigation : MonoBehaviour
 
     public void OpenCredits() => ShowPage(creditsPage);
 
+    // Tombol Keluar: simpan pengaturan lalu tutup game. Di editor, Play mode dihentikan
+    public void QuitGame()
+    {
+        PlayerPrefs.Save();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
     // chapter dimulai dari 1
     public void OpenChapter(int chapter)
     {

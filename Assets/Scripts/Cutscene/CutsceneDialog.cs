@@ -82,6 +82,14 @@ public class CutsceneDialog : MonoBehaviour
     [SerializeField] private float charsPerSecond = 40f;
     [SerializeField] private float indicatorBlinkSpeed = 4f;
 
+    [Header("Suara")]
+    [Tooltip("AudioSource suara bicara (videogame_speak), diputar berulang selama teks diketik")]
+    [SerializeField] private AudioSource typingAudio;
+    [Tooltip("AudioSource musik latar cutscene (Days Gone By), diputar berulang sejak awal cutscene")]
+    [SerializeField] private AudioSource bgmAudio;
+    [Tooltip("Lama musik membesar di awal dan mengecil saat cutscene ditutup")]
+    [SerializeField] private float bgmFadeDuration = 1.2f;
+
     [Header("Skip")]
     [Tooltip("Lama Enter ditahan sebelum petunjuk skip muncul")]
     [SerializeField] private float skipRevealDelay = 1f;
@@ -102,6 +110,8 @@ public class CutsceneDialog : MonoBehaviour
     private bool finished;
     private float skipHeld;
     private Coroutine typeRoutine;
+    private float typingBaseVolume = 1f;
+    private float bgmBaseVolume = 1f;
 
     void Awake()
     {
@@ -114,8 +124,31 @@ public class CutsceneDialog : MonoBehaviour
         nextSceneName = data.nextSceneName;
     }
 
+    void OnEnable()
+    {
+        if (typingAudio != null)
+        {
+            typingBaseVolume = typingAudio.volume;
+            typingAudio.playOnAwake = false;
+            typingAudio.loop = true;
+        }
+        if (bgmAudio != null)
+        {
+            bgmBaseVolume = bgmAudio.volume;
+            bgmAudio.playOnAwake = false;
+            bgmAudio.loop = true;
+        }
+    }
+
     void Start()
     {
+        // Musik latar mengikuti volume musik di pengaturan, membesar bersama layar yang terang
+        if (bgmAudio != null && bgmAudio.clip != null)
+        {
+            bgmAudio.volume = 0f;
+            bgmAudio.Play();
+            StartCoroutine(FadeBgm(bgmBaseVolume * VolumeSettings.MusicVolume, bgmFadeDuration));
+        }
         StartCoroutine(IntroRoutine());
     }
 
@@ -145,7 +178,9 @@ public class CutsceneDialog : MonoBehaviour
     {
         if (finished) return;
 
-        if (!isTransitioning && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
+        // Enter atau klik kiri: penuhi kalimat yang sedang diketik, atau lanjut ke dialog berikutnya
+        bool next = Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetMouseButtonDown(0);
+        if (!isTransitioning && next)
         {
             if (isTyping) CompleteLine();
             else ShowLine(index + 1);
@@ -273,6 +308,7 @@ public class CutsceneDialog : MonoBehaviour
         dialogText.maxVisibleCharacters = 0;
         dialogText.ForceMeshUpdate();
         int total = dialogText.textInfo.characterCount;
+        StartTypingSound();
 
         float shown = 0f;
         while (shown < total)
@@ -290,8 +326,23 @@ public class CutsceneDialog : MonoBehaviour
         if (typeRoutine != null) StopCoroutine(typeRoutine);
         typeRoutine = null;
         isTyping = false;
+        StopTypingSound();
         dialogText.maxVisibleCharacters = int.MaxValue;
         SetIndicator(true);
+    }
+
+    // Suara bicara mengikuti volume SFX di pengaturan, mulai dari titik acak agar tiap kalimat terdengar berbeda
+    void StartTypingSound()
+    {
+        if (typingAudio == null || typingAudio.clip == null) return;
+        typingAudio.volume = typingBaseVolume * VolumeSettings.SfxVolume;
+        typingAudio.time = Random.Range(0f, typingAudio.clip.length * 0.9f);
+        typingAudio.Play();
+    }
+
+    void StopTypingSound()
+    {
+        if (typingAudio != null) typingAudio.Stop();
     }
 
     void SetIndicator(bool visible)
@@ -320,6 +371,7 @@ public class CutsceneDialog : MonoBehaviour
         finished = true;
         StopAllCoroutines();
         isTyping = false;
+        StopTypingSound();
         SetIndicator(false);
         if (skipHint != null) skipHint.alpha = 0f;
         if (!string.IsNullOrEmpty(nextSceneName)) StartCoroutine(LeaveRoutine());
@@ -328,8 +380,20 @@ public class CutsceneDialog : MonoBehaviour
     // Layar menghitam dulu sebelum pindah ke scene level
     IEnumerator LeaveRoutine()
     {
+        if (bgmAudio != null && bgmAudio.isPlaying) StartCoroutine(FadeBgm(0f, stageFadeDuration));
         if (fader != null) yield return Fade(1f, stageFadeDuration);
         SceneManager.LoadScene(nextSceneName);
+    }
+
+    IEnumerator FadeBgm(float target, float duration)
+    {
+        float start = bgmAudio.volume;
+        for (float t = 0f; t < duration; t += FrameStep())
+        {
+            bgmAudio.volume = Mathf.Lerp(start, target, t / duration);
+            yield return null;
+        }
+        bgmAudio.volume = target;
     }
 
     // Langkah waktu per frame dibatasi agar frame pertama yang lambat (saat scene dimuat) tidak melompati fade

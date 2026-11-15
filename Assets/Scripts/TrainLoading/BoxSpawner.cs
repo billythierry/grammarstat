@@ -13,8 +13,10 @@ public class BoxSpawner : MonoBehaviour
     [SerializeField] public SpawnAreaScript[] spawnAreas;
     [Tooltip("Kereta yang membawa drop area (kolom jawaban) di tiap gerbong")]
     [SerializeField] private TrainController train;
-    [Tooltip("Panel UI untuk notifikasi jawaban benar/salah")]
+    [Tooltip("Panel UI untuk notifikasi info (bagian baru, tutorial selesai, kolom belum lengkap)")]
     [SerializeField] private NotificationUI notification;
+    [Tooltip("Notifikasi jawaban benar/salah di tengah layar. Bila kosong, memakai Notification")]
+    [SerializeField] private AnswerPopup answerPopup;
     [Tooltip("Panel tutorial terpandu (rumus, penjelasan, petunjuk)")]
     [SerializeField] private TutorialPanel tutorialPanel;
     [Tooltip("Teks label bagian yang sedang dimainkan, mis. Positif (+)")]
@@ -490,7 +492,13 @@ public class BoxSpawner : MonoBehaviour
             sectionCorrect[CurrentQuestion.section]++;
         }
         bool advance = correct || !advanceOnlyWhenCorrect;
-        if (notification != null)
+        if (answerPopup != null)
+        {
+            // Benar: tampilkan kalimat pemain. Salah: tampilkan kalimat yang benar
+            string sentence = string.Join(" ", correct ? answer.ToArray() : CorrectWords);
+            answerPopup.Show(correct, sentence, advance);
+        }
+        else if (notification != null)
         {
             // Saat pindah gerbong, notifikasi tetap tampil selama kereta bergerak lalu disembunyikan di AdvanceRoutine
             if (correct) notification.ShowCorrect("<b>Jawaban Benar!</b>", advance);
@@ -520,6 +528,7 @@ public class BoxSpawner : MonoBehaviour
         {
             yield return train.MoveToNext();
             if (notification != null) notification.Hide();
+            if (answerPopup != null) answerPopup.Hide();
             LoadStep();
         }
         else
@@ -527,6 +536,7 @@ public class BoxSpawner : MonoBehaviour
             stepIndex = steps.Count - 1;
             yield return train.Depart();
             if (notification != null) notification.Hide();
+            if (answerPopup != null) answerPopup.Hide();
             if (endDialog != null && endDialogLines.Length > 0 && (endDialogLevel == 0 || endDialogLevel == LevelSelection.Level))
                 yield return endDialog.Play(endDialogSpeaker, endDialogLines);
             FinishLevel();
@@ -557,6 +567,7 @@ public class BoxSpawner : MonoBehaviour
             parts.Add(line);
             lines.Add(line);
         }
+        lines.Add("<b>Total : " + CorrectCount + "/" + TotalQuestions + "</b>");
 
         Debug.Log("Level selesai: benar " + CorrectCount + "/" + TotalQuestions + " - " + (IsPassed ? "LULUS" : "TIDAK LULUS") + ", bintang " + Stars);
         if (notification != null) notification.Hide();
