@@ -15,9 +15,15 @@ public class RunawayQuizUI : MonoBehaviour
     [SerializeField] private RectTransform timerFill;
     [SerializeField] private float fadeDuration = 0.2f;
 
-    [Header("Warna")]
+    [Header("Tanda jawaban")]
+    [Tooltip("Sprite tombol untuk jawaban benar. Kosongkan untuk memakai Correct Color")]
+    [SerializeField] private Sprite correctSprite;
+    [Tooltip("Sprite tombol untuk jawaban salah. Kosongkan untuk memakai Wrong Color")]
+    [SerializeField] private Sprite wrongSprite;
     [SerializeField] private Color correctColor = new Color(0.45f, 0.85f, 0.35f);
     [SerializeField] private Color wrongColor = new Color(0.95f, 0.35f, 0.35f);
+
+    [Header("Bar waktu")]
     [Tooltip("Warna bar waktu saat waktu hampir habis")]
     [SerializeField] private Color timerWarningColor = new Color(0.95f, 0.35f, 0.35f);
     [Tooltip("Sisa waktu (0-1) saat bar mulai berwarna peringatan")]
@@ -29,6 +35,7 @@ public class RunawayQuizUI : MonoBehaviour
     private CanvasGroup group;
     private Coroutine routine;
     private Color[] buttonColors;
+    private Sprite[] buttonSprites;
     private Image timerImage;
     private Color timerColor;
     private bool locked = true;
@@ -40,10 +47,12 @@ public class RunawayQuizUI : MonoBehaviour
         group.blocksRaycasts = false;
 
         buttonColors = new Color[answerButtons.Length];
+        buttonSprites = new Sprite[answerButtons.Length];
         for (int i = 0; i < answerButtons.Length; i++)
         {
             Tense tense = (Tense)i;
             buttonColors[i] = answerButtons[i].image.color;
+            buttonSprites[i] = answerButtons[i].image.sprite;
             answerButtons[i].onClick.AddListener(() => Select(tense));
             TMP_Text label = answerButtons[i].GetComponentInChildren<TMP_Text>();
             if (label != null) label.text = TenseNames.Get(tense);
@@ -59,7 +68,11 @@ public class RunawayQuizUI : MonoBehaviour
     public void ShowQuestion(TenseQuestion question)
     {
         sentenceText.text = question.sentence;
-        for (int i = 0; i < answerButtons.Length; i++) answerButtons[i].image.color = buttonColors[i];
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            answerButtons[i].image.sprite = buttonSprites[i];
+            answerButtons[i].image.color = buttonColors[i];
+        }
         SetTimer(1f);
         locked = false;
         FadeTo(1f);
@@ -76,8 +89,13 @@ public class RunawayQuizUI : MonoBehaviour
     {
         if (timerFill == null) return;
         fraction = Mathf.Clamp01(fraction);
-        timerFill.localScale = new Vector3(fraction, 1f, 1f);
-        if (timerImage != null) timerImage.color = fraction <= timerWarningThreshold ? timerWarningColor : timerColor;
+        // Ujung kanan isi bar digeser lewat anchor (bukan scale) supaya ujung bulat sprite tidak gepeng
+        timerFill.anchorMax = new Vector2(fraction, timerFill.anchorMax.y);
+        if (timerImage != null)
+        {
+            timerImage.enabled = fraction > 0f;
+            timerImage.color = fraction <= timerWarningThreshold ? timerWarningColor : timerColor;
+        }
     }
 
     // Kunci tombol lalu tandai jawaban: pilihan pemain merah (bila salah), jawaban benar hijau.
@@ -85,8 +103,19 @@ public class RunawayQuizUI : MonoBehaviour
     public void ShowResult(Tense? chosen, Tense correct)
     {
         locked = true;
-        if (chosen.HasValue && chosen.Value != correct) answerButtons[(int)chosen.Value].image.color = wrongColor;
-        answerButtons[(int)correct].image.color = correctColor;
+        if (chosen.HasValue && chosen.Value != correct) Mark(answerButtons[(int)chosen.Value].image, wrongSprite, wrongColor);
+        Mark(answerButtons[(int)correct].image, correctSprite, correctColor);
+    }
+
+    // Pakai sprite tanda bila ada, kalau tidak warnai tombolnya
+    static void Mark(Image image, Sprite sprite, Color color)
+    {
+        if (sprite != null)
+        {
+            image.sprite = sprite;
+            image.color = Color.white;
+        }
+        else image.color = color;
     }
 
     void Select(Tense tense)
