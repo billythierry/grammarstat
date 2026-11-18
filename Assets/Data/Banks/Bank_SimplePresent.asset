@@ -34,11 +34,6 @@ MonoBehaviour:
     sentence: My-brother-watches-TV
     alternativeSentences: 
     translation: Saudara laki-laki saya menonton TV.
-  - id: SP-P05
-    section: 0
-    sentence: She-always-cooks-for-us
-    alternativeSentences: 
-    translation: Dia (perempuan) selalu memasak untuk kami.
   - id: SP-N01
     section: 1
     sentence: I-do-not-like-coffee
@@ -54,11 +49,6 @@ MonoBehaviour:
     sentence: She-does-not-drink-tea
     alternativeSentences: 
     translation: Dia (perempuan) tidak minum teh.
-  - id: SP-N04
-    section: 1
-    sentence: Tom-does-not-watch-TV
-    alternativeSentences: 
-    translation: Tom tidak menonton TV.
   - id: SP-N05
     section: 1
     sentence: My-father-does-not-smoke
@@ -79,31 +69,11 @@ MonoBehaviour:
     sentence: Do-they-live-here?
     alternativeSentences: 
     translation: Apakah mereka tinggal di sini?
-  - id: SP-Q04
-    section: 2
-    sentence: Does-your-sister-cook?
-    alternativeSentences: 
-    translation: Apakah saudara perempuanmu memasak?
   - id: SP-Q05
     section: 2
     sentence: Does-the-train-leave-early?
     alternativeSentences: 
     translation: Apakah kereta berangkat pagi-pagi?
-  - id: SP-R01
-    section: 3
-    sentence: The-sun-rises-early
-    alternativeSentences: 
-    translation: Matahari terbit pagi-pagi.
-  - id: SP-R02
-    section: 3
-    sentence: We-do-not-eat-pork
-    alternativeSentences: 
-    translation: Kami tidak makan daging babi.
-  - id: SP-R03
-    section: 3
-    sentence: Does-your-father-read-books?
-    alternativeSentences: 
-    translation: Apakah ayahmu membaca buku?
   tutorials:
   - section: 0
     formula: Subject|Verb 1 (+s/es)|Object / Keterangan

@@ -1757,10 +1757,6 @@ PrefabInstance:
       value: PauseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1178305967299103488, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 12009311f2a6e5f42b200517a3ffd3fb, type: 2}
-    - target: {fileID: 1178305967299103488, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
@@ -1865,14 +1861,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2927499012131435792, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1388447c852f87c4da4a15c49183cebb, type: 2}
-    - target: {fileID: 2927499012131435792, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2927499012131435792, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
@@ -1881,52 +1869,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4155321781205703412, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1388447c852f87c4da4a15c49183cebb, type: 2}
-    - target: {fileID: 4155321781205703412, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155321781205703412, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219298444682269720, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4409453877609019878, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1388447c852f87c4da4a15c49183cebb, type: 2}
-    - target: {fileID: 4409453877609019878, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4409453877609019878, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5616094952539772804, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1388447c852f87c4da4a15c49183cebb, type: 2}
-    - target: {fileID: 5616094952539772804, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616094952539772804, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758506758864369135, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1388447c852f87c4da4a15c49183cebb, type: 2}
-    - target: {fileID: 5758506758864369135, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5758506758864369135, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -1953,33 +1905,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6372408845622650814, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1388447c852f87c4da4a15c49183cebb, type: 2}
-    - target: {fileID: 6372408845622650814, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372408845622650814, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437648050373080747, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1388447c852f87c4da4a15c49183cebb, type: 2}
-    - target: {fileID: 6437648050373080747, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6437648050373080747, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6680250397144063161, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: ef5cfdcde86e6a24d9325daf85180508, type: 2}
     - target: {fileID: 6680250397144063161, guid: ede48e9fcc9658c4bb1cfb8a9c3984ee, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
@@ -2170,8 +2102,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Penjelasan
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
-  m_sharedMaterial: {fileID: 1314898028567483148, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2195,11 +2127,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41
-  m_fontSizeBase: 25
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 26
+  m_fontSizeMin: 32
   m_fontSizeMax: 41
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -2920,7 +2852,7 @@ MonoBehaviour:
   guidePanel: {fileID: 1376786636}
   guideLevel: 1
   endDialog: {fileID: 515129368}
-  endDialogLevel: 4
+  endDialogLevel: 3
   endDialogSpeaker: Thomas
   endDialogLines:
   - Huft, sepertinya itu yang terakhir.
@@ -2928,10 +2860,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ecf856846a186504fa3add51ab152aec, type: 2}
   - {fileID: 11400000, guid: cb085a5691fece848b36e5976fb8ca39, type: 2}
   - {fileID: 11400000, guid: 2c4f0c340c063d249979c4629fcdac58, type: 2}
-  - {fileID: 11400000, guid: fbe390ee074621f48b0d4a02314e4666, type: 2}
   questionBank: {fileID: 11400000, guid: ecf856846a186504fa3add51ab152aec, type: 2}
-  oneStarMinCorrect: 9
-  twoStarMinCorrect: 13
+  oneStarMinCorrect: 6
+  twoStarMinCorrect: 9
   advanceOnlyWhenCorrect: 0
   separator: 45
   tutorialCompleteDelay: 0.8
@@ -4280,8 +4211,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: X
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5063,6 +4994,8 @@ MonoBehaviour:
   textFadeDuration: 0.8
   holdDuration: 1.8
   screenFadeDuration: 1
+  chapterNumber: 1
+  chapterName: Train Loading
 --- !u!225 &1035130805
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5287,8 +5220,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
-  m_sharedMaterial: {fileID: 1314898028567483148, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5764,8 +5697,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <b>Jawaban Benar!</b>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
-  m_sharedMaterial: {fileID: 1314898028567483148, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6417,8 +6350,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1 / 6
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6783,8 +6716,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '>>'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7188,14 +7121,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pages:
   - image: {fileID: 21300000, guid: 64bf2e1485181084e99899dd60ba744d, type: 3}
-    text: Kereta datang membawa gerbong kosong. Di peron ada kotak kata yang harus
-      kamu muat ke gerbong sampai menjadi kalimat yang benar.
+    text: Kereta datang membawa gerbong kosong. Di peron ada <b>kotak kata</b> yang
+      harus kamu muat ke gerbong sampai menjadi kalimat yang benar.
   - image: {fileID: 21300000, guid: 82838826a1e25974e8d574b55a930f6d, type: 3}
-    text: Seret kotak kata dari peron ke kolom di gerbong. Susun dari kiri ke kanan
-      sesuai urutan kalimat.
+    text: Seret kotak kata dari peron ke kolom di gerbong, atau <b>klik</b> kotaknya
+      agar langsung masuk ke kolom kosong berikutnya. Susun dari kiri ke kanan sesuai
+      urutan kalimat.
   - image: {fileID: 21300000, guid: 8de5161a3e97e7a42ba94d55faefe6f4, type: 3}
-    text: Di awal setiap bagian ada <b>petunjuk</b>. Pelajari rumus kalimatnya, lalu
-      pindahkan kotak yang menyala kuning ke kolom yang menyala.
+    text: Di awal bagian Positif, Negatif, dan Tanya ada <b>petunjuk</b>. Pelajari
+      rumus kalimatnya, lalu pindahkan kotak yang menyala ke kolom yang menyala.
   - image: {fileID: 21300000, guid: 09c00eb2de23f974bbad3d3f6dcafbe5, type: 3}
     text: Jika semua kolom sudah terisi, tekan <b>Submit</b>. Salah menaruh kotak?
       Seret lagi, atau tekan <b>Reset</b> untuk mengembalikan semua kotak ke peron.
@@ -7205,8 +7139,7 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 98fbdfd2ddf753a40ab91f663d2dfdce, type: 3}
     text: 'Warna gerbong menunjukkan bentuk kalimat: <color=#2D6A27><b>hijau</b></color>
       positif, <color=#A3362A><b>merah</b></color> negatif, <color=#1E5FA8><b>biru</b></color>
-      tanya. Benar minimal <b>3 dari 5</b> di tiap bagian dan <b>2 dari 3</b> di
-      Review untuk berhasil!'
+      tanya. Jawab benar minimal <b>6 dari 12</b> soal untuk berhasil!'
   pageImage: {fileID: 2041557712}
   pageText: {fileID: 2067400651}
   pageCounter: {fileID: 1269958021}
@@ -8138,8 +8071,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <<
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8248,7 +8181,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 137, y: 2}
-  m_SizeDelta: {x: 600, y: 50}
+  m_SizeDelta: {x: 660, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1847931808
 MonoBehaviour:
@@ -8272,8 +8205,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Jawaban yang benar:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
-  m_sharedMaterial: {fileID: 1314898028567483148, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8454,13 +8387,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Positif : 5/5
+  m_text: 'Positif : 4/4
 
-    Negatif : 5/5
+    Negatif : 4/4
 
-    Tanya : 5/5
-
-    Review : 3/3'
+    Tanya : 4/4'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
@@ -9233,8 +9164,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Penjelasan
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

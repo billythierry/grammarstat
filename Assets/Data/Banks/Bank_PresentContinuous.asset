@@ -29,11 +29,6 @@ MonoBehaviour:
     sentence: I-am-reading-a-book
     alternativeSentences: 
     translation: Saya sedang membaca buku.
-  - id: PC-P04
-    section: 0
-    sentence: We-are-watching-TV
-    alternativeSentences: 
-    translation: Kami sedang menonton TV.
   - id: PC-P05
     section: 0
     sentence: The-baby-is-sleeping
@@ -54,11 +49,6 @@ MonoBehaviour:
     sentence: They-are-not-watching-TV
     alternativeSentences: 
     translation: Mereka tidak sedang menonton TV.
-  - id: PC-N04
-    section: 1
-    sentence: She-is-not-reading
-    alternativeSentences: 
-    translation: Dia (perempuan) tidak sedang membaca.
   - id: PC-N05
     section: 1
     sentence: We-are-not-playing-now
@@ -74,11 +64,6 @@ MonoBehaviour:
     sentence: Is-she-drinking-tea?
     alternativeSentences: 
     translation: Apakah dia (perempuan) sedang minum teh?
-  - id: PC-Q03
-    section: 2
-    sentence: Are-they-running?
-    alternativeSentences: 
-    translation: Apakah mereka sedang berlari?
   - id: PC-Q04
     section: 2
     sentence: Is-he-writing-a-letter?
@@ -89,21 +74,6 @@ MonoBehaviour:
     sentence: Is-the-train-coming?
     alternativeSentences: 
     translation: Apakah keretanya sedang datang?
-  - id: PC-R01
-    section: 3
-    sentence: My-mother-is-sleeping
-    alternativeSentences: 
-    translation: Ibu saya sedang tidur.
-  - id: PC-R02
-    section: 3
-    sentence: He-is-not-driving-now
-    alternativeSentences: 
-    translation: Dia (laki-laki) tidak sedang menyetir sekarang.
-  - id: PC-R03
-    section: 3
-    sentence: Are-you-eating-lunch?
-    alternativeSentences: 
-    translation: Apakah kamu sedang makan siang?
   tutorials:
   - section: 0
     formula: Subject|am / is / are|Verb + ing|Object / Keterangan

@@ -192,9 +192,13 @@ public class BoxSpawner : MonoBehaviour
             });
         }
         train.Setup(plans);
-        // Kereta sudah di luar layar sebelum intro memudar, jadi posisi kereta di editor tidak sempat terlihat
+        // Kereta sudah di luar layar sebelum intro memudar, jadi posisi kereta di editor tidak sempat terlihat.
+        // Level 1 diawali intro chapter, level berikutnya langsung intro level
         if (levelIntro != null)
-            yield return levelIntro.Play(questionBank.tenseName + " Tense", "Level " + LevelSelection.Level);
+        {
+            int level = LevelSelection.Level;
+            yield return levelIntro.PlayLevel(level, questionBank.tenseName + " Tense", level == 1);
+        }
         if (guidePanel != null && (guideLevel == 0 || guideLevel == LevelSelection.Level))
         {
             guidePanel.Show();

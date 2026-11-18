@@ -66,6 +66,8 @@ public class ResultPanel : MonoBehaviour
     public void Show(bool isPassed, string lines, int starCount, bool nextLevelExists)
     {
         StopCameraMusic();
+        // Bintang terbaik level ini disimpan untuk ditampilkan di menu level
+        ProgressData.RecordStars(chapter > 0 ? chapter : LevelSelection.Chapter, LevelSelection.Level, starCount);
         passed = isPassed;
         hasNextLevel = nextLevelExists;
         if (titleText != null)

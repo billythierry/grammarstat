@@ -50,7 +50,8 @@ public class CharacterImage
     public Image image;
 }
 
-// Dialog cutscene bergaya visual novel: efek ketik, Enter untuk menampilkan seluruh kalimat / lanjut
+// Dialog cutscene bergaya visual novel: efek ketik, Enter untuk menampilkan seluruh kalimat / lanjut.
+// Cutscene penutup bisa diakhiri layar The End sebelum kembali ke menu
 public class CutsceneDialog : MonoBehaviour
 {
     [Tooltip("Cutscene yang diputar bila scene ini dibuka langsung (tanpa CutsceneSelection)")]
@@ -100,9 +101,22 @@ public class CutsceneDialog : MonoBehaviour
     [Tooltip("Bar progres skip, di-scale X dari 0 ke 1")]
     [SerializeField] private RectTransform skipFill;
 
+    [Header("Layar The End")]
+    [Tooltip("Layar penutup cerita di atas Fader, tampil bila cutscene mengaktifkan Show The End")]
+    [SerializeField] private CanvasGroup endScreen;
+    [SerializeField] private TMP_Text endTitleText;
+    [SerializeField] private TMP_Text endSubtitleText;
+    [Tooltip("Durasi tulisan The End muncul / hilang")]
+    [SerializeField] private float endFadeDuration = 1.5f;
+    [Tooltip("Lama tulisan The End tampil penuh. Klik atau Enter setelah tulisan muncul akan langsung lanjut")]
+    [SerializeField] private float endHoldDuration = 4f;
+
     private List<CutsceneStage> stages = new List<CutsceneStage>();
     private List<CutsceneLine> lines = new List<CutsceneLine>();
     private string nextSceneName = "";
+    private bool showTheEnd;
+    private string endTitle = "";
+    private string endSubtitle = "";
     private int index = -1;
     private int currentStage = -1;
     private bool isTyping;
@@ -122,6 +136,9 @@ public class CutsceneDialog : MonoBehaviour
         stages = data.stages;
         lines = data.lines;
         nextSceneName = data.nextSceneName;
+        showTheEnd = data.showTheEnd;
+        endTitle = data.endTitle;
+        endSubtitle = data.endSubtitle;
     }
 
     void OnEnable()
@@ -142,6 +159,11 @@ public class CutsceneDialog : MonoBehaviour
 
     void Start()
     {
+        if (endScreen != null)
+        {
+            endScreen.alpha = 0f;
+            endScreen.blocksRaycasts = false;
+        }
         // Musik latar mengikuti volume musik di pengaturan, membesar bersama layar yang terang
         if (bgmAudio != null && bgmAudio.clip != null)
         {
@@ -374,15 +396,58 @@ public class CutsceneDialog : MonoBehaviour
         StopTypingSound();
         SetIndicator(false);
         if (skipHint != null) skipHint.alpha = 0f;
-        if (!string.IsNullOrEmpty(nextSceneName)) StartCoroutine(LeaveRoutine());
+        if (!string.IsNullOrEmpty(nextSceneName) || ShowsEndScreen) StartCoroutine(LeaveRoutine());
     }
 
-    // Layar menghitam dulu sebelum pindah ke scene level
+    bool ShowsEndScreen => showTheEnd && endScreen != null;
+
+    // Layar menghitam dulu sebelum pindah ke scene level. Bila cutscene penutup, layar The End tampil dulu
     IEnumerator LeaveRoutine()
     {
-        if (bgmAudio != null && bgmAudio.isPlaying) StartCoroutine(FadeBgm(0f, stageFadeDuration));
+        bool ending = ShowsEndScreen;
+        // Musik tetap mengiringi layar The End, baru mengecil saat tulisan menghilang
+        if (!ending && bgmAudio != null && bgmAudio.isPlaying) StartCoroutine(FadeBgm(0f, stageFadeDuration));
         if (fader != null) yield return Fade(1f, stageFadeDuration);
-        SceneManager.LoadScene(nextSceneName);
+
+        if (ending)
+        {
+            yield return EndScreenRoutine();
+            if (bgmAudio != null && bgmAudio.isPlaying) yield return FadeBgm(0f, bgmFadeDuration);
+        }
+        if (!string.IsNullOrEmpty(nextSceneName)) SceneManager.LoadScene(nextSceneName);
+    }
+
+    // Tulisan The End muncul perlahan di layar hitam, bertahan sejenak (bisa dilewati dengan klik / Enter), lalu menghilang
+    IEnumerator EndScreenRoutine()
+    {
+        if (endTitleText != null) endTitleText.text = endTitle;
+        if (endSubtitleText != null)
+        {
+            endSubtitleText.text = endSubtitle;
+            endSubtitleText.gameObject.SetActive(!string.IsNullOrEmpty(endSubtitle));
+        }
+
+        endScreen.blocksRaycasts = true;
+        yield return FadeGroup(endScreen, 1f, endFadeDuration);
+
+        for (float t = 0f; t < endHoldDuration; t += Time.unscaledDeltaTime)
+        {
+            bool next = Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetMouseButtonDown(0);
+            if (next) break;
+            yield return null;
+        }
+        yield return FadeGroup(endScreen, 0f, endFadeDuration);
+    }
+
+    static IEnumerator FadeGroup(CanvasGroup group, float target, float duration)
+    {
+        float start = group.alpha;
+        for (float t = 0f; t < duration; t += FrameStep())
+        {
+            group.alpha = Mathf.Lerp(start, target, t / duration);
+            yield return null;
+        }
+        group.alpha = target;
     }
 
     IEnumerator FadeBgm(float target, float duration)

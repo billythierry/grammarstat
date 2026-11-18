@@ -29,11 +29,6 @@ MonoBehaviour:
     sentence: They-played-games-yesterday
     alternativeSentences: 
     translation: Mereka bermain game kemarin.
-  - id: SPA-P04
-    section: 0
-    sentence: We-ate-fried-rice
-    alternativeSentences: 
-    translation: Kami makan nasi goreng.
   - id: SPA-P05
     section: 0
     sentence: He-bought-a-new-bag
@@ -44,11 +39,6 @@ MonoBehaviour:
     sentence: I-did-not-sleep-well
     alternativeSentences: 
     translation: Saya tidak tidur nyenyak.
-  - id: SPA-N02
-    section: 1
-    sentence: She-did-not-call-me
-    alternativeSentences: 
-    translation: Dia (perempuan) tidak menelepon saya.
   - id: SPA-N03
     section: 1
     sentence: They-did-not-eat-breakfast
@@ -64,11 +54,6 @@ MonoBehaviour:
     sentence: Tom-did-not-study-yesterday
     alternativeSentences: 
     translation: Tom tidak belajar kemarin.
-  - id: SPA-Q01
-    section: 2
-    sentence: Did-you-sleep-well?
-    alternativeSentences: 
-    translation: Apakah kamu tidur nyenyak?
   - id: SPA-Q02
     section: 2
     sentence: Did-she-call-you?
@@ -89,21 +74,6 @@ MonoBehaviour:
     sentence: Did-the-train-arrive-late?
     alternativeSentences: 
     translation: Apakah kereta datang terlambat?
-  - id: SPA-R01
-    section: 3
-    sentence: We-visited-the-museum
-    alternativeSentences: 
-    translation: Kami mengunjungi museum itu.
-  - id: SPA-R02
-    section: 3
-    sentence: She-did-not-watch-TV
-    alternativeSentences: 
-    translation: Dia (perempuan) tidak menonton TV.
-  - id: SPA-R03
-    section: 3
-    sentence: Did-you-see-the-train?
-    alternativeSentences: 
-    translation: Apakah kamu melihat keretanya?
   tutorials:
   - section: 0
     formula: Subject|Verb 2|Object / Keterangan

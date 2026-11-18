@@ -673,8 +673,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1 / 6
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -799,8 +799,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ':'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -933,8 +933,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1611,8 +1611,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '-'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2813,6 +2813,8 @@ MonoBehaviour:
   textFadeDuration: 0.8
   holdDuration: 1.8
   screenFadeDuration: 1
+  chapterNumber: 2
+  chapterName: Ticket Inspection
 --- !u!1 &689039622
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,8 +3328,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '-'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3745,7 +3747,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 137, y: 2}
-  m_SizeDelta: {x: 600, y: 50}
+  m_SizeDelta: {x: 660, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &867266283
 MonoBehaviour:
@@ -3769,8 +3771,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Jawaban yang benar:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
-  m_sharedMaterial: {fileID: 1314898028567483148, guid: 1654a7aa4cf260a44809e5a89695138b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3903,8 +3905,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <b>Jawaban Benar!</b>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4365,8 +4367,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Penjelasan
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4718,7 +4720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 230}
+  m_AnchoredPosition: {x: 0, y: 113}
   m_SizeDelta: {x: -160, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069225645
@@ -4918,8 +4920,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5052,8 +5054,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: B
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5541,8 +5543,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Note
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5675,8 +5677,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ':'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5865,8 +5867,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1/20
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6026,8 +6028,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '-'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6267,21 +6269,20 @@ MonoBehaviour:
   debugOverlay: {fileID: 1972205298}
   levelBanks:
   - {fileID: 11400000, guid: 4729e4b3f2c84614199dedbd4a980b32, type: 2}
-  - {fileID: 11400000, guid: f28fb228b2f8b1d4bb0450204a8e36b5, type: 2}
   ticketBank: {fileID: 11400000, guid: 4729e4b3f2c84614199dedbd4a980b32, type: 2}
-  passengerCount: 10
+  passengerCount: 15
   initialWeight: 50
   minWeight: 20
   maxWeight: 80
   weightStep: 10
-  oneStarScore: 4
-  twoStarScore: 7
-  threeStarScore: 10
+  oneStarScore: 6
+  twoStarScore: 10
+  threeStarScore: 15
   enterX: -13
   windowX: 0
   exitX: 13
   passengerY: 0
-  walkInDuration: 3.2
+  walkInDuration: 2
   walkOutDuration: 3.2
   ticketDeskPosition: {x: 0, y: -2.9, z: 0}
   ticketDelay: 0.3
@@ -6438,8 +6439,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '>>'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6832,8 +6833,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: X
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7125,8 +7126,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Age
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7446,8 +7447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: -160, y: 420}
+  m_AnchoredPosition: {x: 0, y: -15}
+  m_SizeDelta: {x: -160, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1697940927
 MonoBehaviour:
@@ -7783,8 +7784,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <<
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8146,8 +8147,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ':'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8263,13 +8264,13 @@ MonoBehaviour:
       kalimatnya sudah benar, klik <b>No Error</b>.
   - image: {fileID: 21300000, guid: 080eba1a01405e04e9d7491eec955b10, type: 3}
     text: Jika jawabanmu <color=#2D6A27><b>benar</b></color>, penumpang boleh lanjut
-      naik kereta.
+      naik kereta dan kalimat yang benar ditampilkan.
   - image: {fileID: 21300000, guid: db59ac5a64fa3e742addea535a8c70f0, type: 3}
     text: Jika jawabanmu <color=#A3362A><b>salah</b></color>, penumpang ditolak dan
       kamu akan melihat jawaban serta kalimat yang benar.
   - image: {fileID: 21300000, guid: ec7bf0311f5adae49bf463a40faaaabb, type: 3}
-    text: Ada <b>10 penumpang</b> yang harus diperiksa. Jawab benar minimal <b>4</b>
-      untuk melewati level ini. Selamat bertugas!
+    text: Ada <b>15 penumpang</b> yang harus diperiksa. Jawab benar minimal <b>6</b>
+      untuk menyelesaikan chapter ini. Selamat bertugas!
   pageImage: {fileID: 1068012669}
   pageText: {fileID: 1039960806}
   pageCounter: {fileID: 146865108}
@@ -8635,8 +8636,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: No Error
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
+  m_sharedMaterial: {fileID: 1011458413870479192, guid: bc3f99f44c994e64db57aa7b26e15a2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

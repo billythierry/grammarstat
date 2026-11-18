@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class RunawayQuizUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text sentenceText;
-    [Tooltip("Tombol jawaban, urut sesuai enum Tense: Simple Present, Present Continuous, Simple Past, Future")]
+    [Tooltip("Tombol jawaban, urut sesuai enum Tense: Simple Present, Present Continuous, Simple Past")]
     [SerializeField] private Button[] answerButtons = new Button[4];
     [Tooltip("Isi bar waktu. Pivot kiri, lebarnya diskalakan sesuai sisa waktu")]
     [SerializeField] private RectTransform timerFill;

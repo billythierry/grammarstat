@@ -32,8 +32,8 @@ MonoBehaviour:
     stage: 0
     showCharacters: 0
   - speaker: 0
-    text: Kabar kedatangan kereta pun sampai ke Grammar Station. Thomas, Shelby, dan
-      Mr. Mister akhirnya bisa bernapas lega.
+    text: Kabar kedatangan kereta pun sampai ke Grammar Station. Thomas, Shelby,
+      dan Mr. Mister akhirnya bisa bernapas lega.
     stage: 1
     showCharacters: 1
   - speaker: 3
@@ -54,3 +54,6 @@ MonoBehaviour:
     stage: 1
     showCharacters: 1
   nextSceneName: MainMenu
+  showTheEnd: 1
+  endTitle: The End
+  endSubtitle: Terima kasih telah bermain Grammar Station!

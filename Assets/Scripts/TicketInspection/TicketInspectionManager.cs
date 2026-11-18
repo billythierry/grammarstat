@@ -125,7 +125,8 @@ public class TicketInspectionManager : MonoBehaviour
     // Layar hitam memudar dulu, lalu panduan muncul. Tanpa panduan, level langsung dimulai
     IEnumerator IntroRoutine()
     {
-        if (levelIntro != null) yield return levelIntro.Play(IntroTitle(), "Level " + LevelSelection.Level);
+        // Intro hanya menampilkan nama chapter: judul "Ticket Inspection", subjudul "Chapter 2"
+        if (levelIntro != null) yield return levelIntro.PlayChapter();
 
         if (guidePanel != null && (guideLevel == 0 || guideLevel == LevelSelection.Level))
         {
@@ -136,14 +137,6 @@ public class TicketInspectionManager : MonoBehaviour
         {
             BeginLevel();
         }
-    }
-
-    // Judul intro dari tense di bank soal level ini, mis. "Simple Present & Present Continuous Tense"
-    string IntroTitle()
-    {
-        if (tenses == null || tenses.Count == 0) return "";
-        // Tiap tense di baris sendiri, dipisah "&" di baris tengah
-        return string.Join("\n&\n", tenses.ToArray()) + " Tense";
     }
 
 

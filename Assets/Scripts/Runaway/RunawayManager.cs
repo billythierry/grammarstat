@@ -121,7 +121,7 @@ public class RunawayManager : MonoBehaviour
     // Layar hitam memudar, kereta dan bandit masuk, dialog pembuka, lalu panduan. Tanpa panduan, permainan langsung dimulai
     IEnumerator IntroRoutine()
     {
-        if (levelIntro != null) yield return levelIntro.Play("", "");
+        if (levelIntro != null) yield return levelIntro.PlayChapter();
         yield return train.Enter();
         yield return bandits.Enter();
         if (openingDialog != null && openingLines.Length > 0) yield return openingDialog.Play(openingLines);

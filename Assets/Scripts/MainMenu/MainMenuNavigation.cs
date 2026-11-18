@@ -52,6 +52,29 @@ public class MainMenuNavigation : MonoBehaviour
     [Tooltip("Posisi Y tengah grid level")]
     [SerializeField] private float levelGridCenterY = -22f;
 
+    [Header("Bintang di card level")]
+    [Tooltip("Nama objek di dalam card yang berisi 3 gambar bintang, urut dari kiri")]
+    [SerializeField] private string starsObjectName = "Stars";
+    [SerializeField] private Color starOnColor = new Color32(0xFF, 0xD2, 0x3F, 0xFF);
+    [SerializeField] private Color starOffColor = new Color32(0x4A, 0x26, 0x12, 0xFF);
+
+    [Header("Kunci chapter dan level")]
+    [Tooltip("Card chapter 1 sampai 3, berurutan")]
+    [SerializeField] private RectTransform[] chapterCards;
+    [Tooltip("Nama objek di dalam card yang tampil saat terkunci (lapisan gelap + gembok)")]
+    [SerializeField] private string lockObjectName = "Lock";
+    [Tooltip("Hanya di editor / development build: tombol untuk membuka semua chapter dan level selama sesi ini (untuk pengujian)")]
+    [SerializeField] private KeyCode unlockAllKey = KeyCode.F7;
+
+    // Pengujian: semua terbuka tanpa mengubah progres yang tersimpan
+    private static bool unlockAll;
+
+    [Header("Reset progres (hanya di main menu)")]
+    [Tooltip("Tombol keyboard untuk membuka dialog hapus progres")]
+    [SerializeField] private KeyCode resetProgressKey = KeyCode.F6;
+    [Tooltip("Dialog konfirmasi sebelum semua bintang dihapus")]
+    [SerializeField] private GameObject resetDialog;
+
     private int selectedChapter = 1;
 
     void Start()
@@ -68,11 +91,83 @@ public class MainMenuNavigation : MonoBehaviour
     {
         // Escape sama dengan tombol kembali
         if (Input.GetKeyDown(KeyCode.Escape)) Back();
+        // Pintasan tersembunyi untuk menghapus progres, minta konfirmasi dulu
+        if (Input.GetKeyDown(resetProgressKey)) OpenResetDialog();
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        if (Input.GetKeyDown(unlockAllKey))
+        {
+            unlockAll = !unlockAll;
+            Debug.Log("Buka semua level: " + (unlockAll ? "aktif" : "nonaktif"));
+            RefreshCards();
+        }
+#endif
     }
 
-    public void OpenChapters() => ShowPage(chaptersPage);
+    // Chapter 1 selalu terbuka. Chapter berikutnya terbuka setelah level terakhir chapter sebelumnya lulus (minimal 1 bintang)
+    public bool IsChapterUnlocked(int chapter)
+    {
+        if (chapter <= 1 || unlockAll) return true;
+        ChapterInfo previous = chapters[chapter - 2];
+        return IsChapterUnlocked(chapter - 1) && ProgressData.GetStars(chapter - 1, previous.levelCount) > 0;
+    }
+
+    // Level 1 terbuka bersama chapternya. Level berikutnya terbuka setelah level sebelumnya lulus
+    public bool IsLevelUnlocked(int chapter, int level)
+    {
+        if (!IsChapterUnlocked(chapter)) return false;
+        if (level <= 1 || unlockAll) return true;
+        return ProgressData.GetStars(chapter, level - 1) > 0;
+    }
+
+    public void OpenChapters()
+    {
+        RefreshChapterCards();
+        ShowPage(chaptersPage);
+    }
 
     public void OpenSettings() => ShowPage(settingsPage);
+
+    public void OpenResetDialog()
+    {
+        if (resetDialog != null) resetDialog.SetActive(true);
+    }
+
+    public void CloseResetDialog()
+    {
+        if (resetDialog != null) resetDialog.SetActive(false);
+    }
+
+    // Semua bintang dihapus, card yang sedang tampil langsung diperbarui (bintang dan kunci)
+    public void ConfirmResetProgress()
+    {
+        ProgressData.ResetAll();
+        CloseResetDialog();
+        RefreshCards();
+    }
+
+    void RefreshCards()
+    {
+        RefreshChapterCards();
+        if (levelsPage.activeSelf) LayoutLevelCards(chapters[selectedChapter - 1].levelCount);
+    }
+
+    void RefreshChapterCards()
+    {
+        if (chapterCards == null) return;
+        for (int i = 0; i < chapterCards.Length; i++)
+            if (chapterCards[i] != null) SetLocked(chapterCards[i], !IsChapterUnlocked(i + 1));
+    }
+
+    // Card terkunci: tombol tidak bisa diklik, gembok tampil, bintang disembunyikan
+    void SetLocked(RectTransform card, bool locked)
+    {
+        var button = card.GetComponent<UnityEngine.UI.Button>();
+        if (button != null) button.interactable = !locked;
+        Transform lockObject = card.Find(lockObjectName);
+        if (lockObject != null) lockObject.gameObject.SetActive(locked);
+        Transform stars = card.Find(starsObjectName);
+        if (stars != null) stars.gameObject.SetActive(!locked);
+    }
 
     public void OpenCredits() => ShowPage(creditsPage);
 
@@ -90,6 +185,7 @@ public class MainMenuNavigation : MonoBehaviour
     // chapter dimulai dari 1
     public void OpenChapter(int chapter)
     {
+        if (!IsChapterUnlocked(chapter)) return;
         selectedChapter = chapter;
         LayoutLevelCards(chapters[chapter - 1].levelCount);
         ShowPage(levelsPage);
@@ -98,6 +194,7 @@ public class MainMenuNavigation : MonoBehaviour
     // level dimulai dari 1
     public void PlayLevel(int level)
     {
+        if (!IsLevelUnlocked(selectedChapter, level)) return;
         LevelSelection.Chapter = selectedChapter;
         LevelSelection.Level = level;
         // Level 1 tiap chapter bisa diawali cutscene; cutscene lalu membuka scene level
@@ -109,7 +206,8 @@ public class MainMenuNavigation : MonoBehaviour
 
     public void Back()
     {
-        if (levelsPage.activeSelf) ShowPage(chaptersPage);
+        if (resetDialog != null && resetDialog.activeSelf) CloseResetDialog();
+        else if (levelsPage.activeSelf) OpenChapters();
         else if (chaptersPage.activeSelf || settingsPage.activeSelf || creditsPage.activeSelf) ShowPage(mainPage);
     }
 
@@ -130,11 +228,26 @@ public class MainMenuNavigation : MonoBehaviour
             float x = (col - (colsInRow - 1) / 2f) * levelSpacingX;
             float y = levelGridCenterY + ((rows - 1) / 2f - row) * levelSpacingY;
             levelCards[i].anchoredPosition = new Vector2(x, y);
+            ShowStars(levelCards[i], ProgressData.GetStars(selectedChapter, i + 1));
+            SetLocked(levelCards[i], !IsLevelUnlocked(selectedChapter, i + 1));
+        }
+    }
+
+    // Bintang terbaik yang pernah didapat menyala, sisanya gelap
+    private void ShowStars(RectTransform card, int stars)
+    {
+        Transform group = card.Find(starsObjectName);
+        if (group == null) return;
+        for (int i = 0; i < group.childCount; i++)
+        {
+            var image = group.GetChild(i).GetComponent<UnityEngine.UI.Image>();
+            if (image != null) image.color = i < stars ? starOnColor : starOffColor;
         }
     }
 
     private void ShowPage(GameObject page)
     {
+        CloseResetDialog();
         mainPage.SetActive(page == mainPage);
         chaptersPage.SetActive(page == chaptersPage);
         levelsPage.SetActive(page == levelsPage);

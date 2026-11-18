@@ -7,8 +7,7 @@ public enum Tense
 {
     SimplePresent,
     PresentContinuous,
-    SimplePast,
-    Future
+    SimplePast
 }
 
 public static class TenseNames
@@ -19,8 +18,7 @@ public static class TenseNames
         {
             case Tense.SimplePresent: return "Simple Present";
             case Tense.PresentContinuous: return "Present Continuous";
-            case Tense.SimplePast: return "Simple Past";
-            default: return "Simple Future";
+            default: return "Simple Past";
         }
     }
 }
