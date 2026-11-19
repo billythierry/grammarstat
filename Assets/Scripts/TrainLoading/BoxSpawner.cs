@@ -45,6 +45,8 @@ public class BoxSpawner : MonoBehaviour
     [Header("Questions")]
     [Tooltip("Bank soal per level, urut dari Level 1. Level dipilih dari menu (LevelSelection.Level)")]
     [SerializeField] private QuestionBank[] levelBanks;
+    [Tooltip("Level yang keretanya masuk dari kiri dan bergerak ke kanan (variasi). Level lain masuk dari kanan")]
+    [SerializeField] private int[] levelsFromLeft = { 2 };
     [Tooltip("Bank cadangan bila level yang dipilih belum punya bank di Level Banks")]
     [SerializeField] private QuestionBank questionBank;
     [Header("Bintang (dinilai dari jumlah jawaban benar seluruh soal)")]
@@ -191,6 +193,8 @@ public class BoxSpawner : MonoBehaviour
                 roles = step.IsTutorial ? step.tutorial.GetRoles() : null
             });
         }
+        // Variasi arah: level tertentu keretanya masuk dari kiri, sisanya dari kanan
+        train.SetDirection(System.Array.IndexOf(levelsFromLeft, LevelSelection.Level) >= 0);
         train.Setup(plans);
         // Kereta sudah di luar layar sebelum intro memudar, jadi posisi kereta di editor tidak sempat terlihat.
         // Level 1 diawali intro chapter, level berikutnya langsung intro level

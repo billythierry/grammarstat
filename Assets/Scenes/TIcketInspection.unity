@@ -6270,14 +6270,14 @@ MonoBehaviour:
   levelBanks:
   - {fileID: 11400000, guid: 4729e4b3f2c84614199dedbd4a980b32, type: 2}
   ticketBank: {fileID: 11400000, guid: 4729e4b3f2c84614199dedbd4a980b32, type: 2}
-  passengerCount: 15
+  passengerCount: 12
   initialWeight: 50
   minWeight: 20
   maxWeight: 80
   weightStep: 10
-  oneStarScore: 6
-  twoStarScore: 10
-  threeStarScore: 15
+  oneStarScore: 5
+  twoStarScore: 8
+  threeStarScore: 12
   enterX: -13
   windowX: 0
   exitX: 13
@@ -8269,7 +8269,7 @@ MonoBehaviour:
     text: Jika jawabanmu <color=#A3362A><b>salah</b></color>, penumpang ditolak dan
       kamu akan melihat jawaban serta kalimat yang benar.
   - image: {fileID: 21300000, guid: ec7bf0311f5adae49bf463a40faaaabb, type: 3}
-    text: Ada <b>15 penumpang</b> yang harus diperiksa. Jawab benar minimal <b>6</b>
+    text: Ada <b>12 penumpang</b> yang harus diperiksa. Jawab benar minimal <b>5</b>
       untuk menyelesaikan chapter ini. Selamat bertugas!
   pageImage: {fileID: 1068012669}
   pageText: {fileID: 1039960806}

@@ -63,7 +63,7 @@ Pemain menyusun kotak kata menjadi kalimat. Soal dimainkan berurutan: 4 positif,
 
 Pemain mencari bagian yang salah pada catatan tiket: (A), (B), atau Tidak Ada Kesalahan. Tense dipilih dengan Weighted Random.
 
-Chapter ini hanya punya 1 level. Semua 60 soal berada di satu bank (BankSoal_Ch2), dan setiap permainan mengambil 15 soal secara acak. Bintang 1 / 2 / 3 didapat dengan 6 / 10 / 15 jawaban benar.
+Chapter ini hanya punya 1 level. Semua 60 soal berada di satu bank (BankSoal_Ch2), dan setiap permainan mengambil 12 soal secara acak. Bintang 1 / 2 / 3 didapat dengan 5 / 8 / 12 jawaban benar.
 
 ### Simple Present (20 soal)
 

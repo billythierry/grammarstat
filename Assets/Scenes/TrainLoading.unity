@@ -2860,6 +2860,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ecf856846a186504fa3add51ab152aec, type: 2}
   - {fileID: 11400000, guid: cb085a5691fece848b36e5976fb8ca39, type: 2}
   - {fileID: 11400000, guid: 2c4f0c340c063d249979c4629fcdac58, type: 2}
+  levelsFromLeft: 02000000
   questionBank: {fileID: 11400000, guid: ecf856846a186504fa3add51ab152aec, type: 2}
   oneStarMinCorrect: 6
   twoStarMinCorrect: 9
