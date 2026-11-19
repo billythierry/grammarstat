@@ -64,7 +64,7 @@ public class MainMenuNavigation : MonoBehaviour
     [Tooltip("Nama objek di dalam card yang tampil saat terkunci (lapisan gelap + gembok)")]
     [SerializeField] private string lockObjectName = "Lock";
     [Tooltip("Hanya di editor / development build: tombol untuk membuka semua chapter dan level selama sesi ini (untuk pengujian)")]
-    [SerializeField] private KeyCode unlockAllKey = KeyCode.F7;
+    [SerializeField] private KeyCode unlockAllKey = KeyCode.Alpha7;
 
     // Pengujian: semua terbuka tanpa mengubah progres yang tersimpan
     private static bool unlockAll;
@@ -94,7 +94,9 @@ public class MainMenuNavigation : MonoBehaviour
         // Pintasan tersembunyi untuk menghapus progres, minta konfirmasi dulu
         if (Input.GetKeyDown(resetProgressKey)) OpenResetDialog();
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-        if (Input.GetKeyDown(unlockAllKey))
+        // Angka 7 di numpad juga berlaku bila tombolnya angka 7
+        bool keypad7 = unlockAllKey == KeyCode.Alpha7 && Input.GetKeyDown(KeyCode.Keypad7);
+        if (Input.GetKeyDown(unlockAllKey) || keypad7)
         {
             unlockAll = !unlockAll;
             Debug.Log("Buka semua level: " + (unlockAll ? "aktif" : "nonaktif"));

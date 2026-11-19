@@ -9046,7 +9046,7 @@ MonoBehaviour:
   - {fileID: 1293047593}
   - {fileID: 1721270048}
   lockObjectName: Lock
-  unlockAllKey: 288
+  unlockAllKey: 55
   resetProgressKey: 287
   resetDialog: {fileID: 1507656422}
 --- !u!114 &1454430245
